@@ -1,0 +1,14 @@
+/**
+ * Callouts
+ */
+.callout {
+	@include gen-borders($color: $callout-color);
+	background: lighten($callout-color, 15%);
+	padding: $pad;
+	
+	h1:first-child,
+	h2:first-child,
+	.callout-title {
+		
+	}
+}

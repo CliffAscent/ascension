@@ -1,0 +1,69 @@
+//==========
+// Comment outputted to the top of the stylesheet.
+// Any comment made with /* */ instead of // will be outputted to the css.
+//==========
+
+/**
+ * This stylesheet was generated using SASS from ascension/scss/ascension/
+ */
+
+//==========
+// Load the various Ascension Starter SASS files.
+//==========
+
+// Compass library mixins.
+@import "compass/compass";
+
+// Ascension framework variables.
+@import "../../ascension/scss/ascension/variables";
+
+// Ascension Starter variables.
+@import "ascension-starter/variables";
+
+// Ascension framework mixins.
+@import "../../ascension/scss/ascension/mixins";
+
+// Ascension Starter mixins.
+@import "ascension-starter/mixins";
+
+// Rules effecting the overall layout.
+@import "ascension-starter/layout";
+
+// Rules used throughout the entire site.
+@import "ascension-starter/helpers";
+
+// Loads the files for specific blocks of content.
+@import "ascension-starter/modules";
+
+// Typography rules.
+@import "ascension-starter/type";
+
+// Table rules.
+@import "ascension-starter/tables";
+
+// Form rules.
+@import "ascension-starter/forms";
+
+// Media rules (images, video, etc.).
+@import "ascension-starter/media";
+
+// Header and main navigation rules.
+@import "ascension-starter/header";
+
+// Footer rules.
+@import "ascension-starter/footer";
+
+// Widget rules.
+@import "ascension-starter/widgets";
+
+// Rules for menus and navigation.
+@import "ascension-starter/menus";
+
+// General rules for all posts.
+@import "ascension-starter/posts";
+
+// Loads the files for specific post types.
+@import "ascension-starter/post-types";
+
+// Rules for post comments.
+@import "ascension-starter/comments";

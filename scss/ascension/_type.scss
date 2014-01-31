@@ -1,0 +1,334 @@
+/**
+ * Typography
+ */
+
+//==========
+// General
+//==========
+p {
+	line-height: 1.5;
+	margin-bottom: 1em;
+}
+
+strong {
+	font-weight: bold;
+}
+em {
+	font-style: italic;
+}
+
+small {
+	font-size: 0.8em;
+}
+big {
+	font-size: 1.2em;
+}
+
+pre {
+
+}
+code {
+	display: block;
+	font-family: "Courier New", Courier, monospace;
+	font-size: 0.8em;
+	margin-bottom: 1em;
+	padding: 0.5em;
+	overflow: auto;
+	max-width: 100%;
+}
+var,
+samp {
+	font-family: "Courier New", Courier, monospace;
+}
+
+sup,
+sub {
+	font-family: "Courier New", Courier, monospace;
+	font-size: 0.8em;
+	font-style: italic;
+	position: relative;
+	vertical-align: baseline;
+}
+sup {
+	top: -0.5em;
+}
+sub {
+	bottom: -0.5em;
+}
+
+kbd {
+	@include border-radius(2px, 2px);
+	border: 1px solid #808080;
+	font-family: "Courier New", Courier, monospace;
+	font-size: 0.9em;
+	padding: 0.25em;
+}
+
+dfn,
+abbr,
+acronym {
+	border-bottom: 1px dotted;
+	cursor: help;
+}
+del {
+	text-decoration: line-through;
+}
+ins {
+	border-bottom: 1px dashed;
+	text-decoration: none;
+}
+
+q {
+	font-style: italic;
+	
+	&:before,
+	&:after {
+		content: '"';
+	}
+}
+cite {
+	font-family: Georgia, serif;
+	font-style: italic;
+}
+
+address {
+	margin-bottom: 1em;
+	margin-left: 1em;
+	padding: 0.5em;
+}
+
+mark,
+.highlight {
+	background: #FFFF00;
+	color: #000000;
+	padding: 0 0.25em;
+}
+.strike {
+	text-decoration: line-through;
+}
+.meta {
+	
+	a {
+		color: inherit;
+	}
+}
+.caption {
+	
+}
+.no-wrap {
+	white-space: nowrap;
+}
+
+hr {
+	background: #808080;
+	border: 0;
+	height: 1px;
+	margin-bottom: 0.5em;
+	margin-top: 0.5em;
+}
+
+
+//==========
+/* Headings */
+//==========
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	display: block;
+	line-height: 1.5;
+	word-wrap: break-word;
+	
+	&.subhead,
+	&.subheading,
+	&.subtitle	{
+		border-bottom: 1px solid;
+		font-size: 0.8em;
+		margin-bottom: 0.25em;
+		padding-top: 1em;
+	}
+	a {
+		color: inherit;
+		
+		&:hover,
+		&:focus,
+		&:active {
+			color: inherit;
+		}
+	}
+}
+
+h1 {
+	font-size: 1.8em;
+}
+h2 {
+	font-size: 1.4em;
+}
+h3 {
+	font-size: 1.2em;
+}
+h4 {
+	font-size: 1em;
+}
+h5 {
+	font-size: 0.9em;
+}
+h6 {
+	font-size: 0.8em;
+}
+
+@media (min-width: $medium-starts-at) {
+	h1 {
+		font-size: 2.0em;
+	}
+	h2 {
+		font-size: 1.6em;
+	}
+}
+@media (min-width: $large-starts-at) {
+	h1 {
+		font-size: 2.2em;
+	}
+	h2 {
+		font-size: 1.8em;
+	}
+	h3 {
+		font-size: 1.4em;
+	}
+	h4 {
+		font-size: 1.2em;
+	}
+}
+
+
+//==========
+/* Lists */
+//==========
+ul {
+	list-style-type: disc;
+	margin-bottom: 0.5em;
+	margin-left: 1em;
+	
+	ul {
+		list-style: circle;
+		
+		ul {
+			list-style: square;
+		}
+	}
+}
+ol {
+	list-style-type: decimal;
+	margin-bottom: 0.5em;
+	margin-left: 1.5em;
+	
+	ol {
+		list-style: upper-roman;
+		
+		ol {
+			list-style: lower-roman;
+			
+			ol {
+				list-style: upper-alpha;
+				
+				ol {
+					list-style: lower-alpha;
+				}
+			}
+		}
+	}
+}
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+	margin-bottom: 0;
+}
+
+ul {
+
+	&.square {
+	  list-style-type: square;
+	}
+	&.circle {
+	  list-style-type: circle;
+	}
+	&.disc {
+	  list-style-type: disc;
+	}
+}
+
+ul,
+ol {
+
+	&.plain,
+	&.unstyled {
+		list-style: none;
+		margin-left: 0;
+		padding-left: 0;
+	}
+	&.inline,
+	&.inline {	
+		list-style: none;
+		margin-left: 0;
+		padding-left: 0;
+	  
+		& > li {
+			@include inline-block();
+			padding: 0 0.25em;
+			
+			&:first-child {
+				padding-left: 0;
+			}
+			&:last-child {
+				padding-right: 0;
+			}
+		}
+		ul,
+		ol {
+			@include inline-block();
+		}	
+	}
+}
+
+dl {
+	
+	dt {
+		font-weight: bold;
+	}
+	dd {
+		margin-bottom: 1em;
+		margin-left: 1em;
+		
+		& > dl,
+		& > ul,
+		& > ol {
+			margin-top: 1em;
+		}
+	}
+}
+
+
+//==========
+/* Blockquotes */
+//==========
+blockquote {
+	color: #808080;
+	font-style: italic;
+	font-weight: normal;
+	padding: 1em;
+	
+	/* Reset the <p> that WordPress might add inside the blockquote. */
+	p {
+		display: inline;
+		margin: 0;
+		padding: 0;
+	}
+	
+	em,
+	cite {
+		font-style: normal;
+	}
+}

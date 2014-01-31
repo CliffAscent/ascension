@@ -1,0 +1,71 @@
+/**
+ * Header
+ */
+
+// Effects all header types.
+#header {
+	
+	.contain {
+		position: relative;
+		
+		.header-image-link {
+			line-height: 0;
+			
+			&:hover {
+				text-decoration: none;
+			}
+		}
+		.header-info {
+			
+			.site-title,
+			.site-description {
+				line-height: 1;
+			}
+		}
+		.social-icons {
+			position: absolute;
+			right: 0;
+			top: 0;
+			
+			a {
+				margin-right: 0.5em;
+				
+				&:last-child {
+					margin-right: 0;
+				}
+				img {
+					width: 32px;
+				}
+			}
+		}
+	}
+}
+
+// Default header type.
+#header .header-default {
+
+	.header-image {
+		@include inline-block( none );
+		max-width: 100%;
+	}
+	.header-info {
+		@include inline-block( top );
+	}
+}
+
+// Banner header type.
+#header .header-banner {
+	
+	.contain {
+		position: relative;
+		
+		.header-image {
+			width: 100%;
+		}
+		.header-info {
+			left: 0;
+			position: absolute;
+			top: 0;
+		}
+	}
+}

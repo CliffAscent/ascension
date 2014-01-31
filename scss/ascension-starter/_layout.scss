@@ -1,0 +1,72 @@
+/**
+ * Layout
+ */
+
+body {
+	background-color: $bg-color;
+	color: $text-color;
+	font-family: $text-family;
+	font-size: $base-font-size;
+	line-height: $base-line-height;
+}
+
+// This row is the element centered in the viewport.
+// Ensure all root elements follow this structure.
+// body #{section}.wrapper .row
+body > .wrapper > .row {
+	
+}
+
+// Wraps the main-content and sidebars.
+#content {
+
+}
+
+// Contains the post(s) or page.
+#main-content {
+	
+}
+
+// Category pages can optionally display the description at the top.
+.category-description {
+
+}
+
+// Links to pages with more posts.
+.posts-pages {
+
+	.contain {
+	
+		.next-posts {
+			
+			a {
+				@include gen-dashicon('\f344', $place: after, $margin: 0 0 0 0.25em);
+			}
+		}
+		.prev-posts {
+			
+			a {
+				@include gen-dashicon('\f340', $margin: 0 0.25em 0 0);
+			}
+		}
+	}
+}
+
+// Links to image attachments attached to the same post.
+.image-links {
+	
+	.contain {
+	
+		.next-image {
+			
+		}
+		.prev-image {
+			
+		}
+	}
+}
+
+// Credits element hooked into wp_footer.
+.credits {
+	
+}

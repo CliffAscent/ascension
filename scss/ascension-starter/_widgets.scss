@@ -1,0 +1,118 @@
+/**
+ * Widgets
+ */
+
+// Effects all widgets.
+.widgets {
+	
+	.widget {
+		margin-bottom: $push-lg;
+		
+		.contain {
+			
+			.widget-title {
+			
+			}
+			ul {
+				
+				li {
+					@include gen-border(bottom);
+					padding: 0.25em 0;
+					
+					&:nth-child(even) {
+						
+					}
+					&:nth-child(odd) {
+						
+					}
+					&:last-child {
+						
+					}
+					&.current-menu-item {
+					
+						& > a {
+							text-decoration: underline;
+						}
+					}
+					a {
+			
+						&:hover,
+						&:focus,
+						&:active {
+							
+						}
+					}
+					ul {
+						
+						li {
+							
+							&:last-child {
+								
+							}
+							a {
+								
+							}
+							ul {
+								
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+// Effects only sidebar widgets.
+.sidebar {
+	
+	&.left-sidebar {
+	
+	}
+	&.right-sidebar {
+	
+	}
+	.widgets {
+	
+		.widget {
+			
+			.contain {
+				
+				.widget-title {
+				
+				}
+				ol,
+				ul {
+					
+				}
+			}
+		}
+	}
+}
+.left-sidebar {
+	
+}
+.right-sidebar {
+	
+}
+
+// Effects only non-sidebar widgets.
+.widget-area {
+	
+	.widgets {
+	
+		.widget {
+			
+			.contain {
+				
+				.widget-title {
+				
+				}
+				ol,
+				ul {
+					
+				}
+			}
+		}
+	}
+}

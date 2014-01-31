@@ -1,0 +1,14 @@
+/**
+ * Tooltips
+ */
+
+.tip {
+	
+	.tip-control {
+		
+	}
+	.tip-content {
+		@include gen-borders();
+		background: $bg-alt-color;
+	}
+}

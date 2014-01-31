@@ -1,0 +1,33 @@
+//==========
+/* Media query test */
+//==========
+.media-test {
+	bottom: 0;
+	left: 0;
+	position: fixed;
+	right: 0;
+
+	.row {
+	
+		* {
+			padding: 0.5em;
+			text-align: center;
+		}
+		.media-small {
+			background: #FF0000;
+			color: #000;
+		}
+		.media-medium {
+			background: #FFFF00;
+			color: #000;
+		}
+		.media-large {
+			background: #0000FF;
+			color: #fff;
+		}
+		.media-full {
+			background: #008000;
+			color: #fff;
+		}
+	}
+}

@@ -1,0 +1,37 @@
+// Path added before URL's leading to the theme root.
+$themeRoot: '../../' !default;
+
+
+//==========
+// Grid Options
+//==========
+$column-count: 12 !default;
+$gutter-width: 1.5em !default;
+
+
+//==========
+// Breakpoints
+//==========
+$medium-starts-at: 400px !default;
+$large-starts-at:  800px !default;
+$full-starts-at:   1200px !default;
+
+
+//==========
+// Color Scheme
+//==========
+$bg-color:   #fff !default;
+$text-color: #000 !default;
+
+
+//==========
+// General Colors
+//==========
+$black:  #000000 !default;
+$white:  #FFFFFF !default;
+$grey:   #808080 !default;
+$red:    #FF0000 !default;
+$green:  #008000 !default;
+$blue:   #0000FF !default;
+$yellow: #FFFF00 !default;
+$orange: #FFA500 !default;

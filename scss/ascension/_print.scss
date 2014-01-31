@@ -1,0 +1,17 @@
+/**
+* Print
+*/
+
+@media print {
+
+	body {
+		background: none !important;
+		font-size: 10pt;
+	}
+	
+	/* Show URLs */
+	footer.entry-meta a[rel=bookmark]:link:after,
+	footer.entry-meta a[rel=bookmark]:visited:after {
+		content: " [" attr(href) "] ";
+	}
+}

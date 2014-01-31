@@ -1,0 +1,168 @@
+/**
+ * Posts
+ */
+
+.entry {
+	margin-bottom: $push-lg;
+
+	&.has-post-image {
+
+	}
+	&.sticky {
+		
+	}
+	.entry-header {
+		margin-bottom: $push;
+	}
+		.entry-image {
+			
+				&.archive-entry-image {
+				
+				}
+				.entry-image-link {
+					
+				}
+					.the-entry-image {
+						margin-bottom: 1em;
+					
+						&.entry-thumbnail {
+							float: left;
+							margin: 0.5em;
+						}
+					}
+		}
+		.entry-title {
+		
+			a {
+				&:hover,
+				&:focus,
+				&:active {
+
+				}
+			}
+		}
+		.entry-details {
+			
+			.meta {
+			
+				a {
+					
+					&:hover,
+					&:focus,
+					&:active {
+
+					}
+				}
+				&.attachment{
+					
+					a {
+						@include gen-dashicon('\f128', $margin: 0 0.25em 0 0);
+					}
+				}
+				&.author {
+					
+					a {
+						@include gen-dashicon('\f110', $margin: 0 0.25em 0 0);
+					}
+				}
+				&.bookmark {
+					
+					a {
+						@include gen-dashicon('\f331', $margin: 0 0.25em 0 0);
+					}
+				}
+				&.date {
+					
+					a {
+						@include gen-dashicon('\f145', $margin: 0 0.25em 0 0);
+					}
+				}
+				&.category {
+					@include gen-dashicon('\f318', $margin: 0 0.25em 0 0);
+					
+					a {
+						
+					}
+				}
+				&.comments {
+					
+					a {
+						@include gen-dashicon('\f101', $margin: 0 0.25em 0 0);
+					}
+				}
+			}
+		}
+	.entry-content {
+		margin-bottom: $push;
+		
+		.contain {
+		
+			p,
+			ol,
+			ul {
+			
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+			.more-link {
+			
+				.read-more {
+					@include gen-dashicon('\f310', $place: after, $margin: 0 0 0 0.5em);
+				}
+			}
+		}
+	}
+		// Shown if a post is split into pages.
+		.entry-pages {
+		
+			& > a,
+			& > span {
+				@include gen-button($padding: 0.15em 0.5em);
+				
+				&:hover,
+				&:focus,
+				&:active {
+
+				}
+			}
+			// The active page link.
+			& > span {
+				@include gen-button-disabled();
+			}
+		}
+	.entry-footer {
+	
+		> * {
+			margin-bottom: $push;
+			
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+		.entry-tags {
+			@include gen-dashicon('\f323', $margin: 0 0.25em 0 0);
+			
+			a {
+			
+				&:hover,
+				&:focus,
+				&:active {
+
+				}
+			}
+		}
+		.entry-edit {
+			
+			a {
+				@include gen-dashicon('\f327', $margin: 0 0.25em 0 0);
+			
+				&:hover,
+				&:focus,
+				&:active {
+
+				}
+			}
+		}
+}

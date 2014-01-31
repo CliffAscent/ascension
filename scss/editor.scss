@@ -1,0 +1,29 @@
+/**
+ * Visual Editor
+ */
+
+@import "compass/compass";
+@import "ascension/variables";
+@import "ascension/mixins";
+@import "icons";
+
+.mceContentBody {
+	@import "ascension/layout";
+	@import "ascension/grid";
+	@import "ascension/helpers";
+	@import "ascension/modules";
+	@import "ascension/type";
+	@import "ascension/tables";
+	@import "ascension/forms";
+	@import "ascension/media";
+	
+	@import "ascension-starter";
+	
+	.row {
+	
+		.container {
+			border: 1px solid;
+			padding: $pad;
+		}
+	}
+}

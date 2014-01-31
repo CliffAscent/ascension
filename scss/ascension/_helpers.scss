@@ -1,0 +1,145 @@
+//==========
+/* Alignment */
+//==========
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.alignleft {
+	float: left;
+	margin-right: 1em;
+}
+.alignright {
+	float: right;
+	margin-left: 1em;
+}
+.alignnone {
+	display: block;
+	float: none;
+    margin-bottom: 1em;
+}
+
+// Float classes
+.center,
+.centered {
+	margin: 0 auto;
+}
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+
+/* Clears floated content. */
+.clear,
+.clearfix {
+	@include clear-fix;
+}
+
+/* Text alignment */
+.text-center,
+.text-centered {
+	text-align: center;
+}
+.text-left {
+	text-align: left;
+}
+.text-right {
+	text-align: right;
+}
+
+
+//==========
+/* Assistive Text */
+//==========
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-weight: bold;
+	height: auto;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	position: absolute;
+	left: 5px;
+	top: 5px;
+	text-decoration: none;
+	text-transform: none;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar */
+}
+
+//==========
+/* Visibility */
+//==========
+.show {
+  display: block !important;
+}
+.show-at-sm,
+.show-at-small {
+	display: inherit !important;
+}
+.show-at-md,
+.show-at-med,
+.show-at-medium {
+	display: none !important;
+	
+	@media (min-width: $medium-starts-at) {
+		display: inherit !important;
+	}
+}
+.show-at-lg,
+.show-at-large {
+	display: none !important;
+	
+	@media (min-width: $large-starts-at) {
+		display: inherit !important;
+	}
+}
+.show-at-full {
+	display: none !important;
+	
+	@media (min-width: $full-starts-at) {
+		display: inherit !important;
+	}
+}
+
+.hide {
+  display: none !important;
+}
+.hide-at-sm,
+.hide-at-small {
+	display: none !important;
+}
+.hide-at-md,
+.hide-at-med,
+.hide-at-medium {
+	
+	@media (min-width: $medium-starts-at) {
+		display: none !important;
+	}
+}
+.hide-at-lg,
+.hide-at-large {
+	
+	@media (min-width: $large-starts-at) {
+		display: none !important;
+	}
+}
+.hide-at-full {
+	
+	@media (min-width: $full-starts-at) {
+		display: none !important;
+	}
+}

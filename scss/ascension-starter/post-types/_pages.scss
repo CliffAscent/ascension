@@ -1,0 +1,24 @@
+/**
+ * Pages
+ */
+
+article.type-page {
+
+}
+
+.search-page {
+
+	&.search-no-results {
+	
+	}
+	.search-header {
+		margin-bottom: $push-lg;
+	}
+}
+
+.login-page {
+	
+	.login-form {
+		margin-top: $push-lg;
+	}
+}

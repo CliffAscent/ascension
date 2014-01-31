@@ -1,0 +1,25 @@
+/**
+* Scroll to Top
+*/
+
+#scroll-to-top {
+	bottom: 0;
+	cursor: pointer;
+	/* Displayed by JavaScript once scrolled down. */
+	display: none;
+	line-height: 0;
+	padding: 0.5em;
+	position: fixed;
+	right: 0;
+	z-index: 9999;
+	
+	span {
+		@include gen-dashicon('\f343');
+		color: darken(#808080, 20%);
+		font-size: 48px;
+		
+		&:hover {
+			color: #808080;
+		}
+	}
+}

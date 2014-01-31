@@ -1,0 +1,189 @@
+/**
+ * Forms
+ */
+
+form {
+
+}
+.form-field {
+	
+}
+label {
+	
+}
+input,
+select,
+textarea {
+	@include gen-borders();
+	background: $input-color;
+	padding: 0.25em;
+
+	&:focus,
+	&.active {
+		
+	}
+	&.default {
+	
+	}
+	&.required {
+		
+	}
+	&.valid {
+		
+	}
+	&.error {
+		
+	}
+}
+
+.searchform {
+	position: relative;
+
+	input {
+		width: 100%;
+	}
+	button {
+		background: none;
+		border: 0;
+		box-shadow: 0 0 0;
+		padding: 0.25em 0.5em;
+		position: absolute;
+		right: 0;
+		top: 0;
+		
+		&:hover,
+		&:focus {
+			background: none;
+			border: 0;
+			box-shadow: 0 0 0;
+			color: $link-hover-color;
+		}
+	}
+}
+
+.btn,
+.button,
+button,
+input[type="reset"],
+input[type="submit"] {
+	@include gen-button();
+	
+	&.narrow {
+		padding-left: 0.25em;
+		padding-right: 0.25em;
+	}
+	&.small {
+		font-size: 0.8em;
+		padding: 0.175em 0.5em;
+	}
+	&.large {
+		font-size: 1.2em;
+		padding: 0.5em 2em;
+	}
+	&.full {
+		
+	}
+	&.special-btn,
+	&.special-button {
+		background: darken($button-color, 10%);
+		color: $link-hover-color;
+		
+		&:hover,
+		&:focus {
+			@include gen-borders($color: $link-hover-color);
+			background: $link-color;
+			color: $text-color;
+		}
+	}
+	&.callout-btn,
+	&.callout-button {
+		@include gen-borders($color: $callout-color);
+		background: lighten($callout-color, 15%);
+		
+		&:hover,
+		&:focus {
+			background: lighten($callout-color, 20%);
+		}
+	}
+	&.disabled-btn,
+	&.disabled-button {
+		@include gen-button-disabled();
+	}
+	a {
+		
+		&:hover,
+		&:focus,
+		&:active {
+			
+		}
+	}
+}
+
+.notify {
+	@include border-radius(3px, 3px);
+	color: $black;
+	padding: 1em;
+	
+	&.alert {
+		background: lighten($red, 35%);
+		border: 2px solid $red;
+		
+		a {
+			color: darken($red, 20%);
+			
+			&:hover,
+			&:focus,
+			&:active {
+				color: $red;
+			}
+		}
+	}
+	&.warn {
+		background: lighten($orange, 35%);
+		border: 2px solid $orange;
+		
+		a {
+			color: darken($orange, 20%);
+			
+			&:hover,
+			&:focus,
+			&:active {
+				color: $orange;
+			}
+		}
+	}
+	&.info {
+		background: lighten($yellow, 35%);
+		border: 2px solid $yellow;
+		
+		a {
+			color: darken($yellow, 20%);
+			
+			&:hover,
+			&:focus,
+			&:active {
+				color: darken($yellow, 10%);
+			}
+		}
+	}
+	&.success {
+		background: lighten($green, 50%);
+		border: 2px solid $green;
+		
+		a {
+			color: darken($green, 20%);
+			
+			&:hover,
+			&:focus,
+			&:active {
+				color: $green;
+			}
+		}
+	}
+}
+
+.wp-dialog,
+.ui-dialog-content,
+.ui-widget-content {
+
+}

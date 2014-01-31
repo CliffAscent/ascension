@@ -1,0 +1,30 @@
+/**
+ * Posts
+ */
+
+.entry {
+
+	&.sticky {
+		/* WordPress required class. */
+	}
+	.entry-title {
+		line-height: 1;
+	}
+	.entry-details {
+		
+		.meta {
+			@include inline-block();
+			margin-right: 1em;
+		
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+	.entry-image {
+		line-height: 0;
+	}
+	.entry-edit {
+		@include inline-block();
+	}
+}

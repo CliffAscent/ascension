@@ -1,0 +1,151 @@
+/**
+ * Typography
+ */
+
+//==========
+// General
+//==========
+p {
+	margin:  0 0 $push 0;
+	
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+code {
+	
+}
+
+q {
+	color: $meta-color;
+	
+	&:before,
+	&:after {
+		
+	}
+}
+
+cite {
+	color: $meta-color;
+}
+
+address {
+	
+}
+
+mark,
+.highlight {
+	
+}
+
+.meta {
+	@include meta-text;
+	
+	a {
+	
+		&:hover,
+		&:focus,
+		&:active {
+			
+		}
+	}
+}
+
+.caption {
+	@include meta-text;
+	text-align: center;
+}
+
+hr {
+	background: $border-color;
+	border: 0;
+	height: 1px;
+	margin-bottom: $push;
+	margin-top: $push;
+}
+
+
+//==========
+// Links
+//==========
+a {
+	color: $link-color;
+	
+	&:hover,
+	&:focus,
+	&:active {
+		color: $link-hover-color;
+		text-decoration: none;
+	}
+}
+
+
+//==========
+// Headings
+//==========
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: $heading-color;
+	font-family: $heading-family;
+	font-weight: normal;
+	
+	&.subhead,
+	&.subheading {
+		color: $meta-color;
+	}
+	a {
+		
+		&:hover,
+		&:focus,
+		&:active {
+			color: $link-hover-color;
+		}
+	}
+}
+
+
+
+//==========
+// Lists
+//==========
+ul {
+	
+	li {
+	
+	}
+}
+ol {
+	
+	li {
+	
+	}
+}
+
+dl {
+	
+	dt {
+		
+	}
+	dd {
+		
+	}
+}
+
+
+//==========
+// Blockquotes 
+//==========
+blockquote {
+	@include gen-dashicon('\f122');
+	color: $meta-color;
+	
+	em,
+	cite {
+		
+	}
+}

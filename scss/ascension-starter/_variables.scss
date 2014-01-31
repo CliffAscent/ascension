@@ -1,0 +1,48 @@
+// Path added before URL's leading to the theme root.
+$themeRoot: '../../';
+
+
+//==========
+// Theme Colors
+//==========
+$bg-color:         #fff;
+$bg-alt-color:     #fafafa;
+$border-color:     #ddd;
+$input-color:      #fff;
+$button-color:     #eee;
+$text-color:       #333;
+$heading-color:    #222;
+$meta-color:       #666;
+$link-color:       #2ea2cc;
+$link-hover-color: #0074a2;
+$callout-color:    #d54e21;
+
+
+//==========
+// General Colors
+//==========
+$black:  #000000;
+$white:  #FFFFFF;
+$grey:   #808080;
+$red:    #FF0000;
+$green:  #008000;
+$blue:   #0000FF;
+$yellow: #FFFF00;
+$orange: #FFA500;
+
+
+//==========
+// Typography
+//==========
+$base-font-size:   1em;
+$base-line-height: 1.5;
+$text-family:      'Open Sans', sans-serif;
+$heading-family:   'Open Sans', sans-serif;
+
+
+//==========
+// White Space
+//==========
+$pad:     0.5em;
+$push:    1em;
+$push-lg: 2em;

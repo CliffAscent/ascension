@@ -1,0 +1,35 @@
+//==========
+/* Grid example */
+//==========
+.grid-example {
+	
+	.row {
+		margin-bottom: 1em;
+		
+		& > * {
+			background: #eee;
+			border: 1px solid;
+			padding: 0.5em 0;
+			text-align: center;
+			
+			.row > * {
+				background: rgba(0, 0, 0, 0.2);
+			}
+		}
+	}
+	.show-gutters .row {
+		
+		& > * {
+			background: none;
+			border: 0;
+			padding: 0 $gutter-width / 2;
+			
+			& > * {
+				background: #eee;
+				border: 1px solid;
+				padding: 0.5em 0;
+				text-align: center;
+			}
+		}
+	}
+}

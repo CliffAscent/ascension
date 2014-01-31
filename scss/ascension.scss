@@ -1,0 +1,66 @@
+//==========
+// Comment outputted to the top of the stylesheet.
+// Any comment made with /* */ instead of // will be outputted to the css.
+//==========
+
+/**
+ * This stylesheet was generated using SASS from ascension/scss/ascension/
+ */
+
+//==========
+// Load the various Ascension SASS files.
+//==========
+
+// Compass library mixins.
+@import "compass/compass";
+
+// Reset the browser styles for full style control and cross browser consistency.
+@import "ascension/reset";
+
+// Global variables.
+@import "ascension/variables";
+
+// Global mixins.
+@import "ascension/mixins";
+
+// Rules effecting the overall layout.
+@import "ascension/layout";
+
+// Grid system rules.
+@import "ascension/grid";
+
+// Helper rules used throughout the entire site.
+@import "ascension/helpers";
+
+// Loads the module files which contain rules for specific blocks of content.
+@import "ascension/modules";
+
+// Typography rules.
+@import "ascension/type";
+
+// Table rules.
+@import "ascension/tables";
+
+// Form rules.
+@import "ascension/forms";
+
+// Media rules (images, video, etc.).
+@import "ascension/media";
+
+// Rules for menus and navigation.
+@import "ascension/menus";
+
+// Header rules.
+@import "ascension/header";
+
+// Widget rules.
+@import "ascension/widgets";
+
+// General rules for all posts.
+@import "ascension/posts";
+
+// Rules for post comments.
+@import "ascension/comments";
+
+// Rules for @print styling.
+@import "ascension/print";

@@ -1,0 +1,16 @@
+{
+    "name"    : "Ascension",
+    "version" : "0.8.0",
+    "author"  : "Patrick Clifford",
+    "private" : true,
+
+    "devDependencies" : {
+        "grunt"                : "~0.4.0",
+        "grunt-contrib-watch"  : "*",
+        "grunt-contrib-uglify" : "*",
+        "grunt-contrib-sass"   : "*",
+        "grunt-cssc"           : "*",
+        "grunt-contrib-cssmin" : "*",
+        "matchdep"             : "*"
+    }
+}

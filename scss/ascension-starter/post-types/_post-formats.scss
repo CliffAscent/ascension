@@ -1,0 +1,28 @@
+/**
+ * Posts
+ */
+
+.entry.format-aside {
+	
+}
+
+.entry.format-status {
+	
+}
+
+.single .entry.format-chat {
+	
+	.entry-content  {
+	
+		p {
+			padding: 0.25em;
+		
+			&:nth-child(even) {
+			
+			}
+			&:nth-child(odd) {
+				background: darken($white, 20%);
+			}
+		}
+	}
+}

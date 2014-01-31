@@ -1,0 +1,28 @@
+/**
+* Tooltips
+*/
+
+.tip {
+	@include inline-block(top);
+	
+	.tip-control {
+		@include gen-dashicon('\f348');
+		cursor: pointer;
+		position: relative;
+	}
+	.tip-content {
+		background: $bg-color;
+		display: none;
+		margin: 0;
+		max-width: 300px;
+		padding: 0.5em;
+		position: absolute;
+		z-index: 999;
+	}
+	.no-js &:hover {
+		
+		.tip-content {
+			display: block;
+		}
+	}
+}

@@ -1,0 +1,41 @@
+/**
+ * Media
+ */
+
+// Make sure embeds and iframes fit their containers.
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+.size-auto,
+.size-full,
+.size-large,
+.size-medium,
+.size-thumbnail {
+	height: auto;
+	max-width: 100%;
+}
+
+img {
+	height: auto;
+	max-width: 100%;
+}
+
+.wp-caption {
+	margin-bottom: 1em;
+	max-width: 100%;
+}
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin: 1.2% auto 0;
+	max-width: 98%;
+}
+.wp-caption .wp-caption-text {
+	margin-top: 0.25em;
+}
+
+.gallery-item {
+	border: none;
+}

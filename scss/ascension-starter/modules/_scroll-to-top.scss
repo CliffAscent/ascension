@@ -1,0 +1,23 @@
+/**
+ * Scroll to Top
+ */
+
+#scroll-to-top {
+	
+	&.admin-bar-on {
+		
+	}
+	&.control-bar-on {
+		
+	}
+	&.admin-bar-on.control-bar-on {
+		
+	}
+	span {
+		color: $heading-color;
+		
+		&:hover {
+			color: $link-hover-color;
+		}
+	}
+}

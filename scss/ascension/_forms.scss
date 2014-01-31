@@ -1,0 +1,47 @@
+/**
+ * Forms
+ */
+
+label {
+	display: block;
+}
+
+input,
+select,
+textarea {
+	max-width: 100%;
+	vertical-align: middle;
+}
+
+.btn,
+.button,
+button,
+input[type="reset"],
+input[type="submit"] {
+	vertical-align: middle;
+	
+	&.full {
+		width: 100%;
+	}
+	&.disabled-btn,
+	&.disabled-button {
+		
+		&:hover,
+		&:focus {
+			cursor: default;
+		}
+	}
+	a {
+		color: inherit;
+		
+		&:hover,
+		&:focus,
+		&:active {
+			text-decoration: none;
+		}
+	}
+}
+
+.notify {
+	width: 100%;
+}

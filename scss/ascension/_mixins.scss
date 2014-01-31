@@ -1,0 +1,483 @@
+//==========
+// General
+//==========
+
+// Clears floated content
+@mixin clear-fix {
+	zoom: 1;
+	
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		clear: both;
+		content: " ";
+	}
+}
+
+
+//==========
+// Icons
+//==========
+
+// Generate the dashicon rules, requires the icon content string.
+@mixin gen-dashicon($icon, $place: before, $color: inherit, $size: inherit, $line-height: inherit, $margin: 0) {
+	&:#{$place} {
+		@include inline-block(top);
+		color: $color;
+		content: $icon;
+		font-family: 'dashicons';
+		font-size: $size;
+		font-style: normal;
+		font-weight: normal;
+		line-height: $line-height;
+		margin: $margin;
+		text-decoration: none;
+		-webkit-font-smoothing: antialiased;
+		/* IE7 and IE6 hacks */
+		*display: inline;
+		*overflow: auto;
+		*zoom: 1;
+	}
+}
+
+// Generate the genericon rules, requires the icon content string.
+@mixin gen-genericon($icon, $place: before, $color: inherit, $size: inherit, $line-height: inherit, $margin: 0) {
+	&:#{$place} {
+		@include inline-block(top);
+		color: $color;
+		content: $icon;
+		font-family: 'Genericons';
+		font-size: $size;
+		font-style: normal;
+		font-weight: normal;
+		height: 1em;
+		line-height: $line-height;
+		margin: $margin;
+		text-decoration: none;
+		width: 1em;
+		-webkit-font-smoothing: antialiased;
+		/* IE7 and IE6 hacks */
+		*display: inline;
+		*overflow: auto;
+		*zoom: 1;
+	}
+}
+
+
+//==========
+// Visibility
+//==========
+@mixin show($at: all) {
+	@if $at == all {
+		display: block !important;
+	}
+	@else if $at == small {
+		display: inherit !important;
+	}
+	@else if $at == medium {
+		display: none !important;
+	
+		@media (min-width: $medium-starts-at) {
+			display: inherit !important;
+		}
+	}
+	@else if $at == large {
+		display: none !important;
+	
+		@media (min-width: $large-starts-at) {
+			display: inherit !important;
+		}
+	}
+	@else if $at == full {
+		display: none !important;
+	
+		@media (min-width: $full-starts-at) {
+			display: inherit !important;
+		}
+	}
+}
+
+@mixin hide($at: all) {
+	@if $at == all {
+		display: none !important;
+	}
+	@else if $at == small {
+		display: none !important;
+	}
+	@else if $at == medium {
+		@media (min-width: $medium-starts-at) {
+			display: none !important;
+		}
+	}
+	@else if $at == large {
+		@media (min-width: $large-starts-at) {
+			display: none !important;
+		}
+	}
+	@else if $at == full {
+		@media (min-width: $full-starts-at) {
+			display: none !important;
+		}
+	}
+}
+
+
+//==========
+// Grid system
+//
+// @mixin create-row($gutter: $gutter-width)
+// @mixin create-column($span, $columns: $column-count, $gutter: $gutter-width)
+// @mixin create-push($span, $columns: $column-count)
+// @mixin create-pull($span, $columns: $column-count)
+// @mixin create-offset($span, $columns: $column-count)
+// @mixin create-centered()
+// @mixin create-uncentered()
+// @mixin generate-small-columns($columns: $column-count, $gutter: $gutter-width)
+// @mixin generate-medium-columns($columns: $column-count, $gutter: $gutter-width, $starts-at: $medium-starts-at)
+// @mixin generate-large-columns($columns: $column-count, $gutter: $gutter-width, $starts-at: $large-starts-at)
+// @mixin generate-full-columns($columns: $column-count, $gutter: $gutter-width, $starts-at: $full-starts-at)
+//==========
+
+// Creates the row properties.
+@mixin create-row($gutter: $gutter-width) {
+	@include clear-fix;
+	width: 100%;
+	
+	/* Selects all columns, they can be any element type. */
+	/* Only columns should be directly in a row. */
+	& > * {
+		
+		/* Different browsers calculate the width percentages differently, */
+		/* so we will align the last column to the right edge to hide any gaps. */
+		&:last-child {
+			float: right;
+		}
+		/* Stop the last column from aligning right when desired. */
+		&.end,
+		&.last {
+			float: left;
+		}
+	}
+	& > * {
+		float: left;
+		min-height: 1px;
+		padding-left: $gutter-width / 2;
+		padding-right: $gutter-width / 2;
+		position: relative;
+		width: 100%;
+	}
+	
+	// Nested rows.
+	& .row {
+		width: auto;
+	}
+	
+	//==========
+	/* Row classes to remove various gutters. */
+	//==========
+	&.tight,
+	&.no-gutters {
+		& > * {
+			padding-left: 0 !important;
+			padding-right: 0 !important;
+		}
+	}
+
+	&.no-outter,
+	&.no-outter-gutters {
+		margin-left: $gutter-width / -2 !important;
+		margin-right: $gutter-width / -2 !important;
+	}
+
+	&.no-inner,
+	&.no-inner-gutters {
+		margin-left: $gutter-width / 2 !important;
+		margin-right: $gutter-width / 2 !important;
+		
+		& > * {
+			padding-left: 0 !important;
+			padding-right: 0 !important;
+		}
+
+	}
+	
+	/* Remove gutters on a column. */
+	& > *.no-gutter,
+	& > *.no-gutters {
+		padding: 0;
+	}
+}
+
+// Creates the column properties. Requires the column span/width argument.
+@mixin create-column($span, $columns: $column-count, $gutter: $gutter-width) {
+	padding-left: $gutter / 2;
+	padding-right: $gutter / 2;
+	width: (100% / $columns) * $span;
+}
+
+// Creates the push properties. Requires the column span/width argument.
+@mixin create-push($span, $columns: $column-count) {
+	left: (100% / $columns) * $span;
+	position: relative;
+	right: auto;
+}
+
+// Creates the pull properties. Requires the column span/width argument.
+@mixin create-pull($span, $columns: $column-count) {
+	left: auto;
+	position: relative;
+	right: (100% / $columns) * $span;
+}
+
+// Creates the offset properties. Requires the column span/width argument.
+@mixin create-offset($span, $columns: $column-count) {
+	margin-left: (100% / $columns) * $span;
+	position: relative;
+}
+
+// Creates the centered properties.
+@mixin create-centered() {
+    float: none !important;
+    margin-left: auto;
+    margin-right: auto;
+	position: relative;
+}
+
+// Creates the uncentered properties.
+@mixin create-uncentered() {
+    float: left !important;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+// Generates the small column group.
+@mixin generate-small-columns($columns: $column-count, $gutter: $gutter-width) {
+	// Column
+	@for $span from 1 through $columns {
+		.col-#{$span},
+		.column-#{$span},
+		.sm-#{$span},
+		.small-#{$span} {
+			@include create-column($span, $columns, $gutter);
+		}
+	}
+	
+	// Push
+	@for $span from 1 through $columns {
+		.push-#{$span},
+		.col-push-#{$span},
+		.column-push-#{$span},
+		.sm-push-#{$span},
+		.small-push-#{$span} {
+			@include create-push($span, $columns);
+		}
+	}
+	
+	// Pull
+	@for $span from 1 through $columns {
+		.pull-#{$span},
+		.col-pull-#{$span},
+		.column-pull-#{$span},
+		.sm-pull-#{$span},
+		.small-pull-#{$span} {
+			@include create-pull($span, $columns);
+		}
+	}
+	
+	// Offset
+	@for $span from 0 through $columns {
+		.offset-#{$span},
+		.col-offset-#{$span},
+		.column-offset-#{$span},
+		.sm-offset-#{$span},
+		.small-offset-#{$span} {
+			@include create-offset($span, $columns);
+		}
+	}
+		
+	// Centered
+	.col-center,
+	.col-centered,
+	.column-center,
+	.column-centered,
+	.sm-center,
+	.sm-centered,
+	.small-center,
+	.small-centered {
+		@include create-centered();
+	}
+	
+	// Uncentered
+	.col-uncenter,
+	.col-uncentered,
+	.column-uncenter,
+	.column-uncentered,
+	.sm-uncenter,
+	.sm-uncentered,
+	.small-uncenter,
+	.small-uncentered {
+		@include create-uncentered();
+	}
+}
+
+// Generates the medium column group.
+@mixin generate-medium-columns($columns: $column-count, $gutter: $gutter-width, $starts-at: $medium-starts-at) {
+	@media (min-width: $starts-at) {
+		// Column
+		@for $span from 1 through $columns {
+			.md-#{$span},
+			.med-#{$span},
+			.medium-#{$span} {
+				@include create-column($span, $columns, $gutter);
+			}
+		}
+	
+		// Push
+		@for $span from 1 through $columns {
+			.md-push-#{$span},
+			.med-push-#{$span},
+			.medium-push-#{$span} {
+				@include create-push($span, $columns);
+			}
+		}
+		
+		// Pull
+		@for $span from 1 through $columns {
+			.md-pull-#{$span},
+			.med-pull-#{$span},
+			.medium-pull-#{$span} {
+				@include create-pull($span, $columns);
+			}
+		}
+	
+		// Offset
+		@for $span from 0 through $columns {
+			.md-offset-#{$span},
+			.med-offset-#{$span},
+			.medium-offset-#{$span} {
+				@include create-offset($span, $columns);
+			}
+		}
+		
+		// Centered
+		.md-center,
+		.md-centered,
+		.med-center,
+		.med-centered,
+		.medium-center,
+		.medium-centered {
+			@include create-centered();
+		}
+		
+		// Uncentered
+		.md-uncenter,
+		.md-uncentered,
+		.med-uncenter,
+		.med-uncentered,
+		.medium-uncenter,
+		.medium-uncentered {
+			@include create-uncentered();
+		}
+	}
+}
+
+// Generates the large column group.
+@mixin generate-large-columns($columns: $column-count, $gutter: $gutter-width, $starts-at: $large-starts-at) {
+	@media (min-width: $starts-at) {
+		// Column
+		@for $span from 1 through $columns {
+			.lg-#{$span},
+			.large-#{$span} {
+				@include create-column($span, $columns, $gutter);
+			}
+		}
+	
+		// Push
+		@for $span from 1 through $columns {
+			.lg-push-#{$span},
+			.large-push-#{$span} {
+				@include create-push($span, $columns);
+			}
+		}
+		
+		// Pull
+		@for $span from 1 through $columns {
+			.lg-pull-#{$span},
+			.large-pull-#{$span} {
+				@include create-pull($span, $columns);
+			}
+		}
+	
+		// Offset
+		@for $span from 0 through $columns {
+			.lg-offset-#{$span},
+			.large-offset-#{$span} {
+				@include create-offset($span, $columns);
+			}
+		}
+		
+		// Centered
+		.lg-center,
+		.lg-centered,
+		.large-center,
+		.large-centered {
+			@include create-centered();
+		}
+		
+		// Uncentered
+		.lg-uncenter,
+		.lg-uncentered,
+		.large-uncenter,
+		.large-uncentered {
+			@include create-uncentered();
+		}
+	}
+}
+
+// Generates the full column group.
+@mixin generate-full-columns($columns: $column-count, $gutter: $gutter-width, $starts-at: $full-starts-at) {
+	@media (min-width: $starts-at) {
+		// Column
+		@for $span from 1 through $columns {
+			.full-#{$span} {
+				@include create-column($span, $columns, $gutter);
+			}
+		}
+	
+		// Push
+		@for $span from 1 through $columns {
+			.full-push-#{$span} {
+				@include create-push($span, $columns);
+			}
+		}
+		
+		// Pull
+		@for $span from 1 through $columns {
+			.full-pull-#{$span} {
+				@include create-pull($span, $columns);
+			}
+		}
+	
+		// Offset
+		@for $span from 0 through $columns {
+			.full-offset-#{$span} {
+				@include create-offset($span, $columns);
+			}
+		}
+		
+		// Centered
+		.full-center,
+		.full-centered {
+			@include create-centered();
+		}
+		
+		// Uncentered
+		.full-uncenter,
+		.full-uncentered {
+			@include create-uncentered();
+		}
+	}
+}

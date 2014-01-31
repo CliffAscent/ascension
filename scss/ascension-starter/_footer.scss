@@ -1,0 +1,9 @@
+/**
+ * Footer
+ */
+
+#footer {
+	@include gen-border(top);
+	margin-top: $push;
+	padding-top: $pad;
+}

@@ -1,0 +1,75 @@
+/**
+ * Media
+ */
+
+embed,
+iframe,
+object {
+	
+}
+
+.size-auto,
+.size-full,
+.size-large,
+.size-medium,
+.size-thumbnail {
+	
+}
+
+img {
+	
+}
+img.size-full {
+	
+}
+img.size-large {
+	
+}
+img.size-medium {
+	
+}
+img.size-thumbnail {
+	
+}
+img.avatar {
+	
+}
+
+.post img {
+	
+}
+.type-post img {
+	
+}
+.page img {
+	
+}
+.type-page img {
+	
+}
+.widget img {
+	
+}
+
+.wp-caption {
+	@include meta-text;
+}
+.wp-caption img[class*="wp-image-"] {
+	
+}
+.wp-caption-text {
+	
+}
+.wp-caption .wp-caption-text {
+	
+}
+
+.gallery-item {
+	
+}
+.gallery-icon img {
+	
+}
+.gallery-caption {
+	@include meta-text;
+}

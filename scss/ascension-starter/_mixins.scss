@@ -1,0 +1,63 @@
+//==========
+// Borders
+//==========
+
+// Generate the border properties.
+@mixin gen-borders($size: 1px, $style: solid, $color: $border-color, $radius: 0) {
+	@if $radius != 0 {
+		@include border-radius($radius);
+	}
+	border: $size $style $color;
+}
+
+// Generate the values for a border. Requires the $side argument.
+@mixin gen-border($side, $size: 1px, $style: solid, $color: $border-color) {
+	border-#{$side}: $size $style $color;
+}
+
+
+//==========
+// Buttons
+//==========
+
+// Generate the button properties.
+@mixin gen-button($bg: $button-color, $border: $border-color, $padding: 0.25em 1em) {
+	@include gen-borders($color: $border);
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 1px 0 rgba(0, 0, 0, 0.15);
+	background: $bg;
+	padding: $padding;
+	vertical-align: middle;
+	
+	&:hover,
+	&:focus {
+		background: darken($bg, 5%);
+	}
+	&:active {
+		box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1) inset;
+	}
+}
+
+// Generate the properties for a disabled button.
+@mixin gen-button-disabled($bg: $button-color, $border: $border-color, $color: $text-color) {
+	background: lighten($bg, 3%);
+	border-color: lighten($border, 3%);
+	color: lighten($color, 30%);
+
+	&:hover,
+	&:focus {
+		background: lighten($bg, 3%);
+		cursor: default;
+	}
+	&:active {
+		box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 1px 0 rgba(0, 0, 0, 0.15);
+	}
+}
+
+
+//==========
+// Meta Text
+//==========
+@mixin meta-text {
+	color: $meta-color;
+	font-size: 0.8em;
+}

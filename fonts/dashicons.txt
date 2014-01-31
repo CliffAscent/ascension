@@ -1,0 +1,3 @@
+https://github.com/melchoyce/dashicons
+
+Dashicons is licensed under GPLv2, or any later version with font exception (http://www.gnu.org/licenses/gpl-faq.html#FontException)

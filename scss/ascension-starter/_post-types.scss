@@ -1,0 +1,21 @@
+//==========
+// Load the files with rules for specific post types.
+//==========
+
+// Rules for posts.
+@import "post-types/posts";
+
+// Rules for custom post formats.
+@import "post-types/post-formats";
+
+// Rules for pages.
+@import "post-types/pages";
+
+// Rules for attachment pages.
+@import "post-types/attachments";
+
+// WooCommerce specific rules.
+@import "post-types/woocommerce";
+
+// bbPress specific rules.
+@import "post-types/bbpress";

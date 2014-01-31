@@ -1,0 +1,21 @@
+/**
+ * Styles the theme options page in the admin area.
+ * This stylesheet was generated using SASS and Compass.
+ */
+
+@import "compass/compass";
+@import "ascension/variables";
+@import "ascension/mixins";
+@import "icons";
+@import "ascension/modules/tooltips";
+
+
+@import "ascension-starter/variables";
+@import "ascension-starter/mixins";
+@import "ascension-starter/modules/tooltips";
+
+input:disabled,
+select:disabled,
+textarea:disabled {
+	color: #7F7F7F;
+}

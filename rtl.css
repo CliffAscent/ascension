@@ -1,0 +1,15 @@
+/**
+ * #.# Body
+ *
+ * Override rules for right to left language support.
+ */
+body {
+	direction: rtl;
+	unicode-bidi: embed;
+}
+
+caption,
+th,
+td {
+	text-align: right;
+}

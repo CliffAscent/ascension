@@ -1,0 +1,83 @@
+/**
+ * Slider
+ */
+
+.slider {
+	margin-bottom: $push-lg;
+
+	.slides {
+		
+		li {
+			
+			img {
+				
+			}
+			.slide-content {
+				
+				.contain {
+					background: rgba($black, 0.75);
+					color: $white;
+					padding: $pad;
+				
+					.slide-title {
+						color: $white;
+						line-height: 1;
+					}
+					.slide-text {
+						@include show(large);
+						
+						p {
+							margin: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+	.flex-control-nav {
+		
+		li {
+			
+			a {
+				@include gen-button($padding: 0.15em 0.5em);
+				
+				&:hover,
+				&:focus {
+					color: $link-hover-color;
+				}
+				&.flex-active {
+					@include gen-button-disabled();
+				}
+			}
+		}
+	}
+	.flex-direction-nav {
+		@include show(large);
+	
+		li {
+			font-size: 24px;
+
+			& .flex-prev {
+				@include border-radius(2px, 2px);
+			}
+			& .flex-next {
+				@include border-radius(2px, 2px);
+			}
+			a {
+				background: rgba($black, 0.75);
+				color: $white;
+			
+				&:hover,
+				&:focus,
+				&:active {
+					color: $link-hover-color;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
+
+.carousel {
+	
+}
