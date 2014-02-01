@@ -80,7 +80,8 @@ body {
       color: white;
       line-height: 1; }
     .slider .slides li .slide-content .contain .slide-text {
-      display: none !important; }
+      display: none !important;
+      padding: 0.25em 0; }
       @media (min-width: 800px) {
         .slider .slides li .slide-content .contain .slide-text {
           display: inherit !important; } }
@@ -99,11 +100,18 @@ body {
     .slider .flex-control-nav li a:hover, .slider .flex-control-nav li a:focus {
       color: #0074a2; }
     .slider .flex-control-nav li a.flex-active {
-      background: #f6f6f6;
-      border-color: #e5e5e5;
-      color: gray; }
+      border: 1px solid #dddddd;
+      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 1px 0 rgba(0, 0, 0, 0.15);
+      background: #eeeeee;
+      padding: 0.15em 0.5em;
+      vertical-align: middle;
+      background: #e1e1e1;
+      color: #333333; }
       .slider .flex-control-nav li a.flex-active:hover, .slider .flex-control-nav li a.flex-active:focus {
-        background: #f6f6f6;
+        background: #e1e1e1; }
+      .slider .flex-control-nav li a.flex-active:active {
+        box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1) inset; }
+      .slider .flex-control-nav li a.flex-active:hover, .slider .flex-control-nav li a.flex-active:focus {
         cursor: default; }
       .slider .flex-control-nav li a.flex-active:active {
         box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 1px 0 rgba(0, 0, 0, 0.15); }
@@ -166,7 +174,7 @@ body {
 /**
  * Callouts
  */
-.callout {
+.callout-box {
   border: 1px solid #d54e21;
   background: #e67f5d;
   padding: 0.5em; }
@@ -368,106 +376,110 @@ input[type="submit"] {
   input[type="submit"].large {
     font-size: 1.2em;
     padding: 0.5em 2em; }
-  .btn.special-btn, .btn.special-button,
-  .button.special-btn,
-  .button.special-button,
-  button.special-btn,
-  button.special-button,
-  input[type="reset"].special-btn,
-  input[type="reset"].special-button,
-  input[type="submit"].special-btn,
-  input[type="submit"].special-button {
+  .btn.special,
+  .button.special,
+  button.special,
+  input[type="reset"].special,
+  input[type="submit"].special {
     background: #d4d4d4;
     color: #0074a2; }
-    .btn.special-btn:hover, .btn.special-btn:focus, .btn.special-button:hover, .btn.special-button:focus,
-    .button.special-btn:hover,
-    .button.special-btn:focus,
-    .button.special-button:hover,
-    .button.special-button:focus,
-    button.special-btn:hover,
-    button.special-btn:focus,
-    button.special-button:hover,
-    button.special-button:focus,
-    input[type="reset"].special-btn:hover,
-    input[type="reset"].special-btn:focus,
-    input[type="reset"].special-button:hover,
-    input[type="reset"].special-button:focus,
-    input[type="submit"].special-btn:hover,
-    input[type="submit"].special-btn:focus,
-    input[type="submit"].special-button:hover,
-    input[type="submit"].special-button:focus {
+    .btn.special:hover, .btn.special:focus,
+    .button.special:hover,
+    .button.special:focus,
+    button.special:hover,
+    button.special:focus,
+    input[type="reset"].special:hover,
+    input[type="reset"].special:focus,
+    input[type="submit"].special:hover,
+    input[type="submit"].special:focus {
       border: 1px solid #0074a2;
       background: #2ea2cc;
       color: #333333; }
-  .btn.callout-btn, .btn.callout-button,
-  .button.callout-btn,
-  .button.callout-button,
-  button.callout-btn,
-  button.callout-button,
-  input[type="reset"].callout-btn,
-  input[type="reset"].callout-button,
-  input[type="submit"].callout-btn,
-  input[type="submit"].callout-button {
+  .btn.callout,
+  .button.callout,
+  button.callout,
+  input[type="reset"].callout,
+  input[type="submit"].callout {
     border: 1px solid #d54e21;
     background: #e67f5d; }
-    .btn.callout-btn:hover, .btn.callout-btn:focus, .btn.callout-button:hover, .btn.callout-button:focus,
-    .button.callout-btn:hover,
-    .button.callout-btn:focus,
-    .button.callout-button:hover,
-    .button.callout-button:focus,
-    button.callout-btn:hover,
-    button.callout-btn:focus,
-    button.callout-button:hover,
-    button.callout-button:focus,
-    input[type="reset"].callout-btn:hover,
-    input[type="reset"].callout-btn:focus,
-    input[type="reset"].callout-button:hover,
-    input[type="reset"].callout-button:focus,
-    input[type="submit"].callout-btn:hover,
-    input[type="submit"].callout-btn:focus,
-    input[type="submit"].callout-button:hover,
-    input[type="submit"].callout-button:focus {
+    .btn.callout:hover, .btn.callout:focus,
+    .button.callout:hover,
+    .button.callout:focus,
+    button.callout:hover,
+    button.callout:focus,
+    input[type="reset"].callout:hover,
+    input[type="reset"].callout:focus,
+    input[type="submit"].callout:hover,
+    input[type="submit"].callout:focus {
       background: #e99073; }
-  .btn.disabled-btn, .btn.disabled-button,
-  .button.disabled-btn,
-  .button.disabled-button,
-  button.disabled-btn,
-  button.disabled-button,
-  input[type="reset"].disabled-btn,
-  input[type="reset"].disabled-button,
-  input[type="submit"].disabled-btn,
-  input[type="submit"].disabled-button {
+  .btn.activated,
+  .button.activated,
+  button.activated,
+  input[type="reset"].activated,
+  input[type="submit"].activated {
+    border: 1px solid #dddddd;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 1px 0 rgba(0, 0, 0, 0.15);
+    background: #eeeeee;
+    padding: 0.25em 1em;
+    vertical-align: middle;
+    background: #e1e1e1;
+    color: #333333; }
+    .btn.activated:hover, .btn.activated:focus,
+    .button.activated:hover,
+    .button.activated:focus,
+    button.activated:hover,
+    button.activated:focus,
+    input[type="reset"].activated:hover,
+    input[type="reset"].activated:focus,
+    input[type="submit"].activated:hover,
+    input[type="submit"].activated:focus {
+      background: #e1e1e1; }
+    .btn.activated:active,
+    .button.activated:active,
+    button.activated:active,
+    input[type="reset"].activated:active,
+    input[type="submit"].activated:active {
+      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1) inset; }
+    .btn.activated:hover, .btn.activated:focus,
+    .button.activated:hover,
+    .button.activated:focus,
+    button.activated:hover,
+    button.activated:focus,
+    input[type="reset"].activated:hover,
+    input[type="reset"].activated:focus,
+    input[type="submit"].activated:hover,
+    input[type="submit"].activated:focus {
+      cursor: default; }
+    .btn.activated:active,
+    .button.activated:active,
+    button.activated:active,
+    input[type="reset"].activated:active,
+    input[type="submit"].activated:active {
+      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 1px 0 rgba(0, 0, 0, 0.15); }
+  .btn.disabled,
+  .button.disabled,
+  button.disabled,
+  input[type="reset"].disabled,
+  input[type="submit"].disabled {
     background: #f6f6f6;
     border-color: #e5e5e5;
     color: gray; }
-    .btn.disabled-btn:hover, .btn.disabled-btn:focus, .btn.disabled-button:hover, .btn.disabled-button:focus,
-    .button.disabled-btn:hover,
-    .button.disabled-btn:focus,
-    .button.disabled-button:hover,
-    .button.disabled-button:focus,
-    button.disabled-btn:hover,
-    button.disabled-btn:focus,
-    button.disabled-button:hover,
-    button.disabled-button:focus,
-    input[type="reset"].disabled-btn:hover,
-    input[type="reset"].disabled-btn:focus,
-    input[type="reset"].disabled-button:hover,
-    input[type="reset"].disabled-button:focus,
-    input[type="submit"].disabled-btn:hover,
-    input[type="submit"].disabled-btn:focus,
-    input[type="submit"].disabled-button:hover,
-    input[type="submit"].disabled-button:focus {
+    .btn.disabled:hover, .btn.disabled:focus,
+    .button.disabled:hover,
+    .button.disabled:focus,
+    button.disabled:hover,
+    button.disabled:focus,
+    input[type="reset"].disabled:hover,
+    input[type="reset"].disabled:focus,
+    input[type="submit"].disabled:hover,
+    input[type="submit"].disabled:focus {
       background: #f6f6f6;
       cursor: default; }
-    .btn.disabled-btn:active, .btn.disabled-button:active,
-    .button.disabled-btn:active,
-    .button.disabled-button:active,
-    button.disabled-btn:active,
-    button.disabled-button:active,
-    input[type="reset"].disabled-btn:active,
-    input[type="reset"].disabled-button:active,
-    input[type="submit"].disabled-btn:active,
-    input[type="submit"].disabled-button:active {
+    .btn.disabled:active,
+    .button.disabled:active,
+    button.disabled:active,
+    input[type="reset"].disabled:active,
+    input[type="submit"].disabled:active {
       box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 1px 0 rgba(0, 0, 0, 0.15); }
 
 .notify {
@@ -959,11 +971,18 @@ input[type="submit"] {
     .entry .entry-pages > a:active, .entry .entry-pages > span:active {
       box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1) inset; }
   .entry .entry-pages > span {
-    background: #f6f6f6;
-    border-color: #e5e5e5;
-    color: gray; }
+    border: 1px solid #dddddd;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 1px 0 rgba(0, 0, 0, 0.15);
+    background: #eeeeee;
+    padding: 0.15em 0.5em;
+    vertical-align: middle;
+    background: #e1e1e1;
+    color: #333333; }
     .entry .entry-pages > span:hover, .entry .entry-pages > span:focus {
-      background: #f6f6f6;
+      background: #e1e1e1; }
+    .entry .entry-pages > span:active {
+      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1) inset; }
+    .entry .entry-pages > span:hover, .entry .entry-pages > span:focus {
       cursor: default; }
     .entry .entry-pages > span:active {
       box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 1px 0 rgba(0, 0, 0, 0.15); }

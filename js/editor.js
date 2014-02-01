@@ -3,6 +3,7 @@
  *
  * Notifications
  * Content Boxes
+ * Posts Widgets
  * Callout Boxes
  * Responsive Dropdowns
  * Tooltips
@@ -81,6 +82,22 @@
 				
 				
 				/**
+				 * Posts Widgets
+				 */
+				editor.addButton( 'postWidget', {
+					title : 'Post Widget',
+					cmd   : 'postWidget',
+					image : url + '/../images/editor/widget.png'
+				} );
+				editor.addCommand( 'postWidget', function() {
+					var selectedText = editor.selection.getContent();
+					var returnText   = '';
+					returnText       = '[asc-widget title="' + selectedText + '"]';
+					editor.execCommand( 'mceInsertContent', 0, returnText );
+				} );
+				
+				
+				/**
 				 * Callout Boxes
 				 */
 				editor.addButton( 'callout', {
@@ -96,7 +113,7 @@
 						selectedText = 'Callout Box';
 					}
 					
-					returnText       = '<div class="callout"><h2 class="callout-title">Title</h2><p>' + selectedText + '</p></div><br /><br />';
+					returnText = '<div class="callout-box"><h2 class="callout-title">Title</h2><p>' + selectedText + '</p></div><br /><br />';
 					editor.execCommand( 'mceInsertContent', 0, returnText );
 				} );
 				

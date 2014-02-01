@@ -23,8 +23,8 @@ input[type="submit"] {
 	&.full {
 		width: 100%;
 	}
-	&.disabled-btn,
-	&.disabled-button {
+	&.activated,
+	&.disabled {
 		
 		&:hover,
 		&:focus {

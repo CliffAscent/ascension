@@ -37,6 +37,21 @@
 	}
 }
 
+// Generate the properties for an activated button.
+@mixin gen-button-activated($bg: $button-color, $border: $border-color, $padding: 0.25em 1em) {
+	@include gen-button($bg: $bg, $border: $border, $padding: $padding);
+	background: darken($bg, 5%);
+	color: $text-color;
+	
+	&:hover,
+	&:focus {
+		cursor: default;
+	}
+	&:active {
+		box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 1px 0 rgba(0, 0, 0, 0.15);
+	}
+}
+
 // Generate the properties for a disabled button.
 @mixin gen-button-disabled($bg: $button-color, $border: $border-color, $color: $text-color) {
 	background: lighten($bg, 3%);

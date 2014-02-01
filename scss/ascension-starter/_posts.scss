@@ -128,7 +128,7 @@
 			}
 			// The active page link.
 			& > span {
-				@include gen-button-disabled();
+				@include gen-button-activated($padding: 0.15em 0.5em);
 			}
 		}
 	.entry-footer {

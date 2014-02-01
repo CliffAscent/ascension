@@ -4,20 +4,6 @@ Ascension is a WordPress theme framework that's fully responsive, highly customi
 **This theme is currently in beta testing and should not be used on mission critical sites.**
 
 
-
-## Change Log
-+ 26 January 2014
-	+ Commit of beta files
-	
-+ 30 January 2014
-	+ General cleanup
-	+ Entry image moved into the header
-	+ Filters added to template tags
-	+ Reworked search form and template
-	+ Updated editor styles
-
-
-
 ## Documentation
 Ascension is a parent theme that supports the rapid development of unique and robust child themes. It's best to only use child themes to modify Ascension so the framework can be updated across all of your themes while preserving your changes. The Ascension code structure follows the WordPress coding standards and maintains a similar flow and consistency so it's as easy as possible to adapt too. A wide range of third party development tools and a starter child theme are integrated into Ascension to streamline the theme creation process.
 
@@ -85,7 +71,7 @@ In addition to the sidebars, Ascension comes with 5 widget sections; below the h
 
 
 ### Slider Widget
-A custom image and content slider widget is included that can load it's content from sticky posts, a specified category, or a specified post type. By default, the widget will pull the posts featured image for the slide image and the post excerpt for the slide content. The image and content can be customized per post by setting the 'slider-image' or 'slider-content' custom field with the custom content. The image and content slider widget was created using the Flex Slider jQuery slider toolkit from http://www.woothemes.com/flexslider/
+A custom image and content slider widget is included that can load it's content from defined posts, sticky posts, a specified category, or a specified post type. By default, the widget will pull the posts featured image for the slide image and the post title and excerpt for the slide content. The image, title and content can be customized per post by using the Slider Content meta box on the post edit screen. The image and content slider widget was created using the Flex Slider jQuery slider toolkit from http://www.woothemes.com/flexslider/
 
 
 ### Login Widget
@@ -96,9 +82,13 @@ A simple login widget is included with an option to customize where the user is 
 A set of shortcodes are included with the framework to allow end users to easily add rich formatting or special content to their posts and pages. The shortcodes related to content formatting have an associated visual editor button so they can be easily added and viewed in the post visual editor.
 
 
+### Posts Widgets
+There is a special widget area called "Posts Widgets" whose assigned widgets can be displayed inside of a post or page by using the shortcode [asc-widget title="Widget Title"]
+
+
 ### Updates and Contribution
 Ascension is constantly updated to adhere to new WordPress updates and standards, add new features, maintain tight security, and optimize for performance. Updates that may break child themes are avoided where possible and when necessary saved for major releases. If you wish to contribute to the development of Ascension, feel free to submit pull requests to the GitHub repository at https://github.com/CliffAscent/ascension
 
 
 ### Support
-The full documentation and support resources can be found at http://cliffascent.com/support
+The full documentation and support resources can be found at http://themeascent.com/support

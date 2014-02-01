@@ -7,6 +7,44 @@
 
 
 /**
+ * Posts widgets
+ */
+function asc_sc_posts_widgets( $attr, $content ) {
+	$attr = shortcode_atts( array(
+		'title' => ''
+	), $attr );
+	$html = '';
+	
+	// Make sure a widget was identified.
+	if ( ! empty( $attr['title'] ) ) {
+		// Store the widgets.
+		ob_start();
+		dynamic_sidebar( 'posts-widgets' );
+		$widgets = ob_get_contents();
+		ob_end_clean();
+
+		// Split the widgets into an array.
+		$widgets_array = explode( '</aside>', $widgets );
+		
+		// Split each widget into it's own array containing the title and content.
+		foreach ( $widgets_array as &$widget ) {
+			$widget = array( asc_get_nested_string( $widget, '<h2 class="widget-title">', '</h2>' ), $widget . '</aside>' );
+		}
+	
+		// Get the widget matching the title and add it to the return.
+		foreach ( $widgets_array as $widget ) {
+			if ( $widget[0] === $attr['title'] ) {
+				$html = $widget[1];
+			}
+		}
+	}
+	
+	return $html;
+}
+add_shortcode( 'asc-widget', 'asc_sc_posts_widgets' );
+
+
+/**
  * Responsive dropdowns
  */
 function asc_sc_respond_drop( $attr, $content ) {
@@ -32,7 +70,6 @@ add_shortcode( 'asc-drop', 'asc_sc_respond_drop' );
  * Tooltips
  */
 function asc_sc_tooltip( $attr, $content ) {
-	
 	return '<span class="tip"><span class="tip-control"></span><span class="tip-content">' . $content . '</span></span>';
 }
 add_shortcode( 'asc-tooltip', 'asc_sc_tooltip' );

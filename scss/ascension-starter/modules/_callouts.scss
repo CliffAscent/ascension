@@ -1,7 +1,7 @@
 /**
  * Callouts
  */
-.callout {
+.callout-box {
 	@include gen-borders($color: $callout-color);
 	background: lighten($callout-color, 15%);
 	padding: $pad;

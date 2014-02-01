@@ -994,9 +994,11 @@ function asc_scroll_to_top() {
 			$classes .= 'admin-bar-on';
 		}
 		
-		echo '<div id="scroll-to-top" class="' . $classes . '">';
-			echo apply_filters( 'asc_scroll_to_top_content', '<span></span>' );
-		echo '</div>';
+		$html = '<div id="scroll-to-top" class="' . $classes . '">';
+		$html .= apply_filters( 'asc_scroll_to_top_content', '<span></span>' );
+		$html .= '</div>';
+		
+		echo $html;
 	}
 }
 endif; // End asc_scroll_to_top()

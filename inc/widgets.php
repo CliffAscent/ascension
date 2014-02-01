@@ -66,10 +66,23 @@ class Asc_Content_Slider extends WP_Widget {
 		}
 		
 		// Setup the post query to pull in the slider content.
-		if ( $instance['query'] === 'sticky' ) {
+		if ( $instance['query'] === 'activated' ) {
 			$query_args = array(
-				'posts_per_page' => $count,
-				'post__in' => get_option( 'sticky_posts' ),
+				'posts_per_page'      => $count,
+				'ignore_sticky_posts' => true,
+				'meta_query'          => array(
+					array(
+						'key'     => '_slider_image_id',
+						'value'   => '0',
+						'compare' => '>'
+					)
+				)
+			);
+		}
+		else if ( $instance['query'] === 'sticky' ) {
+			$query_args = array(
+				'posts_per_page'      => $count,
+				'post__in'            => get_option( 'sticky_posts' ),
 				'ignore_sticky_posts' => true
 			);
 		}
@@ -93,7 +106,30 @@ class Asc_Content_Slider extends WP_Widget {
 			if ( $slider_query->have_posts() ) :
 				echo '<div class="slider"><ul class="slides">';
 					while ( $slider_query->have_posts() ) : $slider_query->the_post();
-						$slider_image = get_post_meta( get_the_ID(), 'slider-image', true );
+						$post_id        = get_the_ID();
+						$image_id       = get_post_meta( $post_id, '_slider_image_id', true );
+						$slider_title   = get_post_meta( $post_id, '_slider_title', true );
+						$slider_excerpt = get_post_meta( $post_id, '_slider_excerpt', true );
+						
+						// Get the post image if a slider image is not set.
+						if ( is_numeric( $image_id ) ) {
+							$image_src    = wp_get_attachment_image_src( $image_id, 'ascension-slider' );
+							$slider_image = $image_src[0];
+						}
+						else {
+							$slider_image = get_post_meta( $post_id, 'ascension-slider', true );
+						}
+						
+						// Get the post title if a slider title is not set.
+						if ( empty( $slider_title ) ) {
+							$slider_title = get_the_title();
+						}
+						
+						// Get the post excerpt if a slider excerpt is not set.
+						if ( empty( $slider_excerpt ) ) {
+							$slider_excerpt = get_the_excerpt();
+						}
+						
 						?>
 							<li>
 								<?php if ( ! empty( $slider_image ) ) : ?>
@@ -104,13 +140,11 @@ class Asc_Content_Slider extends WP_Widget {
 								<div class="slide-content">
 									<div class="contain">	
 										<h2 class="slide-title">
-											<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+											<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php echo $slider_title; ?></a>
 										</h2>
-										<div class="slide-text">
-											<?php 
-												the_excerpt();
-											?>
-										</div>
+										<p class="slide-text">
+											<?php echo $slider_excerpt; ?>
+										</p>
 									</div>
 								</div>
 							</li>
@@ -156,8 +190,9 @@ class Asc_Content_Slider extends WP_Widget {
 			<p>
 				<label for="<?php echo $this->get_field_id( 'query' ); ?>"><?php _e( 'Pull Slides From:', 'ascension' ); ?></label> 
 				<select id="<?php echo $this->get_field_id( 'query' ); ?>" name="<?php echo $this->get_field_name( 'query' ); ?>">
-					<option value="category" <?php if ( $query === 'category' ) echo 'selected="selected"'; ?>><?php _e( 'Category', 'ascension' ); ?></option>
+					<option value="activated" <?php if ( $query === 'activated' ) echo 'selected="selected"'; ?>><?php _e( 'Posts with a Slider Image', 'ascension' ); ?></option>
 					<option value="sticky" <?php if ( $query === 'sticky' ) echo 'selected="selected"'; ?>><?php _e( 'Sticky Posts', 'ascension' ); ?></option>
+					<option value="category" <?php if ( $query === 'category' ) echo 'selected="selected"'; ?>><?php _e( 'Category', 'ascension' ); ?></option>
 					<option value="custom" <?php if ( $query === 'custom' ) echo 'selected="selected"'; ?>><?php _e( 'Custom Post Type', 'ascension' ); ?></option>
 				</select>
 			</p>

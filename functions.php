@@ -9,24 +9,33 @@
 /**
  * Navigation Menu
  *
+ * Starter Child
  * Versions
  * Setup
  * File URI
+ * Get Nested String
  * Page Title
  * Scripts and Styles
  * Custom Code
- * Webfonts
  * Admin Bar Link
  * Body Classes
  * Entry Classes
  * Custom Walker Nav
- * Register Widget Areas
  * Excerpts
  * Visual Editor
  * WooCommerce
  * Footer Credits
- * Starter Child
  */
+
+
+/**
+ * Starter Child
+ *
+ * Setup the starter child theme if no child theme is set.
+ */
+if ( ! is_child_theme() ) {
+	require( get_template_directory() . '/inc/starter-functions.php' );
+}
 
 
 /**
@@ -58,9 +67,12 @@ define( 'ASC_THEME_SEPARATOR', ' - ' );
 // Load the required framework files.
 require( ASC_TEMPLATE_DIR . '/inc/theme-options.php' );
 require( ASC_TEMPLATE_DIR . '/inc/template-tags.php' );
+require( ASC_TEMPLATE_DIR . '/inc/widget-areas.php' );
 require( ASC_TEMPLATE_DIR . '/inc/widgets.php' );
 require( ASC_TEMPLATE_DIR . '/inc/shortcodes.php' );
 require( ASC_TEMPLATE_DIR . '/inc/custom-header.php' );
+require( ASC_TEMPLATE_DIR . '/inc/web-fonts.php' );
+require( ASC_TEMPLATE_DIR . '/inc/slider-meta-box.php' );
 
 // Load the theme options into the global space.
 $asc_theme_options = asc_get_theme_options();
@@ -115,6 +127,31 @@ function asc_file_uri( $file ) {
 	}
 }
 endif; // End asc_file_uri()
+
+
+/**
+ * Get Nested String
+ *
+ * Return the string nested between two string.
+ *
+ * @param string $string The string containing the target
+ * @param string $start The string before the target string
+ * @param string $end The string after the target string
+ * @return string the target string
+ */
+if ( ! function_exists( 'asc_get_nested_string' ) ) :
+function asc_get_nested_string( $string, $start, $end ) {
+    $string = ' ' . $string;
+    $ini = strpos( $string, $start );
+    if ( $ini == 0 ) {
+        return '';
+	}
+    $ini += strlen( $start );
+    $len = strpos( $string, $end, $ini ) - $ini;
+	
+    return substr( $string, $ini, $len );
+}
+endif; // End asc_get_nested_string()
 
 
 /**
@@ -227,173 +264,6 @@ function asc_footer_code() {
 	}
 }
 add_action( 'wp_footer', 'asc_footer_code' );
-
-
-/**
- * Webfonts
- *
- * Loads custom web fonts from any of a wide range of font vendors.
- */
-function asc_webfonts( $vendor, $fonts, $args = '' ) {
-	$GLOBALS['webfont_fonts'] = $fonts;
-	$GLOBALS['webfont_args']  = $args;
-	
-	// Load the web font loader script.
-	function asc_webfont_script() {
-		wp_enqueue_script( 'webfont-js', ASC_TEMPLATE_DIR_URI . '/js/vendor/webfont.min.js', array( 'ascension' ), '1.5', false );
-	}
-	add_action( 'wp_enqueue_scripts', 'asc_webfont_script' );
-	
-	switch ( $vendor ) {
-		case 'google' :
-			function asc_webfont_args() {
-				global $webfont_fonts;
-				global $webfont_args;
-				
-				wp_localize_script( 'webfont-js', 'googleFontFamilies', $webfont_fonts );
-				
-				if ( ! empty( $webfont_args ) ) {
-					wp_localize_script( 'webfont-js', 'googleFontText', $webfont_args );
-				}
-			}
-			add_action( 'wp_enqueue_scripts', 'asc_webfont_args' );
-			
-			// Initiate the Web Font Loader JavaScript object.
-			function asc_init_webfont() {
-				global $webfont_args;
-				
-				?>
-					<script type="text/javascript">
-						WebFont.load( {
-							google: {
-								families : googleFontFamilies,
-								<?php if ( ! empty( $webfont_args ) ) : ?>
-									text     : googleFontText
-								<?php endif; ?>
-							}
-						} );
-					</script>
-				<?php
-			}
-			add_action( 'wp_head', 'asc_init_webfont', 99 );
-			
-			break;
-		
-		case 'fontdeck' :
-			function asc_webfont_args() {
-				global $webfont_fonts;
-				wp_localize_script( 'webfont-js', 'fontDeckId', $webfont_fonts );
-			}
-			add_action( 'wp_enqueue_scripts', 'asc_webfont_args' );
-			
-			// Initiate the Web Font Loader JavaScript object.
-			function asc_init_webfont() {
-				?>
-					<script type="text/javascript">
-						WebFont.load( {
-							fontdeck: {
-								id : fontDeckId
-							}
-						} );
-					</script>
-				<?php
-			}
-			add_action( 'wp_head', 'asc_init_webfont', 99 );
-			
-			break;
-		
-		case 'typekit' :
-			function asc_webfont_args() {
-				global $webfont_fonts;
-				wp_localize_script( 'webfont-js', 'typeKitId', $webfont_fonts );
-			}
-			add_action( 'wp_enqueue_scripts', 'asc_webfont_args' );
-			
-			// Initiate the Web Font Loader JavaScript object.
-			function asc_init_webfont() {
-				?>
-					<script type="text/javascript">
-						WebFont.load( {
-							typekit: {
-								id : typeKitId
-							}
-						} );
-					</script>
-				<?php
-			}
-			add_action( 'wp_head', 'asc_init_webfont', 99 );
-			
-			break;
-		
-		case 'fontscom' :
-			function asc_webfont_args() {
-				global $webfont_fonts;
-				global $webfont_args;
-				
-				wp_localize_script( 'webfont-js', 'fontsComId', $webfont_fonts );
-				
-				if ( ! empty( $webfont_args ) ) {
-					wp_localize_script( 'webfont-js', 'fontsComVersion', $webfont_args );
-				}
-			}
-			add_action( 'wp_enqueue_scripts', 'asc_webfont_args' );
-			
-			// Initiate the Web Font Loader JavaScript object.
-			function asc_init_webfont() {
-				global $webfont_args;
-				
-				?>
-					<script type="text/javascript">
-						WebFont.load( {
-							monotype: {
-								projectId : fontsComId,
-								<?php if ( ! empty( $webfont_args ) ) : ?>
-									version : fontsComVersion
-								<?php endif; ?>
-							}
-						} );
-					</script>
-				<?php
-			}
-			add_action( 'wp_head', 'asc_init_webfont', 99 );
-			
-			break;
-		
-		case 'custom' :
-			function asc_webfont_args() {
-				global $webfont_fonts;
-				global $webfont_args;
-				
-				wp_localize_script( 'webfont-js', 'customFontFamilies', $webfont_fonts );
-				
-				if ( ! empty( $webfont_args ) ) {
-					wp_localize_script( 'webfont-js', 'customFontUrls', $webfont_args );
-				}
-			}
-			add_action( 'wp_enqueue_scripts', 'asc_webfont_args' );
-			
-			// Initiate the Web Font Loader JavaScript object.
-			function asc_init_webfont() {
-				global $webfont_args;
-				
-				?>
-					<script type="text/javascript">
-						WebFont.load( {
-							custom: {
-								families : customFontFamilies,
-								<?php if ( ! empty( $webfont_args ) ) : ?>
-									urls : customFontUrls
-								<?php endif; ?>
-							}
-						} );
-					</script>
-				<?php
-			}
-			add_action( 'wp_head', 'asc_init_webfont', 99 );
-			
-			break;
-	}
-}
 
 
 /**
@@ -517,255 +387,6 @@ class Asc_walker_Nav_Menu extends Walker_Nav_Menu {
 
 
 /**
- * Register Widget Areas
- *
- * Register the sidebars and widget areas.
- */
-function asc_widget_areas() {
-	global $asc_theme_options;
-	
-	register_sidebar( array(
-		'name' => __( 'Right Sidebar', 'ascension' ),
-		'id' => 'right-sidebar',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s"><div class="contain">',
-		'after_widget' => '</div></aside>',
-		'before_title' => '<h2 class="widget-title">',
-		'after_title' => '</h2>',
-	) );
-	
-	register_sidebar( array(
-		'name' => __( 'Left Sidebar', 'ascension' ),
-		'id' => 'left-sidebar',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s"><div class="contain">',
-		'after_widget' => '</div></aside>',
-		'before_title' => '<h2 class="widget-title">',
-		'after_title' => '</h2>',
-	) );
-	
-	if ( $asc_theme_options['asc_header_layout'] === 'Widget' ) {
-		register_sidebar( array(
-			'name' => __( 'Header', 'ascension' ),
-			'id' => 'header',
-			'description' => __( 'This widget area is used as a custom header.', 'ascension' ),
-			'before_widget' => '<div id="%1$s" class="header-widget clear %2$s">',
-			'after_widget' => '</div>',
-			'before_title' => '<h1 class="site-title"><a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" rel="home">',
-			'after_title' => '</a></h1>',
-		) );
-	}
-	
-	register_sidebar( array(
-		'name' => __( 'Main Slider', 'ascension' ),
-		'id' => 'main-slider',
-		'description' => __( 'Area for the main content slider just below the navigation.', 'ascension' ),
-		'before_widget' => '<aside id="%1$s" class="%2$s"><div class="contain">',
-		'after_widget' => '</div></aside>',
-	) );
-	
-	register_sidebar( array(
-		'name' => __( 'Top - Full Width', 'ascension' ),
-		'id' => 'top-full',
-		'description' => __( 'These widgets will fill the entire page width and stack vertically.', 'ascension' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s"><div class="contain">',
-		'after_widget' => '</div></aside>',
-		'before_title' => '<h2 class="widget-title">',
-		'after_title' => '</h2>',
-	) );
-	
-	register_sidebar( array(
-		'name' => __( 'Top - Half Width', 'ascension' ),
-		'id' => 'top-halfs',
-		'description' => __( 'These widgets will fill half of the page width and will re-stack when the screen width decreases.', 'ascension' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s"><div class="contain">',
-		'after_widget' => '</div></aside>',
-		'before_title' => '<h2 class="widget-title">',
-		'after_title' => '</h2>',
-	) );
-	
-	register_sidebar( array(
-		'name' => __( 'Top - Third Width', 'ascension' ),
-		'id' => 'top-thirds',
-		'description' => __( 'These widgets will fill a third of the page width and will re-stack when the screen width decreases.', 'ascension' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s"><div class="contain">',
-		'after_widget' => '</div></aside>',
-		'before_title' => '<h2 class="widget-title">',
-		'after_title' => '</h2>',
-	) );
-	
-	register_sidebar( array(
-		'name' => __( 'Top - Quarter Width', 'ascension' ),
-		'id' => 'top-quarters',
-		'description' => __( 'These widgets will fill a quarter of the page width and will re-stack when the screen width decreases.', 'ascension' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s"><div class="contain">',
-		'after_widget' => '</div></aside>',
-		'before_title' => '<h2 class="widget-title">',
-		'after_title' => '</h2>',
-	) );
-	
-	register_sidebar( array(
-		'name' => __( 'Content Top - Full Width', 'ascension' ),
-		'id' => 'content-top-full',
-		'description' => __( 'These widgets will fill the entire page width and stack vertically.', 'ascension' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s"><div class="contain">',
-		'after_widget' => '</div></aside>',
-		'before_title' => '<h2 class="widget-title">',
-		'after_title' => '</h2>',
-	) );
-	
-	register_sidebar( array(
-		'name' => __( 'Content Top - Half Width', 'ascension' ),
-		'id' => 'content-top-halfs',
-		'description' => __( 'These widgets will fill half of the page width and will re-stack when the screen width decreases.', 'ascension' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s"><div class="contain">',
-		'after_widget' => '</div></aside>',
-		'before_title' => '<h2 class="widget-title">',
-		'after_title' => '</h2>',
-	) );
-	
-	register_sidebar( array(
-		'name' => __( 'Content Top - Third Width', 'ascension' ),
-		'id' => 'content-top-thirds',
-		'description' => __( 'These widgets will fill a third of the page width and will re-stack when the screen width decreases.', 'ascension' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s"><div class="contain">',
-		'after_widget' => '</div></aside>',
-		'before_title' => '<h2 class="widget-title">',
-		'after_title' => '</h2>',
-	) );
-	
-	register_sidebar( array(
-		'name' => __( 'Content Top - Quarter Width', 'ascension' ),
-		'id' => 'content-top-quarters',
-		'description' => __( 'These widgets will fill a quarter of the page width and will re-stack when the screen width decreases.', 'ascension' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s"><div class="contain">',
-		'after_widget' => '</div></aside>',
-		'before_title' => '<h2 class="widget-title">',
-		'after_title' => '</h2>',
-	) );
-	
-	register_sidebar( array(
-		'name' => __( 'Content Bottom - Full Width', 'ascension' ),
-		'id' => 'content-bottom-full',
-		'description' => __( 'These widgets will fill the entire page width and stack vertically.', 'ascension' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s"><div class="contain">',
-		'after_widget' => '</div></aside>',
-		'before_title' => '<h2 class="widget-title">',
-		'after_title' => '</h2>',
-	) );
-	
-	register_sidebar( array(
-		'name' => __( 'Content Bottom - Half Width', 'ascension' ),
-		'id' => 'content-bottom-halfs',
-		'description' => __( 'These widgets will fill half of the page width and will re-stack when the screen width decreases.', 'ascension' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s"><div class="contain">',
-		'after_widget' => '</div></aside>',
-		'before_title' => '<h2 class="widget-title">',
-		'after_title' => '</h2>',
-	) );
-	
-	register_sidebar( array(
-		'name' => __( 'Content Bottom - Third Width', 'ascension' ),
-		'id' => 'content-bottom-thirds',
-		'description' => __( 'These widgets will fill a third of the page width and will re-stack when the screen width decreases.', 'ascension' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s"><div class="contain">',
-		'after_widget' => '</div></aside>',
-		'before_title' => '<h2 class="widget-title">',
-		'after_title' => '</h2>',
-	) );
-	
-	register_sidebar( array(
-		'name' => __( 'Content Bottom - Quarter Width', 'ascension' ),
-		'id' => 'content-bottom-quarters',
-		'description' => __( 'These widgets will fill a quarter of the page width and will re-stack when the screen width decreases.', 'ascension' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s"><div class="contain">',
-		'after_widget' => '</div></aside>',
-		'before_title' => '<h2 class="widget-title">',
-		'after_title' => '</h2>',
-	) );
-	
-	register_sidebar( array(
-		'name' => __( 'Bottom - Full Width', 'ascension' ),
-		'id' => 'bottom-full',
-		'description' => __( 'These widgets will fill the entire page width and stack vertically.', 'ascension' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s"><div class="contain">',
-		'after_widget' => '</div></aside>',
-		'before_title' => '<h2 class="widget-title">',
-		'after_title' => '</h2>',
-	) );
-	
-	register_sidebar( array(
-		'name' => __( 'Bottom - Half Width', 'ascension' ),
-		'id' => 'bottom-halfs',
-		'description' => __( 'These widgets will fill half of the page width and will re-stack when the screen width decreases.', 'ascension' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s"><div class="contain">',
-		'after_widget' => '</div></aside>',
-		'before_title' => '<h2 class="widget-title">',
-		'after_title' => '</h2>',
-	) );
-	
-	register_sidebar( array(
-		'name' => __( 'Bottom - Third Width', 'ascension' ),
-		'id' => 'bottom-thirds',
-		'description' => __( 'These widgets will fill a third of the page width and will re-stack when the screen width decreases.', 'ascension' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s"><div class="contain">',
-		'after_widget' => '</div></aside>',
-		'before_title' => '<h2 class="widget-title">',
-		'after_title' => '</h2>',
-	) );
-	
-	register_sidebar( array(
-		'name' => __( 'Bottom - Quarter Width', 'ascension' ),
-		'id' => 'bottom-quarters',
-		'description' => __( 'These widgets will fill a quarter of the page width and will re-stack when the screen width decreases.', 'ascension' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s"><div class="contain">',
-		'after_widget' => '</div></aside>',
-		'before_title' => '<h2 class="widget-title">',
-		'after_title' => '</h2>',
-	) );
-	
-	register_sidebar( array(
-		'name' => __( 'Footer - Full Width', 'ascension' ),
-		'id' => 'footer-full',
-		'description' => __( 'These widgets will fill the entire page width and stack vertically.', 'ascension' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s"><div class="contain">',
-		'after_widget' => '</div></aside>',
-		'before_title' => '<h2 class="widget-title">',
-		'after_title' => '</h2>',
-	) );
-	
-	register_sidebar( array(
-		'name' => __( 'Footer - Half Width', 'ascension' ),
-		'id' => 'footer-halfs',
-		'description' => __( 'These widgets will fill half of the page width and will re-stack when the screen width decreases.', 'ascension' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s"><div class="contain">',
-		'after_widget' => '</div></aside>',
-		'before_title' => '<h2 class="widget-title">',
-		'after_title' => '</h2>',
-	) );
-	
-	register_sidebar( array(
-		'name' => __( 'Footer - Third Width', 'ascension' ),
-		'id' => 'footer-thirds',
-		'description' => __( 'These widgets will fill a third of the page width and will re-stack when the screen width decreases.', 'ascension' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s"><div class="contain">',
-		'after_widget' => '</div></aside>',
-		'before_title' => '<h2 class="widget-title">',
-		'after_title' => '</h2>',
-	) );
-	
-	register_sidebar( array(
-		'name' => __( 'Footer - Quarter Width', 'ascension' ),
-		'id' => 'footer-quarters',
-		'description' => __( 'These widgets will fill a quarter of the page width and will re-stack when the screen width decreases.', 'ascension' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s"><div class="contain">',
-		'after_widget' => '</div></aside>',
-		'before_title' => '<h2 class="widget-title">',
-		'after_title' => '</h2>',
-	) );
-}
-add_action( 'widgets_init', 'asc_widget_areas' );
-
-
-/**
  * Excerpts
  *
  * Customize the post excerpts.
@@ -798,7 +419,7 @@ function asc_editor_plugin( $plugin_array ) {
 
 // Declare the custom editor buttons.
 function asc_editor_buttons( $buttons ) {
-    array_push( $buttons, 'notify', 'contentBoxes', 'callout', 'respondDrop', 'tooltip', 'blockquoteLeft', 'blockquoteRight', 'highlight', 'subheading', 'newline' );
+    array_push( $buttons, 'notify', 'contentBoxes', 'postWidget', 'callout', 'respondDrop', 'tooltip', 'blockquoteLeft', 'blockquoteRight', 'highlight', 'subheading', 'newline' );
     return $buttons;
 }
 
@@ -859,55 +480,4 @@ function asc_footer_credits() {
 }
 endif; // End asc_footer_credits()
 add_action( 'wp_footer', 'asc_footer_credits', 99 );
-
-
-/**
- * Starter Child
- *
- * Setup the starter child theme is no child theme is set.
- */
-if ( ! is_child_theme() ) {
-	/**
-	 * Versions
-	 *
-	 * Version numbers tracking the various theme sections.
-	 * Numbers are formatted as majorRelease.minorRelease.hotfix
-	 */
-	define( 'ASC_ST_VERSION', '0.8.0' );
-	define( 'ASC_ST_SCRIPT_VERSION', '0.1.0' );
-	define( 'ASC_ST_STYLE_VERSION', '0.8.0' );
-
-
-	/**
-	 * Setup
-	 *
-	 * Define constants, load settings, load required files, register supports, etc.
-	 */
-	function asc_st_setup() {
-		// Add internationalization support.
-		load_theme_textdomain( 'ascension-starter', ASC_STYLESHEET_DIR_URI . '/languages' );
-		
-		// Load the Open Sans Google fonts.
-		asc_webfonts( 'google', array( 'Open Sans' ) );
-		
-		// Enabled the dropped main navigation template.
-		define( 'ASC_DROPPED_NAV', true );
-	}
-	add_action( 'after_setup_theme', 'asc_st_setup' );
-
-
-	/**
-	 * Scripts and Styles
-	 *
-	 * Enqueue the scripts and stylesheets.
-	 */
-	function asc_st_scripts() {
-		// Load the Ascension Starter stylesheet after the Ascension framework stylesheet.
-		wp_enqueue_style( 'ascension-starter', ASC_STYLESHEET_DIR_URI . '/css/ascension-starter.css', array( 'ascension' ), ASC_ST_STYLE_VERSION );
-		
-		// Load the Ascension Starter script.
-		wp_enqueue_script( 'ascension-starter', ASC_STYLESHEET_DIR_URI . '/js/ascension-starter.js', array( 'jquery' ), ASC_ST_SCRIPT_VERSION, false );
-	}
-	add_action( 'wp_enqueue_scripts', 'asc_st_scripts', 20 );
-}
 ?>

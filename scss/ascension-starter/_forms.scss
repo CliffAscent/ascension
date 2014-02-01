@@ -83,8 +83,7 @@ input[type="submit"] {
 	&.full {
 		
 	}
-	&.special-btn,
-	&.special-button {
+	&.special {
 		background: darken($button-color, 10%);
 		color: $link-hover-color;
 		
@@ -95,8 +94,7 @@ input[type="submit"] {
 			color: $text-color;
 		}
 	}
-	&.callout-btn,
-	&.callout-button {
+	&.callout {
 		@include gen-borders($color: $callout-color);
 		background: lighten($callout-color, 15%);
 		
@@ -105,8 +103,11 @@ input[type="submit"] {
 			background: lighten($callout-color, 20%);
 		}
 	}
-	&.disabled-btn,
-	&.disabled-button {
+	&.activated {
+		@include gen-button-activated();
+		
+	}
+	&.disabled {
 		@include gen-button-disabled();
 	}
 	a {

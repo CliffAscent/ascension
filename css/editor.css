@@ -3440,23 +3440,23 @@
     .mceContentBody input[type="reset"].full,
     .mceContentBody input[type="submit"].full {
       width: 100%; }
-    .mceContentBody .btn.disabled-btn:hover, .mceContentBody .btn.disabled-btn:focus, .mceContentBody .btn.disabled-button:hover, .mceContentBody .btn.disabled-button:focus,
-    .mceContentBody .button.disabled-btn:hover,
-    .mceContentBody .button.disabled-btn:focus,
-    .mceContentBody .button.disabled-button:hover,
-    .mceContentBody .button.disabled-button:focus,
-    .mceContentBody button.disabled-btn:hover,
-    .mceContentBody button.disabled-btn:focus,
-    .mceContentBody button.disabled-button:hover,
-    .mceContentBody button.disabled-button:focus,
-    .mceContentBody input[type="reset"].disabled-btn:hover,
-    .mceContentBody input[type="reset"].disabled-btn:focus,
-    .mceContentBody input[type="reset"].disabled-button:hover,
-    .mceContentBody input[type="reset"].disabled-button:focus,
-    .mceContentBody input[type="submit"].disabled-btn:hover,
-    .mceContentBody input[type="submit"].disabled-btn:focus,
-    .mceContentBody input[type="submit"].disabled-button:hover,
-    .mceContentBody input[type="submit"].disabled-button:focus {
+    .mceContentBody .btn.activated:hover, .mceContentBody .btn.activated:focus, .mceContentBody .btn.disabled:hover, .mceContentBody .btn.disabled:focus,
+    .mceContentBody .button.activated:hover,
+    .mceContentBody .button.activated:focus,
+    .mceContentBody .button.disabled:hover,
+    .mceContentBody .button.disabled:focus,
+    .mceContentBody button.activated:hover,
+    .mceContentBody button.activated:focus,
+    .mceContentBody button.disabled:hover,
+    .mceContentBody button.disabled:focus,
+    .mceContentBody input[type="reset"].activated:hover,
+    .mceContentBody input[type="reset"].activated:focus,
+    .mceContentBody input[type="reset"].disabled:hover,
+    .mceContentBody input[type="reset"].disabled:focus,
+    .mceContentBody input[type="submit"].activated:hover,
+    .mceContentBody input[type="submit"].activated:focus,
+    .mceContentBody input[type="submit"].disabled:hover,
+    .mceContentBody input[type="submit"].disabled:focus {
       cursor: default; }
     .mceContentBody .btn a,
     .mceContentBody .button a,
@@ -3570,7 +3570,8 @@
         color: white;
         line-height: 1; }
       .mceContentBody .slider .slides li .slide-content .contain .slide-text {
-        display: none !important; }
+        display: none !important;
+        padding: 0.25em 0; }
         @media (min-width: 800px) {
           .mceContentBody .slider .slides li .slide-content .contain .slide-text {
             display: inherit !important; } }
@@ -3589,11 +3590,18 @@
       .mceContentBody .slider .flex-control-nav li a:hover, .mceContentBody .slider .flex-control-nav li a:focus {
         color: #0074a2; }
       .mceContentBody .slider .flex-control-nav li a.flex-active {
-        background: #f6f6f6;
-        border-color: #e5e5e5;
-        color: gray; }
+        border: 1px solid #dddddd;
+        box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 1px 0 rgba(0, 0, 0, 0.15);
+        background: #eeeeee;
+        padding: 0.15em 0.5em;
+        vertical-align: middle;
+        background: #e1e1e1;
+        color: #333333; }
         .mceContentBody .slider .flex-control-nav li a.flex-active:hover, .mceContentBody .slider .flex-control-nav li a.flex-active:focus {
-          background: #f6f6f6;
+          background: #e1e1e1; }
+        .mceContentBody .slider .flex-control-nav li a.flex-active:active {
+          box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1) inset; }
+        .mceContentBody .slider .flex-control-nav li a.flex-active:hover, .mceContentBody .slider .flex-control-nav li a.flex-active:focus {
           cursor: default; }
         .mceContentBody .slider .flex-control-nav li a.flex-active:active {
           box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 1px 0 rgba(0, 0, 0, 0.15); }
@@ -3640,7 +3648,7 @@
     color: #222222; }
     .mceContentBody #scroll-to-top span:hover {
       color: #0074a2; }
-  .mceContentBody .callout {
+  .mceContentBody .callout-box {
     border: 1px solid #d54e21;
     background: #e67f5d;
     padding: 0.5em; }
@@ -3820,106 +3828,110 @@
     .mceContentBody input[type="submit"].large {
       font-size: 1.2em;
       padding: 0.5em 2em; }
-    .mceContentBody .btn.special-btn, .mceContentBody .btn.special-button,
-    .mceContentBody .button.special-btn,
-    .mceContentBody .button.special-button,
-    .mceContentBody button.special-btn,
-    .mceContentBody button.special-button,
-    .mceContentBody input[type="reset"].special-btn,
-    .mceContentBody input[type="reset"].special-button,
-    .mceContentBody input[type="submit"].special-btn,
-    .mceContentBody input[type="submit"].special-button {
+    .mceContentBody .btn.special,
+    .mceContentBody .button.special,
+    .mceContentBody button.special,
+    .mceContentBody input[type="reset"].special,
+    .mceContentBody input[type="submit"].special {
       background: #d4d4d4;
       color: #0074a2; }
-      .mceContentBody .btn.special-btn:hover, .mceContentBody .btn.special-btn:focus, .mceContentBody .btn.special-button:hover, .mceContentBody .btn.special-button:focus,
-      .mceContentBody .button.special-btn:hover,
-      .mceContentBody .button.special-btn:focus,
-      .mceContentBody .button.special-button:hover,
-      .mceContentBody .button.special-button:focus,
-      .mceContentBody button.special-btn:hover,
-      .mceContentBody button.special-btn:focus,
-      .mceContentBody button.special-button:hover,
-      .mceContentBody button.special-button:focus,
-      .mceContentBody input[type="reset"].special-btn:hover,
-      .mceContentBody input[type="reset"].special-btn:focus,
-      .mceContentBody input[type="reset"].special-button:hover,
-      .mceContentBody input[type="reset"].special-button:focus,
-      .mceContentBody input[type="submit"].special-btn:hover,
-      .mceContentBody input[type="submit"].special-btn:focus,
-      .mceContentBody input[type="submit"].special-button:hover,
-      .mceContentBody input[type="submit"].special-button:focus {
+      .mceContentBody .btn.special:hover, .mceContentBody .btn.special:focus,
+      .mceContentBody .button.special:hover,
+      .mceContentBody .button.special:focus,
+      .mceContentBody button.special:hover,
+      .mceContentBody button.special:focus,
+      .mceContentBody input[type="reset"].special:hover,
+      .mceContentBody input[type="reset"].special:focus,
+      .mceContentBody input[type="submit"].special:hover,
+      .mceContentBody input[type="submit"].special:focus {
         border: 1px solid #0074a2;
         background: #2ea2cc;
         color: #333333; }
-    .mceContentBody .btn.callout-btn, .mceContentBody .btn.callout-button,
-    .mceContentBody .button.callout-btn,
-    .mceContentBody .button.callout-button,
-    .mceContentBody button.callout-btn,
-    .mceContentBody button.callout-button,
-    .mceContentBody input[type="reset"].callout-btn,
-    .mceContentBody input[type="reset"].callout-button,
-    .mceContentBody input[type="submit"].callout-btn,
-    .mceContentBody input[type="submit"].callout-button {
+    .mceContentBody .btn.callout,
+    .mceContentBody .button.callout,
+    .mceContentBody button.callout,
+    .mceContentBody input[type="reset"].callout,
+    .mceContentBody input[type="submit"].callout {
       border: 1px solid #d54e21;
       background: #e67f5d; }
-      .mceContentBody .btn.callout-btn:hover, .mceContentBody .btn.callout-btn:focus, .mceContentBody .btn.callout-button:hover, .mceContentBody .btn.callout-button:focus,
-      .mceContentBody .button.callout-btn:hover,
-      .mceContentBody .button.callout-btn:focus,
-      .mceContentBody .button.callout-button:hover,
-      .mceContentBody .button.callout-button:focus,
-      .mceContentBody button.callout-btn:hover,
-      .mceContentBody button.callout-btn:focus,
-      .mceContentBody button.callout-button:hover,
-      .mceContentBody button.callout-button:focus,
-      .mceContentBody input[type="reset"].callout-btn:hover,
-      .mceContentBody input[type="reset"].callout-btn:focus,
-      .mceContentBody input[type="reset"].callout-button:hover,
-      .mceContentBody input[type="reset"].callout-button:focus,
-      .mceContentBody input[type="submit"].callout-btn:hover,
-      .mceContentBody input[type="submit"].callout-btn:focus,
-      .mceContentBody input[type="submit"].callout-button:hover,
-      .mceContentBody input[type="submit"].callout-button:focus {
+      .mceContentBody .btn.callout:hover, .mceContentBody .btn.callout:focus,
+      .mceContentBody .button.callout:hover,
+      .mceContentBody .button.callout:focus,
+      .mceContentBody button.callout:hover,
+      .mceContentBody button.callout:focus,
+      .mceContentBody input[type="reset"].callout:hover,
+      .mceContentBody input[type="reset"].callout:focus,
+      .mceContentBody input[type="submit"].callout:hover,
+      .mceContentBody input[type="submit"].callout:focus {
         background: #e99073; }
-    .mceContentBody .btn.disabled-btn, .mceContentBody .btn.disabled-button,
-    .mceContentBody .button.disabled-btn,
-    .mceContentBody .button.disabled-button,
-    .mceContentBody button.disabled-btn,
-    .mceContentBody button.disabled-button,
-    .mceContentBody input[type="reset"].disabled-btn,
-    .mceContentBody input[type="reset"].disabled-button,
-    .mceContentBody input[type="submit"].disabled-btn,
-    .mceContentBody input[type="submit"].disabled-button {
+    .mceContentBody .btn.activated,
+    .mceContentBody .button.activated,
+    .mceContentBody button.activated,
+    .mceContentBody input[type="reset"].activated,
+    .mceContentBody input[type="submit"].activated {
+      border: 1px solid #dddddd;
+      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 1px 0 rgba(0, 0, 0, 0.15);
+      background: #eeeeee;
+      padding: 0.25em 1em;
+      vertical-align: middle;
+      background: #e1e1e1;
+      color: #333333; }
+      .mceContentBody .btn.activated:hover, .mceContentBody .btn.activated:focus,
+      .mceContentBody .button.activated:hover,
+      .mceContentBody .button.activated:focus,
+      .mceContentBody button.activated:hover,
+      .mceContentBody button.activated:focus,
+      .mceContentBody input[type="reset"].activated:hover,
+      .mceContentBody input[type="reset"].activated:focus,
+      .mceContentBody input[type="submit"].activated:hover,
+      .mceContentBody input[type="submit"].activated:focus {
+        background: #e1e1e1; }
+      .mceContentBody .btn.activated:active,
+      .mceContentBody .button.activated:active,
+      .mceContentBody button.activated:active,
+      .mceContentBody input[type="reset"].activated:active,
+      .mceContentBody input[type="submit"].activated:active {
+        box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1) inset; }
+      .mceContentBody .btn.activated:hover, .mceContentBody .btn.activated:focus,
+      .mceContentBody .button.activated:hover,
+      .mceContentBody .button.activated:focus,
+      .mceContentBody button.activated:hover,
+      .mceContentBody button.activated:focus,
+      .mceContentBody input[type="reset"].activated:hover,
+      .mceContentBody input[type="reset"].activated:focus,
+      .mceContentBody input[type="submit"].activated:hover,
+      .mceContentBody input[type="submit"].activated:focus {
+        cursor: default; }
+      .mceContentBody .btn.activated:active,
+      .mceContentBody .button.activated:active,
+      .mceContentBody button.activated:active,
+      .mceContentBody input[type="reset"].activated:active,
+      .mceContentBody input[type="submit"].activated:active {
+        box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 1px 0 rgba(0, 0, 0, 0.15); }
+    .mceContentBody .btn.disabled,
+    .mceContentBody .button.disabled,
+    .mceContentBody button.disabled,
+    .mceContentBody input[type="reset"].disabled,
+    .mceContentBody input[type="submit"].disabled {
       background: #f6f6f6;
       border-color: #e5e5e5;
       color: gray; }
-      .mceContentBody .btn.disabled-btn:hover, .mceContentBody .btn.disabled-btn:focus, .mceContentBody .btn.disabled-button:hover, .mceContentBody .btn.disabled-button:focus,
-      .mceContentBody .button.disabled-btn:hover,
-      .mceContentBody .button.disabled-btn:focus,
-      .mceContentBody .button.disabled-button:hover,
-      .mceContentBody .button.disabled-button:focus,
-      .mceContentBody button.disabled-btn:hover,
-      .mceContentBody button.disabled-btn:focus,
-      .mceContentBody button.disabled-button:hover,
-      .mceContentBody button.disabled-button:focus,
-      .mceContentBody input[type="reset"].disabled-btn:hover,
-      .mceContentBody input[type="reset"].disabled-btn:focus,
-      .mceContentBody input[type="reset"].disabled-button:hover,
-      .mceContentBody input[type="reset"].disabled-button:focus,
-      .mceContentBody input[type="submit"].disabled-btn:hover,
-      .mceContentBody input[type="submit"].disabled-btn:focus,
-      .mceContentBody input[type="submit"].disabled-button:hover,
-      .mceContentBody input[type="submit"].disabled-button:focus {
+      .mceContentBody .btn.disabled:hover, .mceContentBody .btn.disabled:focus,
+      .mceContentBody .button.disabled:hover,
+      .mceContentBody .button.disabled:focus,
+      .mceContentBody button.disabled:hover,
+      .mceContentBody button.disabled:focus,
+      .mceContentBody input[type="reset"].disabled:hover,
+      .mceContentBody input[type="reset"].disabled:focus,
+      .mceContentBody input[type="submit"].disabled:hover,
+      .mceContentBody input[type="submit"].disabled:focus {
         background: #f6f6f6;
         cursor: default; }
-      .mceContentBody .btn.disabled-btn:active, .mceContentBody .btn.disabled-button:active,
-      .mceContentBody .button.disabled-btn:active,
-      .mceContentBody .button.disabled-button:active,
-      .mceContentBody button.disabled-btn:active,
-      .mceContentBody button.disabled-button:active,
-      .mceContentBody input[type="reset"].disabled-btn:active,
-      .mceContentBody input[type="reset"].disabled-button:active,
-      .mceContentBody input[type="submit"].disabled-btn:active,
-      .mceContentBody input[type="submit"].disabled-button:active {
+      .mceContentBody .btn.disabled:active,
+      .mceContentBody .button.disabled:active,
+      .mceContentBody button.disabled:active,
+      .mceContentBody input[type="reset"].disabled:active,
+      .mceContentBody input[type="submit"].disabled:active {
         box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 1px 0 rgba(0, 0, 0, 0.15); }
   .mceContentBody .notify {
     -webkit-border-radius: first-value-of(3px) first-value-of(3px);
@@ -4382,11 +4394,18 @@
       .mceContentBody .entry .entry-pages > a:active, .mceContentBody .entry .entry-pages > span:active {
         box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1) inset; }
     .mceContentBody .entry .entry-pages > span {
-      background: #f6f6f6;
-      border-color: #e5e5e5;
-      color: gray; }
+      border: 1px solid #dddddd;
+      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 1px 0 rgba(0, 0, 0, 0.15);
+      background: #eeeeee;
+      padding: 0.15em 0.5em;
+      vertical-align: middle;
+      background: #e1e1e1;
+      color: #333333; }
       .mceContentBody .entry .entry-pages > span:hover, .mceContentBody .entry .entry-pages > span:focus {
-        background: #f6f6f6;
+        background: #e1e1e1; }
+      .mceContentBody .entry .entry-pages > span:active {
+        box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1) inset; }
+      .mceContentBody .entry .entry-pages > span:hover, .mceContentBody .entry .entry-pages > span:focus {
         cursor: default; }
       .mceContentBody .entry .entry-pages > span:active {
         box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 1px 0 rgba(0, 0, 0, 0.15); }

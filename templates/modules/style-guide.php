@@ -252,25 +252,28 @@ else {
 	<button class="button">A normal button</button>
 </p>
 <p>
-	<button class="special-button">A special button</button>
+	<button class="special">A special button</button>
 </p>
 <p>
-	<button class="callout-button">A callout button</button>
+	<button class="callout">A callout button</button>
 </p>
 <p>
-	<button class="disabled-button">A disabled button</button>
+	<button class="disabled">A disabled button</button>
 </p>
 <p>
-	<button class="button narrow">A narrow button</button>
+	<button class="activated">An activated button</button>
 </p>
 <p>
-	<button class="button small">A small button</button>
+	<button class="narrow">A narrow button</button>
 </p>
 <p>
-	<button class="button large">A large button</button>
+	<button class="small">A small button</button>
 </p>
 <p>
-	<button class="button full">A full button</button>
+	<button class="large">A large button</button>
+</p>
+<p>
+	<button class="full">A full button</button>
 </p>
 
 <h2 class="subheading">Notifications</h2>
@@ -280,7 +283,7 @@ else {
 <p class="notify success">This is a success notification with a <a href="#">Link</a></p>
 
 <h2 class="subheading">Content Containers</h2>
-<div class="callout push-down">
+<div class="callout-box push-down">
 	<h2 class="callout-title">Title</h2>
 	<p>Callout Box</p>
 </div>
