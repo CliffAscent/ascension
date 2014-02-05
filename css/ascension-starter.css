@@ -11,6 +11,9 @@ body {
   font-size: 1em;
   line-height: 1.5; }
 
+#main-content {
+  margin-bottom: 2rem; }
+
 .posts-pages .contain .next-posts a:after {
   display: -moz-inline-stack;
   display: inline-block;
@@ -65,13 +68,13 @@ body {
   padding: 0.5em; }
 
 .push-down {
-  margin-bottom: 2em; }
+  margin-bottom: 2rem; }
 
 /**
  * Slider
  */
 .slider {
-  margin-bottom: 2em; }
+  margin-bottom: 2rem; }
   .slider .slides li .slide-content .contain {
     background: rgba(0, 0, 0, 0.75);
     color: white;
@@ -183,7 +186,7 @@ body {
  * Typography
  */
 p {
-  margin: 0 0 1em 0; }
+  margin: 0 0 1rem 0; }
   p:last-child {
     margin-bottom: 0; }
 
@@ -206,8 +209,8 @@ hr {
   background: #dddddd;
   border: 0;
   height: 1px;
-  margin-bottom: 1em;
-  margin-top: 1em; }
+  margin-bottom: 1rem;
+  margin-top: 1rem; }
 
 a {
   color: #2ea2cc; }
@@ -223,7 +226,8 @@ h5,
 h6 {
   color: #222222;
   font-family: "Open Sans", sans-serif;
-  font-weight: normal; }
+  font-weight: normal;
+  margin-top: 1rem; }
   h1.subhead, h1.subheading,
   h2.subhead,
   h2.subheading,
@@ -254,6 +258,10 @@ h6 {
   h6 a:active {
     color: #0074a2; }
 
+ul,
+il {
+  margin-bottom: 1rem; }
+
 blockquote {
   color: #666666; }
   blockquote:before {
@@ -282,7 +290,7 @@ blockquote {
  * Tables
  */
 table {
-  margin-bottom: 2em; }
+  margin-bottom: 2rem; }
   table caption {
     color: #666666;
     font-size: 0.8em;
@@ -304,12 +312,21 @@ table {
 /**
  * Forms
  */
+.form-field {
+  margin-bottom: 1rem; }
+
+label {
+  display: block; }
+
 input,
 select,
 textarea {
   border: 1px solid #dddddd;
   background: white;
   padding: 0.25em; }
+
+.caption {
+  text-align: left; }
 
 .searchform {
   position: relative; }
@@ -532,9 +549,9 @@ input[type="submit"] {
  * Header
  */
 #header {
-  margin: 0.5em 0 2em 0; }
+  margin: 0.5em 0 2rem 0; }
   #header .contain .header-image-link {
-    margin-right: 1em; }
+    margin-right: 1rem; }
   #header .contain .header-info .site-title {
     color: #222222;
     font-size: 2.2em; }
@@ -544,7 +561,7 @@ input[type="submit"] {
 
 #navigation {
   background: #222222;
-  margin-top: 1em; }
+  margin-top: 1rem; }
   #navigation .menu {
     text-align: center; }
     #navigation .menu > .menu-item {
@@ -619,14 +636,14 @@ input[type="submit"] {
  */
 #footer {
   border-top: 1px solid #dddddd;
-  margin-top: 1em;
+  margin-top: 1rem;
   padding-top: 0.5em; }
 
 /**
  * Widgets
  */
 .widgets .widget {
-  margin-bottom: 2em; }
+  margin-bottom: 2rem; }
   .widgets .widget .contain ul li {
     border-bottom: 1px solid #dddddd;
     padding: 0.25em 0; }
@@ -799,15 +816,15 @@ input[type="submit"] {
  * Posts
  */
 .entry {
-  margin-bottom: 2em; }
+  margin-bottom: 2rem; }
   .entry .entry-header {
-    margin-bottom: 1em; }
+    margin-bottom: 1rem; }
   .entry .entry-image .the-entry-image {
     margin-bottom: 1em; }
     .entry .entry-image .the-entry-image.entry-thumbnail {
       float: left;
       margin: 0.5em; }
-  .entry .entry-details .meta.attachment a:before {
+  .entry .entry-details .meta.attachment:before {
     display: -moz-inline-stack;
     display: inline-block;
     vertical-align: top;
@@ -828,7 +845,7 @@ input[type="submit"] {
     *display: inline;
     *overflow: auto;
     *zoom: 1; }
-  .entry .entry-details .meta.author a:before {
+  .entry .entry-details .meta.author:before {
     display: -moz-inline-stack;
     display: inline-block;
     vertical-align: top;
@@ -849,7 +866,7 @@ input[type="submit"] {
     *display: inline;
     *overflow: auto;
     *zoom: 1; }
-  .entry .entry-details .meta.bookmark a:before {
+  .entry .entry-details .meta.bookmark:before {
     display: -moz-inline-stack;
     display: inline-block;
     vertical-align: top;
@@ -870,7 +887,7 @@ input[type="submit"] {
     *display: inline;
     *overflow: auto;
     *zoom: 1; }
-  .entry .entry-details .meta.date a:before {
+  .entry .entry-details .meta.date:before {
     display: -moz-inline-stack;
     display: inline-block;
     vertical-align: top;
@@ -912,7 +929,7 @@ input[type="submit"] {
     *display: inline;
     *overflow: auto;
     *zoom: 1; }
-  .entry .entry-details .meta.comments a:before {
+  .entry .entry-details .meta.comments:before {
     display: -moz-inline-stack;
     display: inline-block;
     vertical-align: top;
@@ -934,7 +951,7 @@ input[type="submit"] {
     *overflow: auto;
     *zoom: 1; }
   .entry .entry-content {
-    margin-bottom: 1em; }
+    margin-bottom: 1rem; }
     .entry .entry-content .contain p:last-child,
     .entry .entry-content .contain ol:last-child,
     .entry .entry-content .contain ul:last-child {
@@ -987,7 +1004,7 @@ input[type="submit"] {
     .entry .entry-pages > span:active {
       box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 1px 0 rgba(0, 0, 0, 0.15); }
   .entry .entry-footer > * {
-    margin-bottom: 1em; }
+    margin-bottom: 1rem; }
     .entry .entry-footer > *:last-child {
       margin-bottom: 0; }
   .entry .entry-tags:before {
@@ -1011,7 +1028,7 @@ input[type="submit"] {
     *display: inline;
     *overflow: auto;
     *zoom: 1; }
-  .entry .entry-edit a:before {
+  .entry .entry-edit:before {
     display: -moz-inline-stack;
     display: inline-block;
     vertical-align: top;
@@ -1048,10 +1065,10 @@ input[type="submit"] {
  * Pages
  */
 .search-page .search-header {
-  margin-bottom: 2em; }
+  margin-bottom: 2rem; }
 
 .login-page .login-form {
-  margin-top: 2em; }
+  margin-top: 2rem; }
 
 /**
  * Attachments
@@ -1066,15 +1083,15 @@ input[type="submit"] {
  * Comments
  */
 #comments .comments-list .comment {
-  margin-bottom: 2em;
+  margin-bottom: 1rem;
   padding: 0.5em; }
   #comments .comments-list .comment article .comment-header {
-    margin-bottom: 1em; }
+    margin-bottom: 1rem; }
   #comments .comments-list .comment article .comment-details {
-    margin-bottom: 1em; }
+    margin-bottom: 1rem; }
     #comments .comments-list .comment article .comment-details .meta {
-      margin-right: 1em; }
-      #comments .comments-list .comment article .comment-details .meta.author a:before {
+      margin-right: 1rem; }
+      #comments .comments-list .comment article .comment-details .meta.author:before {
         display: -moz-inline-stack;
         display: inline-block;
         vertical-align: top;
@@ -1095,7 +1112,7 @@ input[type="submit"] {
         *display: inline;
         *overflow: auto;
         *zoom: 1; }
-      #comments .comments-list .comment article .comment-details .meta.date a:before {
+      #comments .comments-list .comment article .comment-details .meta.date:before {
         display: -moz-inline-stack;
         display: inline-block;
         vertical-align: top;
@@ -1116,7 +1133,7 @@ input[type="submit"] {
         *display: inline;
         *overflow: auto;
         *zoom: 1; }
-      #comments .comments-list .comment article .comment-details .meta.time a:before {
+      #comments .comments-list .comment article .comment-details .meta.time:before {
         display: -moz-inline-stack;
         display: inline-block;
         vertical-align: top;
@@ -1138,7 +1155,7 @@ input[type="submit"] {
         *overflow: auto;
         *zoom: 1; }
   #comments .comments-list .comment article .comment-content {
-    margin-bottom: 1em; }
+    margin-bottom: 1rem; }
     #comments .comments-list .comment article .comment-content:before {
       display: -moz-inline-stack;
       display: inline-block;
@@ -1169,7 +1186,7 @@ input[type="submit"] {
       #comments .comments-list .comment article .comment-content ul:last-child {
         margin-bottom: 0; }
   #comments .comments-list .comment article .comment-reply {
-    margin-bottom: 1em; }
+    margin-bottom: 1rem; }
     #comments .comments-list .comment article .comment-reply .comment-reply-link:after {
       display: -moz-inline-stack;
       display: inline-block;
@@ -1191,7 +1208,7 @@ input[type="submit"] {
       *display: inline;
       *overflow: auto;
       *zoom: 1; }
-  #comments .comments-list .comment article .comment-edit .comment-edit-link:before {
+  #comments .comments-list .comment article .comment-edit:before {
     display: -moz-inline-stack;
     display: inline-block;
     vertical-align: top;
@@ -1214,7 +1231,7 @@ input[type="submit"] {
     *zoom: 1; }
   #comments .comments-list .comment .children {
     border-left: 1px solid #dddddd;
-    margin-top: 1em; }
+    margin-top: 1rem; }
 
 .comments-pages .contain .next-comments a:after {
   display: -moz-inline-stack;

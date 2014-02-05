@@ -149,7 +149,6 @@ function asc_get_social_icons() {
 	$twitter_url  = $asc_theme_options['asc_twitter_feed'];
 	$facebook_url = $asc_theme_options['asc_facebook_profile'];
 	$youtube_url  = $asc_theme_options['asc_youtube_page'];
-	$linkedin_url = $asc_theme_options['asc_linkedin_profile'];
 	$rss_url      = $asc_theme_options['asc_rss_link'];
 	$social_icons = '';
 
@@ -161,9 +160,6 @@ function asc_get_social_icons() {
 	}
 	if ( ! empty( $youtube_url ) ) {
 		$social_icons .= '<a href="' . esc_url( $youtube_url ) . '" target="_blank"><img src="' . asc_file_uri( '/images/icons/youtube.png' ) . '" alt="YouTube Page" /></a>';
-	}
-	if ( ! empty( $linkedin_url ) ) {
-		$social_icons .= '<a href="' . esc_url( $linkedin_url ) . '" target="_blank"><img src="' . asc_file_uri( '/images/icons/linkedin.png' ) . '" alt="LinkedIn Profile" /></a>';
 	}
 	if ( ! empty( $rss_url ) ) {
 		$social_icons .= '<a href="' . esc_url( $rss_url ) . '" target="_blank"><img src="' . asc_file_uri( '/images/icons/rss.png' ) . '" alt="RSS Feed" /></a>';

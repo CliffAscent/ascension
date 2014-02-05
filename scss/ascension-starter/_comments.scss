@@ -12,19 +12,8 @@
 	}
 	.comments-list {
 	
-		.pingback {
-			
-			p {
-				.url {
-				
-				}
-				.edit-link {
-				
-				}
-			}
-		}
 		.comment {
-			margin-bottom: $push-lg;
+			margin-bottom: $push;
 			padding: $pad;
 			
 			&.even {
@@ -72,21 +61,24 @@
 								}
 							}
 							&.author {
+								@include gen-dashicon('\f110', $margin: 0 0.25em 0 0);
 								
 								a {
-									@include gen-dashicon('\f110', $margin: 0 0.25em 0 0);
+									
 								}
 							}
 							&.date {
+								@include gen-dashicon('\f145', $margin: 0 0.25em 0 0);
 								
 								a {
-									@include gen-dashicon('\f145', $margin: 0 0.25em 0 0);
+									
 								}
 							}
 							&.time {
+								@include gen-dashicon('\f469', $margin: 0 0.25em 0 0);
 								
 								a {
-									@include gen-dashicon('\f469', $margin: 0 0.25em 0 0);
+									
 								}
 							}
 						}
@@ -116,9 +108,10 @@
 						}
 					}
 					.comment-edit {
+						@include gen-dashicon('\f327', $margin: 0 0.5em 0 0);
 						
 						.comment-edit-link {
-							@include gen-dashicon('\f327', $margin: 0 0.5em 0 0);
+							
 						}
 					}
 			}
@@ -131,6 +124,20 @@
 				}
 				& .odd {
 					
+				}
+			}
+		}
+		.pingback {
+			
+			p {
+				.url {
+				
+				}
+				.comment-edit {
+					
+					.comment-edit-link {
+						
+					}
 				}
 			}
 		}

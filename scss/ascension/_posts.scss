@@ -9,6 +9,7 @@
 	}
 	.entry-title {
 		line-height: 1;
+		margin: 0;
 	}
 	.entry-details {
 		
@@ -19,6 +20,17 @@
 			&:last-child {
 				margin-right: 0;
 			}
+		}
+	}
+	.entry-content {
+		
+		h1:first-child,
+		h2:first-child,
+		h3:first-child,
+		h4:first-child,
+		h5:first-child,
+		h6:first-child {
+			margin-top: 0;
 		}
 	}
 	.entry-image {

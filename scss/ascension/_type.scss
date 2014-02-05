@@ -7,7 +7,7 @@
 //==========
 p {
 	line-height: 1.5;
-	margin-bottom: 1em;
+	margin-bottom: 1rem;
 }
 
 strong {
@@ -31,7 +31,7 @@ code {
 	display: block;
 	font-family: "Courier New", Courier, monospace;
 	font-size: 0.8em;
-	margin-bottom: 1em;
+	margin-bottom: 1rem;
 	padding: 0.5em;
 	overflow: auto;
 	max-width: 100%;
@@ -92,8 +92,8 @@ cite {
 }
 
 address {
-	margin-bottom: 1em;
-	margin-left: 1em;
+	margin-bottom: 1rem;
+	margin-left: 1rem;
 	padding: 0.5em;
 }
 
@@ -123,8 +123,8 @@ hr {
 	background: #808080;
 	border: 0;
 	height: 1px;
-	margin-bottom: 0.5em;
-	margin-top: 0.5em;
+	margin-bottom: 0.5rem;
+	margin-top: 0.5rem;
 }
 
 
@@ -139,15 +139,14 @@ h5,
 h6 {
 	display: block;
 	line-height: 1.5;
+	margin: 1rem 0 0.25rem 0;
 	word-wrap: break-word;
 	
 	&.subhead,
 	&.subheading,
 	&.subtitle	{
 		border-bottom: 1px solid;
-		font-size: 0.8em;
-		margin-bottom: 0.25em;
-		padding-top: 1em;
+		font-size: 1em;
 	}
 	a {
 		color: inherit;
@@ -173,10 +172,10 @@ h4 {
 	font-size: 1em;
 }
 h5 {
-	font-size: 0.9em;
+	font-size: 1em;
 }
 h6 {
-	font-size: 0.8em;
+	font-size: 0.9em;
 }
 
 @media (min-width: $medium-starts-at) {
@@ -208,7 +207,7 @@ h6 {
 //==========
 ul {
 	list-style-type: disc;
-	margin-bottom: 0.5em;
+	margin-bottom: 0.5rem;
 	margin-left: 1em;
 	
 	ul {
@@ -221,7 +220,7 @@ ul {
 }
 ol {
 	list-style-type: decimal;
-	margin-bottom: 0.5em;
+	margin-bottom: 0.5rem;
 	margin-left: 1.5em;
 	
 	ol {
@@ -299,13 +298,13 @@ dl {
 		font-weight: bold;
 	}
 	dd {
-		margin-bottom: 1em;
+		margin-bottom: 1rem;
 		margin-left: 1em;
 		
 		& > dl,
 		& > ul,
 		& > ol {
-			margin-top: 1em;
+			margin-top: 1rem;
 		}
 	}
 }
@@ -318,7 +317,7 @@ blockquote {
 	color: #808080;
 	font-style: italic;
 	font-weight: normal;
-	padding: 1em;
+	margin: 1.5rem;
 	
 	/* Reset the <p> that WordPress might add inside the blockquote. */
 	p {

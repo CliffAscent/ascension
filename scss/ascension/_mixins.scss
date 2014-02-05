@@ -70,6 +70,8 @@
 //==========
 // Visibility
 //==========
+
+// Display at the specified breakpoint.
 @mixin show($at: all) {
 	@if $at == all {
 		display: block !important;
@@ -100,6 +102,7 @@
 	}
 }
 
+// Hide at the specified breakpoint.
 @mixin hide($at: all) {
 	@if $at == all {
 		display: none !important;

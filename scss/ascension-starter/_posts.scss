@@ -54,27 +54,31 @@
 					}
 				}
 				&.attachment{
+					@include gen-dashicon('\f128', $margin: 0 0.25em 0 0);
 					
 					a {
-						@include gen-dashicon('\f128', $margin: 0 0.25em 0 0);
+						
 					}
 				}
 				&.author {
+					@include gen-dashicon('\f110', $margin: 0 0.25em 0 0);
 					
 					a {
-						@include gen-dashicon('\f110', $margin: 0 0.25em 0 0);
+						
 					}
 				}
 				&.bookmark {
+					@include gen-dashicon('\f331', $margin: 0 0.25em 0 0);
 					
 					a {
-						@include gen-dashicon('\f331', $margin: 0 0.25em 0 0);
+						
 					}
 				}
 				&.date {
+					@include gen-dashicon('\f145', $margin: 0 0.25em 0 0);
 					
 					a {
-						@include gen-dashicon('\f145', $margin: 0 0.25em 0 0);
+						
 					}
 				}
 				&.category {
@@ -85,9 +89,10 @@
 					}
 				}
 				&.comments {
+					@include gen-dashicon('\f101', $margin: 0 0.25em 0 0);
 					
 					a {
-						@include gen-dashicon('\f101', $margin: 0 0.25em 0 0);
+						
 					}
 				}
 			}
@@ -154,9 +159,9 @@
 			}
 		}
 		.entry-edit {
+			@include gen-dashicon('\f327', $margin: 0 0.25em 0 0);
 			
 			a {
-				@include gen-dashicon('\f327', $margin: 0 0.25em 0 0);
 			
 				&:hover,
 				&:focus,

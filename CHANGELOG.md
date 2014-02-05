@@ -1,5 +1,10 @@
 # Change Log
 
++ 03 February 2014
+	+ Misc. cleanup
+	+ Margin changes for headings and post content
+	+ Form field wrapper setup
+
 + 31 January 2014
 	+ Added an "activated" button type
 	+ Misc. button class name changes

@@ -2,39 +2,39 @@
  * Forms
  */
 
-form {
-
-}
 .form-field {
-	
+	margin-bottom: $push;
 }
-label {
-	
-}
-input,
-select,
-textarea {
-	@include gen-borders();
-	background: $input-color;
-	padding: 0.25em;
+	label {
+		display: block;
+	}
+	input,
+	select,
+	textarea {
+		@include gen-borders();
+		background: $input-color;
+		padding: 0.25em;
 
-	&:focus,
-	&.active {
+		&:focus,
+		&.active {
+			
+		}
+		&.default {
 		
+		}
+		&.required {
+			
+		}
+		&.valid {
+			
+		}
+		&.error {
+			
+		}
 	}
-	&.default {
-	
+	.caption {
+		text-align: left;
 	}
-	&.required {
-		
-	}
-	&.valid {
-		
-	}
-	&.error {
-		
-	}
-}
 
 .searchform {
 	position: relative;

@@ -125,17 +125,6 @@ function asc_theme_options() {
 		)
 	);
 	add_settings_field(
-		'asc_linkedin_profile',
-		__( 'LinkedIn Profile URL', 'ascension' ),
-		'asc_settings_display_text_field',
-		'asc_social_icons',
-		'asc_social_icons',
-		array(
-			'label_for'   => 'asc_linkedin_profile',
-			'description' => __( 'The address to your LinkedIn profile. If this field is blank the icon will not be displayed.', 'ascension' )
-		)
-	);
-	add_settings_field(
 		'asc_rss_link',
 		__( 'RSS Feed URL', 'ascension' ),
 		'asc_settings_display_text_field',
@@ -523,7 +512,6 @@ function asc_get_default_theme_options() {
 		'asc_twitter_feed'               => 'https://twitter.com/CliffAscent',
 		'asc_facebook_profile'           => '',
 		'asc_youtube_page'               => '',
-		'asc_linkedin_profile'           => '',
 		'asc_rss_link'                   => '',
 		'asc_header_socials'             => 'Yes',
 		
