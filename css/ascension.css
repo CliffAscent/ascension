@@ -2041,7 +2041,9 @@ body > .wrapper > .row {
     cursor: pointer;
     display: none; }
     .drop .drop-control .drop-title {
-      display: inline; }
+      display: inline;
+      margin: 0;
+      padding: 0; }
   @media (max-width: 400px) {
     .drop.at-small .drop-control {
       cursor: pointer;

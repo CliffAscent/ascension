@@ -6,6 +6,16 @@ module.exports = function( grunt ) {
     grunt.initConfig( {
         pkg : grunt.file.readJSON( 'package.json' ),
 		
+		// Install the script dependencies.
+		bower: {
+			install: {
+				options: {
+					targetDir: './js/vendor',
+					cleanBowerDir: true
+				}
+			}
+		},
+		
 		// Watch files and execute tasks when they change.
 		watch : {
 			css: {
@@ -25,11 +35,19 @@ module.exports = function( grunt ) {
 	
 		// Compress JavaScript files.
 		uglify : {
-			build : {
+			framework : {
 				files : {
 					'js/ascension.min.js'         : ['js/ascension.js'],
 					'js/ascension-starter.min.js' : ['js/ascension-starter.js'],
 					'js/editor.min.js'            : ['js/editor.js']
+				}
+			},
+			
+			vendors : {
+				files : {
+					'js/vendor/enquire/enquire.min.js'     : ['js/vendor/enquire/enquire.js'],
+					'js/vendor/jquery/jquery.min.js'       : ['js/vendor/jquery/jquery.js'],
+					'js/vendor/modernizr/modernizr.min.js' : ['js/vendor/modernizr/modernizr.js']
 				}
 			}
 		},
@@ -98,6 +116,7 @@ module.exports = function( grunt ) {
 
 	// Register the grunt tasks.
     grunt.registerTask( 'default', [] );
-	grunt.registerTask( 'scripts', ['uglify'] );
+    grunt.registerTask( 'setup',   ['bower', 'uglify:vendors'] );
+	grunt.registerTask( 'scripts', ['uglify:framework'] );
 	grunt.registerTask( 'styles',  ['sass', 'cssc', 'cssmin'] );
 };

@@ -11,6 +11,8 @@
         "grunt-contrib-sass"   : "*",
         "grunt-cssc"           : "*",
         "grunt-contrib-cssmin" : "*",
-        "matchdep"             : "*"
+        "matchdep"             : "*",
+		"grunt-bower"          : "*",
+		"grunt-bower-task"     : "*"
     }
 }

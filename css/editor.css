@@ -3020,7 +3020,9 @@
       cursor: pointer;
       display: none; }
       .mceContentBody .drop .drop-control .drop-title {
-        display: inline; }
+        display: inline;
+        margin: 0;
+        padding: 0; }
     @media (max-width: 400px) {
       .mceContentBody .drop.at-small .drop-control {
         cursor: pointer;
@@ -4369,10 +4371,6 @@
       *zoom: 1; }
     .mceContentBody .entry .entry-content {
       margin-bottom: 1rem; }
-      .mceContentBody .entry .entry-content .contain p:last-child,
-      .mceContentBody .entry .entry-content .contain ol:last-child,
-      .mceContentBody .entry .entry-content .contain ul:last-child {
-        margin-bottom: 0; }
       .mceContentBody .entry .entry-content .contain .more-link .read-more:after {
         display: -moz-inline-stack;
         display: inline-block;

@@ -1,9 +1,13 @@
 # Change Log
 
-+ 03 February 2014
++ 08 February 2014
 	+ Misc. cleanup
 	+ Margin changes for headings and post content
 	+ Form field wrapper setup
+	+ Extra files removed
+	+ Bower added to manage vendor scripts
+	+ Script initializations moved into 'init' methods
+	+ Fixed spacing issue with navigation-dropped
 
 + 31 January 2014
 	+ Added an "activated" button type

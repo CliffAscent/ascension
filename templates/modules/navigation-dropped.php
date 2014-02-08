@@ -1,6 +1,6 @@
 <div class="drop at-medium">
 	<div class="drop-control">
-		<h2><?php _e( 'Navigation', 'ascension-starter' ) ?></h2>
+		<h2 class="drop-title"><?php _e( 'Navigation', 'ascension-starter' ) ?></h2>
 	</div>
 	<div class="drop-content">
 		<nav class="horizontal-menu" role="navigation">

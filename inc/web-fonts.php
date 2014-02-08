@@ -10,7 +10,7 @@ function asc_webfonts( $vendor, $fonts, $args = '' ) {
 	
 	// Load the web font loader script.
 	function asc_webfont_script() {
-		wp_enqueue_script( 'webfont-js', ASC_TEMPLATE_DIR_URI . '/js/vendor/webfont.min.js', array( 'ascension' ), '1.5', false );
+		wp_enqueue_script( 'webfont-js', ASC_TEMPLATE_DIR_URI . '/js/vendor/webfontloader-min/webfont.js', array( 'ascension' ), '1.5', false );
 	}
 	add_action( 'wp_enqueue_scripts', 'asc_webfont_script' );
 	

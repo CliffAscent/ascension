@@ -10,15 +10,15 @@ Navigation Menu
 
 config :
 removeNoJS :
-isTouchScreen :
 scrollToTopBox :
 scrollToTop :
-query :
-open :
-close :
 toggleRespond :
 toggleToolTip :
 toggleSubMenu :
+isTouchScreen :
+query :
+open :
+close :
 createSlider :
 */
 
@@ -40,24 +40,24 @@ createSlider :
 				subMenuDisplay    : 'block',
 				subSubMenuDisplay : 'inline-block'
             }, config ),
+			
+			// Initiate methods on document ready.
+			init : $( function() {
+				Asc.removeNoJS();
+				Asc.scrollToTopBox();
+				Asc.scrollToTop();
+				Asc.toggleRespond();
+				Asc.toggleToolTip();
+				Asc.toggleSubMenu();
+			} ),
 
 			// Remove .no-js from <body> to disable unnecessary CSS.
-			removeNoJS : $( function () {
+			removeNoJS : function() {
 				$( 'body' ).removeClass( 'no-js' );
-			} ),
-			
-			// Test for touch screen support and return true or false.
-			isTouchScreen : function () {
-				if ( ( 'ontouchstart' in window ) || window.DocumentTouch && document instanceof DocumentTouch ) {
-					return true;
-				}
-				else {
-					return false;
-				}
 			},
 
 			// Toggle the scroll to top box display when scrolling.
-			scrollToTopBox : $( function () {
+			scrollToTopBox : function () {
 				$( window ).on( 'load scroll', function () {
 					var $scrollToTop = $( '#scroll-to-top' );
 					
@@ -68,17 +68,148 @@ createSlider :
 						$scrollToTop.fadeOut();
 					}
 				} );
-			} ),
+			},
 
 			// Scroll to the top of the page on click.
-			scrollToTop :  $( function () {
+			scrollToTop :  function () {
 				var $scrollToTop = $( '#scroll-to-top' );
 					
 				$scrollToTop.click( function () {
 					$( 'html, body' ).animate( { scrollTop : 0 }, 'slow' );
 					return false;
 				} );
-			} ),
+			},
+
+			// Open respond-content when respond-control is clicked.
+			toggleRespond : function () {
+				$( '.drop-control' ).on( 'click', function ( e ) {
+					// Store the first respond-content.
+					var $respondContent = $( this ).siblings( '.drop-content' ).eq( 0 );
+
+					// If it's shown, hide it.
+					if ( $respondContent.is( ':visible' ) ) {
+						Asc.close( $respondContent );
+					}
+					// Else it's hidden, so show it.
+					else {
+						Asc.open( $respondContent );
+					}
+				} );
+			},
+
+			// Open tip-content when tip is clicked.
+			toggleToolTip :  function () {
+				var touch  = Asc.isTouchScreen();
+				
+				if ( touch === true ) {
+					var events = 'click';
+				}
+				else {
+					var events = 'mouseenter mouseleave';
+				}
+				
+				$( '.tip-control' ).on( events, function ( e ) {
+					// Store the first tip-content.
+					var $tipContent = $( this ).siblings( '.tip-content' ).eq( 0 );
+
+					// If it's shown, hide it.
+					if ( $tipContent.is( ':visible' ) ) {
+						Asc.close( $tipContent );
+					}
+					// Else it's hidden, so show it.
+					else {
+						Asc.open( $tipContent );
+					}
+				} );
+			},
+
+			// Open sub-menu when a menu-item is clicked.
+			toggleSubMenu :  function () {
+				var touch  = Asc.isTouchScreen();
+				
+				if ( touch === true ) {
+					var events = 'click';
+				}
+				else {
+					var events = 'mouseenter mouseleave';
+				}
+				
+				$( '.menu-item' ).on( events, function ( e ) {
+					// Stop click events from bubbling, but allow hover events.
+					if ( touch === true ) {
+						e.stopPropagation();
+					}
+					
+					var $this      = $( this );
+					// Store the sub-menu if the menu-item has one.
+					var $subMenu   = $this.children( '.sub-menu' );
+					// Is it a sub-menu inside of another sub-menu?
+					var $subSub    = $( $subMenu ).hasClass( 'sub-sub-menu' );
+					// Get all other sub-menus in this menu.
+					var $otherSubs = $subMenu.parents( '.menu' ).find( '.sub-menu' ).not( $subMenu );
+
+					// Make sure there is a sub-menu, if not do nothing and allow the click event.
+					if ( $subMenu.length > 0 ) {
+						// If it's shown, hide it.
+						if ( $subMenu.is( ':visible' ) ) {
+							e.preventDefault();
+							Asc.close( $subMenu );
+							$subMenu.parent( '.menu-item' ).removeClass( 'opened' );
+						}
+						// Else it's hidden, so show it.
+						else {
+							var $respondContainer = $this.parents( '.drop' );
+
+							// If the element has a responsive container
+							// make sure you're not in an active query
+							// before allowing a .sub-menu to display.
+							if ( $respondContainer.length > 0 ) {
+								var inQuery = Asc.query.active( $respondContainer );
+								
+								if ( ! inQuery ) {
+									e.preventDefault();
+									
+									// Set a custom display type for the .sub-sub-menu display.
+									if ( $subSub ) {
+										Asc.open( $subMenu, Asc.config.subSubMenuDisplay );
+										$subMenu.parent( '.menu-item' ).addClass( 'opened' );
+									}
+									else {
+										Asc.open( $subMenu, Asc.config.subMenuDisplay );
+										$subMenu.parent( '.menu-item' ).addClass( 'opened' );
+										
+										// Close all other .sub-menus.
+										Asc.close( $otherSubs );
+										$otherSubs.parent( '.menu-item' ).removeClass( 'opened' );
+									}
+								}
+							}
+							else {
+								if ( $subMenu.is( ':visible' ) ) {
+									e.preventDefault();
+									Asc.close( $subMenu );
+									$subMenu.parent( '.menu-item' ).removeClass( 'opened' );
+								}
+								else {
+									e.preventDefault();
+									Asc.open( $subMenu );
+									$subMenu.parent( '.menu-item' ).addClass( 'opened' );
+								}
+							}
+						}
+					}
+				} );
+			},
+			
+			// Test for touch screen support and return true or false.
+			isTouchScreen : function () {
+				if ( ( 'ontouchstart' in window ) || window.DocumentTouch && document instanceof DocumentTouch ) {
+					return true;
+				}
+				else {
+					return false;
+				}
+			},
 
 			// Use enquire.js to register the media queries,
 			// and create variables that are usable in other functions.
@@ -92,9 +223,17 @@ createSlider :
 				lower    : false,
 				current  : false,
 				higher   : false,
+				
+				// Initiate methods on document ready.
+				init : $( function() {
+					Asc.query.atSmall();
+					Asc.query.atMedium();
+					Asc.query.atLarge();
+					Asc.query.atFull();
+				} ),
 
 				// Register the small media query.
-				'at-small' : $( function () {
+				atSmall : function () {
 					enquire.register( '( max-width: ' + Asc.config.mediumStartsAt + ' )', {
 						// Triggered when this query is matched.
 						match : function () {
@@ -104,10 +243,10 @@ createSlider :
 							Asc.query.toggle();
 						}
 					} );
-				} ),
+				},
 
 				// Register the medium media query.
-				'at-medium' : $( function () {
+				atMedium : function () {
 					enquire.register( '( min-width: ' + Asc.config.mediumStartsAt + ' ) and ( max-width: ' + Asc.config.largeStartsAt + ' )', {
 						// Triggered when this query is matched.
 						match : function () {
@@ -117,10 +256,10 @@ createSlider :
 							Asc.query.toggle();
 						}
 					} );
-				} ),
+				},
 
 				// Register the large media query.
-				'at-large' : $( function () {
+				atLarge : function () {
 					enquire.register( '( min-width: ' + Asc.config.largeStartsAt + ' ) and ( max-width: ' + Asc.config.fullStartsAt + ' )', {
 						// Triggered when this query is matched.
 						match : function () {
@@ -130,10 +269,10 @@ createSlider :
 							Asc.query.toggle();
 						}
 					} );
-				} ),
+				},
 
 				// Register the full media query.
-				'at-full' : $( function () {
+				atFull : function () {
 					enquire.register( '( min-width: ' + Asc.config.fullStartsAt + ' )', {
 						// Triggered when this query is matched.
 						match : function () {
@@ -143,7 +282,7 @@ createSlider :
 							Asc.query.toggle();
 						}
 					} );
-				} ),
+				},
 				
 				// Accepts an element and returns true or false.
 				active  : function ( $elm ) {
@@ -221,127 +360,6 @@ createSlider :
 					$elm.slideUp( parseInt( Asc.config.closeSpeed ) );
 				}
 			},
-
-			// Open respond-content when respond-control is clicked.
-			toggleRespond :  $( function () {
-				$( '.drop-control' ).on( 'click', function ( e ) {
-					// Store the first respond-content.
-					var $respondContent = $( this ).siblings( '.drop-content' ).eq( 0 );
-
-					// If it's shown, hide it.
-					if ( $respondContent.is( ':visible' ) ) {
-						Asc.close( $respondContent );
-					}
-					// Else it's hidden, so show it.
-					else {
-						Asc.open( $respondContent );
-					}
-				} );
-			} ),
-
-			// Open tip-content when tip is clicked.
-			toggleToolTip :  $( function () {
-				var touch  = Asc.isTouchScreen();
-				
-				if ( touch === true ) {
-					var events = 'click';
-				}
-				else {
-					var events = 'mouseenter mouseleave';
-				}
-				
-				$( '.tip-control' ).on( events, function ( e ) {
-					// Store the first tip-content.
-					var $tipContent = $( this ).siblings( '.tip-content' ).eq( 0 );
-
-					// If it's shown, hide it.
-					if ( $tipContent.is( ':visible' ) ) {
-						Asc.close( $tipContent );
-					}
-					// Else it's hidden, so show it.
-					else {
-						Asc.open( $tipContent );
-					}
-				} );
-			} ),
-
-			// Open sub-menu when a menu-item is clicked.
-			toggleSubMenu :  $( function () {
-				var touch  = Asc.isTouchScreen();
-				
-				if ( touch === true ) {
-					var events = 'click';
-				}
-				else {
-					var events = 'mouseenter mouseleave';
-				}
-				
-				$( '.menu-item' ).on( events, function ( e ) {
-					// Stop click events from bubbling, but allow hover events.
-					if ( touch === true ) {
-						e.stopPropagation();
-					}
-					
-					var $this      = $( this );
-					// Store the sub-menu if the menu-item has one.
-					var $subMenu   = $this.children( '.sub-menu' );
-					// Is it a sub-menu inside of another sub-menu?
-					var $subSub    = $( $subMenu ).hasClass( 'sub-sub-menu' );
-					// Get all other sub-menus in this menu.
-					var $otherSubs = $subMenu.parents( '.menu' ).find( '.sub-menu' ).not( $subMenu );
-
-					// Make sure there is a sub-menu, if not do nothing and allow the click event.
-					if ( $subMenu.length > 0 ) {
-						// If it's shown, hide it.
-						if ( $subMenu.is( ':visible' ) ) {
-							e.preventDefault();
-							Asc.close( $subMenu );
-							$subMenu.parent( '.menu-item' ).removeClass( 'opened' );
-						}
-						// Else it's hidden, so show it.
-						else {
-							var $respondContainer = $this.parents( '.drop' );
-
-							// If the element has a responsive container
-							// make sure you're not in an active query
-							// before allowing a .sub-menu to display.
-							if ( $respondContainer.length > 0 ) {
-								var inQuery = Asc.query.active( $respondContainer );
-								
-								if ( ! inQuery ) {
-									e.preventDefault();
-									
-									// Set a custom display type for the .sub-sub-menu display.
-									if ( $subSub ) {
-										Asc.open( $subMenu, Asc.config.subSubMenuDisplay );
-										$subMenu.parent( '.menu-item' ).addClass( 'opened' );
-									}
-									else {
-										Asc.open( $subMenu, Asc.config.subMenuDisplay );
-										$subMenu.parent( '.menu-item' ).addClass( 'opened' );
-										
-										// Close all other .sub-menus.
-										Asc.close( $otherSubs );
-										$otherSubs.parent( '.menu-item' ).removeClass( 'opened' );
-									}
-								}
-							}
-							else {
-								if ( $subMenu.is( ':visible' ) ) {
-									e.preventDefault();
-									Asc.close( $subMenu );
-									$subMenu.parent( '.menu-item' ).removeClass( 'opened' );
-								}
-								else {
-									e.preventDefault();
-									Asc.open( $subMenu );
-									$subMenu.parent( '.menu-item' ).addClass( 'opened' );
-								}
-							}
-						}
-					}
-				} );
-			} ),
 
 			// Create a slider in the selected element.
 			createSlider : function ( selector, prev, next ) {

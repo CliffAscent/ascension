@@ -952,10 +952,6 @@ input[type="submit"] {
     *zoom: 1; }
   .entry .entry-content {
     margin-bottom: 1rem; }
-    .entry .entry-content .contain p:last-child,
-    .entry .entry-content .contain ol:last-child,
-    .entry .entry-content .contain ul:last-child {
-      margin-bottom: 0; }
     .entry .entry-content .contain .more-link .read-more:after {
       display: -moz-inline-stack;
       display: inline-block;

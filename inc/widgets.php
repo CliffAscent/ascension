@@ -51,7 +51,7 @@ class Asc_Content_Slider extends WP_Widget {
 		$query_args = array();
 		
 		// Load the flex slider script.
-		wp_enqueue_script( 'flex-slider', ASC_TEMPLATE_DIR_URI . '/js/vendor/jquery.flexslider.js', array( 'jquery', 'ascension' ), '2.2.0', true );
+		wp_enqueue_script( 'flex-slider', ASC_TEMPLATE_DIR_URI . '/js/vendor/flexslider/jquery.flexslider-min.js', array( 'jquery', 'ascension' ), '2.2.0', true );
 		
 		// Initiate the slider.
 		?>

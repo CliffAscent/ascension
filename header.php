@@ -19,7 +19,7 @@ global $asc_theme_options;
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
 	<!--[if lt IE 9]>
-		<script src="<?php echo ASC_TEMPLATE_DIR_URI; ?>/js/vendor/html5.js" type="text/javascript"></script>
+		<script src="<?php echo ASC_TEMPLATE_DIR_URI; ?>/js/vendor/html5shiv/html5shiv.js" type="text/javascript"></script>
 	<![endif]-->
 
 	<?php /* Scripts and styles are loaded by asc_scripts() in functions.php */ ?>

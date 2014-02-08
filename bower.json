@@ -1,0 +1,13 @@
+{
+	"name"    : "Ascension",
+	"version" : "0.8.0",
+	"main"    : "style.css",
+	"dependencies" : {
+		"jquery"            : "latest",
+		"enquire"           : "latest",
+		"html5shiv"         : "latest",
+		"modernizr"         : "latest",
+		"flexslider"        : "latest",
+		"webfontloader-min" : "latest"
+  }
+}
