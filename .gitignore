@@ -1,3 +1,14 @@
 .sass-cache
 node_modules
 TODO.md
+
+js/vendor/flexslider/*
+!js/vendor/flexslider/jquery.flexslider.js
+!js/vendor/flexslider/jquery.flexslider-min.js
+
+js/vendor/modernizr/*
+!js/vendor/modernizr/modernizr.js
+!js/vendor/modernizr/modernizr.min.js
+
+js/vendor/webfontloader-min/*
+!js/vendor/webfontloader-min/webfont.js
