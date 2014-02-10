@@ -2,9 +2,21 @@
 node_modules
 TODO.md
 
+js/vendor/enquire/*
+!js/vendor/enquire/enquire.js
+!js/vendor/enquire/enquire.min.js
+
 js/vendor/flexslider/*
 !js/vendor/flexslider/jquery.flexslider.js
 !js/vendor/flexslider/jquery.flexslider-min.js
+
+js/vendor/html5shiv/*
+!js/vendor/html5shiv/html5shiv.js
+!js/vendor/html5shiv/html5shiv-printshiv.js
+
+js/vendor/jquery/*
+!js/vendor/jquery/jquery.js
+!js/vendor/jquery/jquery.min.js
 
 js/vendor/modernizr/*
 !js/vendor/modernizr/modernizr.js

@@ -818,11 +818,11 @@ endif; // End asc_get_comment()
  */
 if ( ! function_exists( 'asc_get_comment_avatar' ) ) :
 function asc_get_comment_avatar( $comment ) {
-	$avatar_size = apply_filters( 'ascension_avatar_size', 64 );
+	$avatar_size = apply_filters( 'asc_avatar_size', 64 );
 	
 	// Use smaller avatars for replies.
 	if ( '0' != $comment->comment_parent ) {
-		$avatar_size = apply_filters( 'ascension_avatar_reply_size', 48 );
+		$avatar_size = apply_filters( 'asc_avatar_reply_size', 48 );
 	}
 
 	return get_avatar( $comment, $avatar_size );

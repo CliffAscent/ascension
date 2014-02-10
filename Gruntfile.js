@@ -115,8 +115,8 @@ module.exports = function( grunt ) {
     } );
 
 	// Register the grunt tasks.
-    grunt.registerTask( 'default', [] );
-    grunt.registerTask( 'setup',   ['bower', 'uglify:vendors'] );
-	grunt.registerTask( 'scripts', ['uglify:framework'] );
-	grunt.registerTask( 'styles',  ['sass', 'cssc', 'cssmin'] );
+    grunt.registerTask( 'default',    [] );
+    grunt.registerTask( 'dl-scripts', ['bower', 'uglify:vendors'] );
+	grunt.registerTask( 'scripts',    ['uglify:framework'] );
+	grunt.registerTask( 'styles',     ['sass', 'cssc', 'cssmin'] );
 };

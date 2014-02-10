@@ -26,7 +26,7 @@ function asc_custom_header_setup() {
 	global $asc_theme_options;
 
 	if ( $asc_theme_options['asc_header_layout'] === 'Banner Image' ) {
-		$args = array(
+		$header_args = array(
 			'default-image'          => ASC_TEMPLATE_DIR_URI . '/images/headers/luna.jpg',
 			'header-text'            => true,
 			'uploads'                => true,
@@ -41,7 +41,7 @@ function asc_custom_header_setup() {
 	}
 
 	else {
-		$args = array(
+		$header_args = array(
 			'default-image'          => ASC_TEMPLATE_DIR_URI . '/images/headers/aquarius.jpg',
 			'header-text'            => true,
 			'uploads'                => true,
@@ -56,28 +56,30 @@ function asc_custom_header_setup() {
 	}
 
 	// Filter hook to allow customization of the header arguments.
-	$args = apply_filters( 'asc_custom_header_args', $args );
-	add_theme_support( 'custom-header', $args );
+	$header_args = apply_filters( 'asc_custom_header_args', $header_args );
+	add_theme_support( 'custom-header', $header_args );
 
 	// Default custom headers packaged with the theme.
 	if ( $asc_theme_options['asc_header_layout'] === 'Banner Image' ) {
-		register_default_headers( array(
+		$default_header_args = array(
 			'luna' => array(
 				'url'           => '%s/images/headers/luna.jpg',
 				'thumbnail_url' => '%s/images/headers/luna-thumbnail.jpg',
 				'description'   => __( 'Luna', 'ascension' )
 			)
-		) );
+		);
 	}
 	else {
-		register_default_headers( array(
+		$default_header_args = array(
 			'aquarius' => array(
 				'url'           => '%s/images/headers/aquarius.jpg',
 				'thumbnail_url' => '%s/images/headers/aquarius.jpg',
 				'description'   => __( 'Aquarius', 'ascension' )
 			)
-		) );
+		);
 	}
+	
+	register_default_headers( apply_filters( 'asc_custom_header_defaults', $default_header_args ) );
 }
 add_action( 'after_setup_theme', 'asc_custom_header_setup' );
 
@@ -179,6 +181,9 @@ if ( ! function_exists( 'asc_admin_header_style' ) ) :
 function asc_admin_header_style() {
 	?>
 		<style type="text/css">
+			img {
+				max-width: 100%;
+			}
 			.appearance_page_custom-header #headimg {
 				border: none;
 			}

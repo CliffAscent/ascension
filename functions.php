@@ -87,21 +87,21 @@ function asc_setup() {
 
 	// Add theme supports.
 	add_theme_support( 'automatic-feed-links' );
-	add_theme_support( 'post-formats', apply_filters( 'ascension_post_formats', array( 'aside', 'audio', 'chat', 'gallery', 'image', 'link', 'quote', 'slider', 'status', 'video' ) ) );
-	add_theme_support( 'custom-background', apply_filters( 'ascension_custom_bg_default', array( 'default-color' => 'fff' ) ) );
+	add_theme_support( 'post-formats', apply_filters( 'asc_post_formats', array( 'aside', 'audio', 'chat', 'gallery', 'image', 'link', 'quote', 'slider', 'status', 'video' ) ) );
+	add_theme_support( 'custom-background', apply_filters( 'asc_custom_bg_defaults', array( 'default-color' => 'fff' ) ) );
 	add_theme_support( 'post-thumbnails' );
 	
 	// Use HTML5 markup for supported forms.
 	add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list' ) );
 	
 	// Set the default post thumbnail size.
-	set_post_thumbnail_size( apply_filters( 'ascension_image_width_thumb', 100 ), apply_filters( 'ascension_image_height_thumb', 100 ) );
+	set_post_thumbnail_size( apply_filters( 'asc_image_width_thumb', 100 ), apply_filters( 'asc_image_height_thumb', 100 ) );
 	
 	// Add custom image sizes that match the grid breakpoints.
-	add_image_size( 'ascension-slider', apply_filters( 'ascension_image_width_slider', 1200 ), apply_filters( 'ascension_image_height_slider', 300 ), apply_filters( 'ascension_image_crop', true ) );
-	add_image_size( 'ascension-large', apply_filters( 'ascension_image_width_large', 1200 ), apply_filters( 'ascension_image_height_large', 0 ) );
-	add_image_size( 'ascension-medium', apply_filters( 'ascension_image_width_medium', 800 ), apply_filters( 'ascension_image_height_medium', 0 ) );
-	add_image_size( 'ascension-small', apply_filters( 'ascension_image_width_small', 400 ), apply_filters( 'ascension_image_height_small', 0 ) );
+	add_image_size( 'ascension-slider', apply_filters( 'asc_image_width_slider', 1200 ), apply_filters( 'asc_image_height_slider', 300 ), apply_filters( 'asc_image_crop_slider', true ) );
+	add_image_size( 'ascension-large', apply_filters( 'asc_image_width_large', 1200 ), apply_filters( 'asc_image_height_large', 0 ) );
+	add_image_size( 'ascension-medium', apply_filters( 'asc_image_width_medium', 800 ), apply_filters( 'asc_image_height_medium', 0 ) );
+	add_image_size( 'ascension-small', apply_filters( 'asc_image_width_small', 400 ), apply_filters( 'asc_image_height_small', 0 ) );
 }
 add_action( 'after_setup_theme', 'asc_setup' );
 

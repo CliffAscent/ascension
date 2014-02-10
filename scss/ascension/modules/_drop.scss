@@ -3,8 +3,13 @@
 */
 
 .drop {
-	position: relative;
 	
+	&.relative {
+		position: relative;
+	}
+	.entry-content & {
+		position: relative;
+	}
 	.drop-control {
 		cursor: pointer;
 		display: none;

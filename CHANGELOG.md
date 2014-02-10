@@ -1,5 +1,13 @@
 # Change Log
 
++ 10 February 2014
+	+ Header defaults hook added
+	+ Hooks starting with ascension_ changed to asc_
+	+ Misc hook changes
+	+ .drop changed to only be relative inside of entry-content or if .relative is added
+	+ grunt setup renamed to grunt dl-scripts
+	+ Various bug fixes
+
 + 08 February 2014
 	+ Misc. cleanup
 	+ Margin changes for headings and post content

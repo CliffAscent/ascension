@@ -2035,8 +2035,6 @@ body > .wrapper > .row {
 /**
 * Responsive dropdowns
 */
-.drop {
-  position: relative; }
   .drop .drop-control {
     cursor: pointer;
     display: none; }

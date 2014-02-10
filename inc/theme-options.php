@@ -581,7 +581,7 @@ function asc_theme_options_scripts() {
 	wp_enqueue_style( 'ascension-theme-options', ASC_TEMPLATE_DIR_URI . '/css/theme-options.css' );
 	
 	// Load enquire.js to run media queries in JavaScript for advanced functionality.
-	wp_enqueue_script( 'enquire-js', ASC_TEMPLATE_DIR_URI . '/js/vendor/enquire.js', array(), '2.0.2', false );
+	wp_enqueue_script( 'enquire-js', ASC_TEMPLATE_DIR_URI . '/js/vendor/enquire/enquire.js', array(), '2.0.2', false );
 	// Load the Ascension script.
 	wp_enqueue_script( 'ascension', ASC_TEMPLATE_DIR_URI . '/js/ascension.js', array( 'jquery' ), ASC_SCRIPT_VERSION, false );
 }
