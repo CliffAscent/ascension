@@ -350,43 +350,6 @@ add_filter( 'post_class', 'asc_entry_classes' );
 
 
 /**
- * Custom Walker Nav
- *
- * Modify the default behaviour of wp_nav_menu()
- * This overrides methods of Walker_Nav_Menu in wp-includes/nav-menu-template.php
- */
-class Asc_walker_Nav_Menu extends Walker_Nav_Menu {
-	// Add a class to menu items with a sub menu.
-    function display_element( $element, &$children_elements, $max_depth, $depth = 0, $args, &$output ) {
-        $id_field = $this->db_fields['id'];
-        if ( ! empty( $children_elements[ $element->$id_field ] ) ) {
-            $element->classes[] = 'has-sub-menu';
-        }
-        Walker_Nav_Menu::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );
-    }
-	
-	// Add a depth class to sub-menus
-	function start_lvl( &$output, $depth = 0, $args = array() ) {
-		$indent = str_repeat( "\t", $depth );
-		$new_depth = $depth + 1;
-		
-		if ( $depth === 0 ) {
-			$output .= "\n$indent<ul class=\"sub-menu depth-$new_depth\">\n";
-		}
-		else {
-			$output .= "\n$indent<ul class=\"sub-menu depth-$new_depth sub-sub-menu\">\n";
-		}
-	}
-	
-	// Close the container on sub-menus
-	function end_lvl( &$output, $depth = 0, $args = array() ) {
-		$indent = str_repeat("\t", $depth);
-		$output .= "$indent</ul>\n";
-	}
-}
-
-
-/**
  * Excerpts
  *
  * Customize the post excerpts.

@@ -8,6 +8,7 @@
 	+ Vertical or horizontal menu classes have changed.
 	+ Reduced CSS specificity where possible.
 	+ Misc CSS changes.
+	+ Custom walker nav removed.
 
 + 10 February 2014
 	+ Header defaults hook added

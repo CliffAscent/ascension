@@ -681,6 +681,48 @@ input[type="submit"] {
     padding: 0.25em 0; }
     .widget li.current-menu-item > a {
       text-decoration: underline; }
+  .widget .menu-item.menu-item-has-children > a:after {
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: top;
+    *vertical-align: auto;
+    zoom: 1;
+    *display: inline;
+    color: inherit;
+    content: "\f140";
+    font-family: 'dashicons';
+    font-size: inherit;
+    font-style: normal;
+    font-weight: normal;
+    line-height: inherit;
+    margin: 0 0 0 0.5em;
+    text-decoration: none;
+    -webkit-font-smoothing: antialiased;
+    /* IE7 and IE6 hacks */
+    *display: inline;
+    *overflow: auto;
+    *zoom: 1; }
+  .widget .menu-item.menu-item-has-children.opened > a:after {
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: top;
+    *vertical-align: auto;
+    zoom: 1;
+    *display: inline;
+    color: inherit;
+    content: "\f142";
+    font-family: 'dashicons';
+    font-size: inherit;
+    font-style: normal;
+    font-weight: normal;
+    line-height: inherit;
+    margin: 0 0 0 0.5em;
+    text-decoration: none;
+    -webkit-font-smoothing: antialiased;
+    /* IE7 and IE6 hacks */
+    *display: inline;
+    *overflow: auto;
+    *zoom: 1; }
 
 .menu.vertical .menu-item {
   border-bottom: 1px solid #dddddd; }

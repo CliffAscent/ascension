@@ -143,8 +143,6 @@ createSlider :
 					var $this      = $( this );
 					// Store the sub-menu if the menu-item has one.
 					var $subMenu   = $this.children( '.sub-menu' );
-					// Is it a sub-menu inside of another sub-menu?
-					var $subSub    = $( $subMenu ).hasClass( 'sub-sub-menu' );
 					// Get all other sub-menus in this menu.
 					var $otherSubs = $subMenu.parents( '.menu' ).find( '.sub-menu' ).not( $subMenu );
 
@@ -169,8 +167,8 @@ createSlider :
 								if ( ! inQuery ) {
 									e.preventDefault();
 									
-									// Set a custom display type for the .sub-sub-menu display.
-									if ( $subSub ) {
+									// Set a custom display type for nested sub-menus.
+									if ( $subMenu.parents( '.sub-menu' ).length ) {
 										Asc.open( $subMenu, Asc.config.subSubMenuDisplay );
 										$subMenu.parent( '.menu-item' ).addClass( 'opened' );
 									}

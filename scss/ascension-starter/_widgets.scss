@@ -61,6 +61,15 @@
 					}
 				}
 			}
+			.menu-item.menu-item-has-children {
+			
+				> a {
+					@include gen-dashicon('\f140', after, $margin: 0 0 0 0.5em);
+				}
+				&.opened > a {
+					@include gen-dashicon('\f142', after, $margin: 0 0 0 0.5em);
+				}
+			}
 }
 	.widget-title {
 	
