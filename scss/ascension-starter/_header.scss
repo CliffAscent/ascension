@@ -8,50 +8,52 @@
 	
 	.contain {
 		
-		.header-image-link {
-			margin-right: $push;
+	}
+}
+	.header-image-link {
+		margin-right: $push;
+		
+		&:hover {
 			
-			&:hover {
-				
-			}
-			.header-image {
-				
-			}
 		}
-		.header-info {
+	}
+		.header-image {
 			
-			.site-title {
-				color: $heading-color;
-				font-size: 2.2em;
-				
-				a {
-					
-					&:hover,
-					&:focus,
-					&:active {
-					
-					}
-				}
-			}
-			.site-description {
-				color: $meta-color;
-				font-size: 1.2em;
-			}
 		}
-		.social-icons {
+		
+	.header-info {
+		
+	}
+		.site-title {
+			color: $heading-color;
+			font-size: 2.2em;
 			
 			a {
 				
-				&:last-child {
-					
-				}
-				img {
-					
+				&:hover,
+				&:focus,
+				&:active {
+				
 				}
 			}
 		}
+		.site-description {
+			color: $meta-color;
+			font-size: 1.2em;
+		}
+		
+	.social-icons {
+		
+		a {
+			
+			&:last-child {
+				
+			}
+			img {
+				
+			}
+		}
 	}
-}
 
 // Main navigation.
 #navigation {
@@ -60,22 +62,58 @@
 	
 	.menu {
 		text-align: center;
+	}
+	.menu-item {
+		margin: 0;
 		
-		& > .menu-item {
-			margin: 0;
+		&:hover {
+			background: $text-color;
+		}
+		&.current-menu-item {
+		
+			& > a {
+				background: $text-color;
+				color: $link-color;
+				text-decoration: none;
+			}
+		}
+		a {
+			color: $bg-alt-color;
 			
+			&:hover,
+			&:focus,
+			&:active {
+				color: $link-color;
+			}
+		}
+	}
+	.sub-menu {
+		background: $text-color;
+		
+		.menu-item {
+			@include gen-border(bottom, $color: $heading-color);
+			padding: 0.25em 0;
+			
+			&:last-child {
+				border-bottom: 0;
+			}
 			&:hover {
 				background: $text-color;
 			}
-			&.current-menu-item {
-			
-				& > a {
-					background: $text-color;
-					color: $link-color;
-					text-decoration: none;
-				}
-			}
 			a {
+				
+			}
+		}
+	}
+	// templates/modules/navigation-main was customized to move the navigation
+	// into a dropdown at the medium breakpoint. This media query will control
+	// the display of the menu when it collapses into a dropdown.
+	@media ( max-width: $large-starts-at ) {
+		.drop-control {
+			text-align: center;
+			
+			h2 {
+				@include gen-dashicon('\f333', $margin: 0 0.25em 0 0);
 				color: $bg-alt-color;
 				
 				&:hover,
@@ -84,57 +122,19 @@
 					color: $link-color;
 				}
 			}
-			.sub-menu {
-				background: $text-color;
-				
-				.menu-item {
-					
-					&:hover {
-						background: $text-color;
-					}
-					a {
-						
-					}
-				}
-			}
 		}
-	}
-	// templates/modules/navigation-main was customized to move the navigation
-	// into a dropdown at the medium breakpoint. This media query will control
-	// the display of the menu when it collapses into a dropdown.
-	@media ( max-width: $large-starts-at ) {
-		.drop.at-medium {
-		
-			.drop-control {
-				text-align: center;
+		.drop-content {
+			@include gen-borders($color: $heading-color, $radius: 0);
+			background: $text-color;
+			padding: 0;
+			
+			.menu-item {
+				@include gen-border(bottom, $color: $heading-color);
+				margin: 0;
+				padding: 0.25em 0;
 				
-				h2 {
-					@include gen-dashicon('\f333', $margin: 0 0.25em 0 0);
-					color: $bg-alt-color;
-					
-					&:hover,
-					&:focus,
-					&:active {
-						color: $link-color;
-					}
-				}
-			}
-			.drop-content {
-				@include gen-borders($color: $heading-color, $radius: 0);
-				background: $text-color;
-				padding: 0;
-				
-				.menu {
-					
-					.menu-item {
-						@include gen-border(bottom, $color: $heading-color);
-						margin: 0;
-						padding: 0.25em 0;
-						
-						&:last-child {
-							border-bottom: 0;
-						}
-					}
+				&:last-child {
+					border-bottom: 0;
 				}
 			}
 		}
@@ -142,18 +142,21 @@
 }
 
 // Default header type.
-#header .header-default {
+.header-default {
 	
 	.contain {
 		
+	}
 		.header-image-link {
 			
+		}
 			.header-image {
 				
 			}
-		}
+			
 		.header-info {
 			
+		}
 			.site-title {
 				
 				a {
@@ -168,26 +171,26 @@
 			.site-description {
 				
 			}
-		}
-	}
 }
 
 // Banner header type.
-#header .header-banner {
+.header-banner {
 	
 	.contain {
 		
+	}
 		.header-image-link {
 			
+		}
 			.header-image {
 				
 			}
-		}
+			
 		.header-info {
 			background: rgba($white, 0.75);
 			margin: $pad;
 			padding: $pad;
-			
+		}
 			.site-title {
 			
 				a {
@@ -202,20 +205,21 @@
 			.site-description {
 				@include show(large);
 			}
-		}
+			
 		.social-icons {
 			padding: $pad;
 		}
-	}
 }
 
 // Widget header type.
-#header .header-widget {
+.header-widget {
 	
 	.contain {
 		
+	}
 		.header-info {
 			
+		}
 			.site-title {
 			
 				a {
@@ -230,6 +234,4 @@
 			.site-description {
 				
 			}
-		}
-	}
 }

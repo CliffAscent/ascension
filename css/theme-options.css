@@ -1251,45 +1251,47 @@
   *vertical-align: auto;
   zoom: 1;
   *display: inline; }
-  .tip .tip-control {
-    cursor: pointer;
-    position: relative; }
-    .tip .tip-control:before {
-      display: -moz-inline-stack;
-      display: inline-block;
-      vertical-align: top;
-      *vertical-align: auto;
-      zoom: 1;
-      *display: inline;
-      color: inherit;
-      content: "\f348";
-      font-family: 'dashicons';
-      font-size: inherit;
-      font-style: normal;
-      font-weight: normal;
-      line-height: inherit;
-      margin: 0;
-      text-decoration: none;
-      -webkit-font-smoothing: antialiased;
-      /* IE7 and IE6 hacks */
-      *display: inline;
-      *overflow: auto;
-      *zoom: 1; }
-  .tip .tip-content {
-    background: white;
-    display: none;
-    margin: 0;
-    max-width: 300px;
-    padding: 0.5em;
-    position: absolute;
-    z-index: 999; }
   .no-js .tip:hover .tip-content {
     display: block; }
+
+.tip-control {
+  cursor: pointer;
+  position: relative; }
+  .tip-control:before {
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: top;
+    *vertical-align: auto;
+    zoom: 1;
+    *display: inline;
+    color: inherit;
+    content: "\f348";
+    font-family: 'dashicons';
+    font-size: inherit;
+    font-style: normal;
+    font-weight: normal;
+    line-height: inherit;
+    margin: 0;
+    text-decoration: none;
+    -webkit-font-smoothing: antialiased;
+    /* IE7 and IE6 hacks */
+    *display: inline;
+    *overflow: auto;
+    *zoom: 1; }
+
+.tip-content {
+  background: white;
+  display: none;
+  margin: 0;
+  max-width: 300px;
+  padding: 0.5em;
+  position: absolute;
+  z-index: 999; }
 
 /**
  * Tooltips
  */
-.tip .tip-content {
+.tip-content {
   border: 1px solid #dddddd;
   background: #fafafa; }
 

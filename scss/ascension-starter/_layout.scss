@@ -37,36 +37,36 @@ body > .wrapper > .row {
 
 	.contain {
 	
-		.next-posts {
-			
-			a {
-				@include gen-dashicon('\f344', $place: after, $margin: 0 0 0 0.25em);
-			}
-		}
-		.prev-posts {
-			
-			a {
-				@include gen-dashicon('\f340', $margin: 0 0.25em 0 0);
-			}
-		}
 	}
 }
+	.next-posts {
+		
+		a {
+			@include gen-dashicon('\f344', $place: after, $margin: 0 0 0 0.25em);
+		}
+	}
+	.prev-posts {
+		
+		a {
+			@include gen-dashicon('\f340', $margin: 0 0.25em 0 0);
+		}
+	}
 
 // Links to image attachments attached to the same post.
 .image-links {
 	
 	.contain {
 	
-		.next-image {
-			
-		}
-		.prev-image {
-			
-		}
 	}
 }
+	.next-image {
+		
+	}
+	.prev-image {
+		
+	}
 
 // Credits element hooked into wp_footer.
-.credits {
+.ascension-credits {
 	
 }

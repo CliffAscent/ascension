@@ -3,38 +3,45 @@
  */
 
 .slider {
-	margin-bottom: $push-lg;
 
+}
 	.slides {
 		
 		li {
 			
-			img {
+			a {
+			
+				img {
 				
-			}
-			.slide-content {
-				
-				.contain {
-					background: rgba($black, 0.75);
-					color: $white;
-					padding: $pad;
-				
-					.slide-title {
-						color: $white;
-						line-height: 1;
-					}
-					.slide-text {
-						@include show(large);
-						padding: 0.25em 0;
-						
-						p {
-							margin: 0;
-						}
-					}
 				}
 			}
 		}
 	}
+		.slide-content {
+			bottom: 0;
+			position: absolute;
+			width: 100%;
+			z-index: 99;
+			
+			.contain {
+				background: rgba($black, 0.75);
+				color: $white;
+				padding: $pad;
+			}
+		}
+			.slide-title {
+				color: $white;
+				line-height: 1;
+			}
+			.slide-text {
+				@include show(large);
+				padding: 0.25em 0;
+				
+				p {
+					margin: 0;
+				}
+			}
+			
 	.flex-control-nav {
 		
 		li {
@@ -52,6 +59,7 @@
 			}
 		}
 	}
+	
 	.flex-direction-nav {
 		@include show(large);
 	
@@ -77,7 +85,6 @@
 			}
 		}
 	}
-}
 
 .carousel {
 	

@@ -4,6 +4,7 @@
 
 .slider {
 
+}
 	.slides {
 		@include clear-fix;
 		list-style-type: none;
@@ -18,10 +19,6 @@
 				width: 100%;
 			}
 			.slide-content {
-				bottom: 0;
-				position: absolute;
-				width: 100%;
-				z-index: 99;
 				
 				.contain {
 				
@@ -87,7 +84,7 @@
 			}
 		}
 	}
-}
+
 // No JavaScript fallback to display the first slide.
 .no-js .slider .slides li:first-child {
 	display: block;

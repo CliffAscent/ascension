@@ -13,19 +13,18 @@ table {
 	
 		tr {
 			@include gen-border(bottom, $size: 2px);
-			
+		}
 			th {
 				font-weight: bold;
 				padding: $pad;
 				text-align: center;
 			}
-		}
 	}
 	tbody {
 		
 		tr {
 			@include gen-border(bottom);
-			
+		}
 			td {
 				@include gen-border(right);
 				padding: $pad;
@@ -34,6 +33,5 @@ table {
 					border-right: 0;
 				}
 			}
-		}
 	}
 }

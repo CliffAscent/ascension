@@ -314,7 +314,7 @@ function asc_body_classes( $classes ) {
 	}
 
 	if ( is_active_sidebar( 'main-slider' ) ) {
-		$classes[] = 'slider';
+		$classes[] = 'main-slider-active';
 	}
 	
 	return $classes;
@@ -396,11 +396,11 @@ class Asc_walker_Nav_Menu extends Walker_Nav_Menu {
 function asc_excerpt_length( $length ) {
 	return 60;
 }
-add_filter( 'excerpt_length', 'asc_excerpt_length' );
+add_filter( 'excerpt_length', 'asc_excerpt_length', 99 );
 
 // Set a new read more link for the post excerpt.
 function asc_excerpt_more( $more ) {
-	return asc_get_read_more();
+	return '<a class="more-link" href="'. get_permalink( get_the_ID() ) . '">' . asc_get_read_more() . '</a>';
 }
 add_filter( 'excerpt_more', 'asc_excerpt_more' );
 

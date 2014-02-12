@@ -1,5 +1,14 @@
 # Change Log
 
++ 12 February 2014
+	+ Ensure user can upload files before displaying the slider mat box.
+	+ Changed the orderby for the 'activated' slider query.
+	+ Removed some extra 'after image' hooks.
+	+ Added an option to remove a slider image in the post edit screen.
+	+ Vertical or horizontal menu classes have changed.
+	+ Reduced CSS specificity where possible.
+	+ Misc CSS changes.
+
 + 10 February 2014
 	+ Header defaults hook added
 	+ Hooks starting with ascension_ changed to asc_

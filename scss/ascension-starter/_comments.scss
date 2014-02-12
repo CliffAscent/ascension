@@ -4,6 +4,7 @@
 
 #comments {
 
+}
 	.comments-title {
 	
 	}
@@ -12,6 +13,7 @@
 	}
 	.comments-list {
 	
+	}
 		.comment {
 			margin-bottom: $push;
 			padding: $pad;
@@ -34,86 +36,6 @@
 			}
 			article {
 				
-				.comment-header {
-					margin-bottom: $push;
-				}
-					.comment-author {
-					
-						&.avatar {
-						
-						}
-						&.vcard {
-						
-						}
-					}
-					.comment-details {
-						margin-bottom: $push;
-						
-						.meta {
-							margin-right: $push;
-						
-							a {
-								
-								&:hover,
-								&:focus,
-								&:active {
-
-								}
-							}
-							&.author {
-								@include gen-dashicon('\f110', $margin: 0 0.25em 0 0);
-								
-								a {
-									
-								}
-							}
-							&.date {
-								@include gen-dashicon('\f145', $margin: 0 0.25em 0 0);
-								
-								a {
-									
-								}
-							}
-							&.time {
-								@include gen-dashicon('\f469', $margin: 0 0.25em 0 0);
-								
-								a {
-									
-								}
-							}
-						}
-					}
-				.comment-content {
-					@include gen-dashicon('\f122');
-					margin-bottom: $push;
-					
-					p,
-					ol,
-					ul {
-						margin-left: 1.5em;
-						
-						&:last-child {
-							margin-bottom: 0;
-						}
-					}
-				}
-				.comment-footer {
-					
-				}
-					.comment-reply {
-						margin-bottom: $push;
-						
-						.comment-reply-link {
-							@include gen-dashicon('\f346', $place: after, $margin: 0 0 0 0.5em);
-						}
-					}
-					.comment-edit {
-						@include gen-dashicon('\f327', $margin: 0 0.5em 0 0);
-						
-						.comment-edit-link {
-							
-						}
-					}
 			}
 			.children {
 				@include gen-border(left);
@@ -127,6 +49,88 @@
 				}
 			}
 		}
+			.comment-header {
+				margin-bottom: $push;
+			}
+				.comment-author {
+				
+					&.avatar {
+					
+					}
+					&.vcard {
+					
+					}
+				}
+				.comment-details {
+					margin-bottom: $push;
+					
+					.meta {
+						margin-right: $push;
+					
+						a {
+							
+							&:hover,
+							&:focus,
+							&:active {
+
+							}
+						}
+						&.author {
+							@include gen-dashicon('\f110', $margin: 0 0.25em 0 0);
+							
+							a {
+								
+							}
+						}
+						&.date {
+							@include gen-dashicon('\f145', $margin: 0 0.25em 0 0);
+							
+							a {
+								
+							}
+						}
+						&.time {
+							@include gen-dashicon('\f469', $margin: 0 0.25em 0 0);
+							
+							a {
+								
+							}
+						}
+					}
+				}
+			.comment-content {
+				@include gen-dashicon('\f122');
+				margin-bottom: $push;
+				
+				.contain {
+					padding-left: 1.5em;
+				}
+					ol,
+					ul {
+						margin-left: 1.5em;
+						
+						&:last-child {
+							margin-bottom: 0;
+						}
+					}
+			}
+			.comment-footer {
+				
+			}
+				.comment-reply {
+					margin-bottom: $push;
+					
+					.comment-reply-link {
+						@include gen-dashicon('\f346', $place: after, $margin: 0 0 0 0.5em);
+					}
+				}
+				.comment-edit {
+					@include gen-dashicon('\f327', $margin: 0 0.5em 0 0);
+					
+					.comment-edit-link {
+						
+					}
+				}
 		.pingback {
 			
 			p {
@@ -141,34 +145,33 @@
 				}
 			}
 		}
-	}
 	.no-comments {
 	
 	}
-}
 
 // Links to pages with more comments.
 .comments-pages {
 
 	.contain {
 	
-		.next-comments {
-			
-			a {
-				@include gen-dashicon('\f344', $place: after, $margin: 0 0 0 0.25em);
-			}
-		}
-		.prev-comments {
-			
-			a {
-				@include gen-dashicon('\f340', $margin: 0 0.25em 0 0);
-			}
-		}
 	}
 }
+	.next-comments {
+		
+		a {
+			@include gen-dashicon('\f344', $place: after, $margin: 0 0 0 0.25em);
+		}
+	}
+	.prev-comments {
+		
+		a {
+			@include gen-dashicon('\f340', $margin: 0 0.25em 0 0);
+		}
+	}
 
 #respond {
 
+}
 	.comment-reply-title {
 	
 	}
@@ -206,4 +209,3 @@
 		
 		}
 	}
-}

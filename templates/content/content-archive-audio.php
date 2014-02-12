@@ -31,8 +31,6 @@ $image   = has_post_thumbnail();
 			<?php do_action( 'asc_after_entry_image' ); ?>
 		<?php endif; ?>
 		
-		<?php do_action( 'asc_after_entry_image' ); ?>
-		
 		<?php if ( $title ) : ?>
 			<h1 class="entry-title">
 				<?php echo $title; ?>

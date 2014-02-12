@@ -38,8 +38,6 @@ $image   = has_post_thumbnail();
 				
 					<?php do_action( 'asc_after_entry_image' ); ?>
 				<?php endif; ?>
-				
-				<?php do_action( 'asc_after_entry_image' ); ?>
 
 				<div class="entry-content <?php echo apply_filters( 'asc_entry_content_class', '' ); ?>">
 					<div class="contain">

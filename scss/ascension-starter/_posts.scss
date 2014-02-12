@@ -11,26 +11,28 @@
 	&.sticky {
 		
 	}
+}
 	.entry-header {
 		margin-bottom: $push;
 	}
 		.entry-image {
 			
-				&.archive-entry-image {
-				
-				}
-				.entry-image-link {
-					
-				}
-					.the-entry-image {
-						margin-bottom: 1em;
-					
-						&.entry-thumbnail {
-							float: left;
-							margin: 0.5em;
-						}
-					}
+			&.archive-entry-image {
+			
+			}
 		}
+			.entry-image-link {
+				
+			}
+				.the-entry-image {
+					margin-bottom: 1em;
+				
+					&.entry-thumbnail {
+						float: left;
+						margin: 0.5em;
+					}
+				}
+				
 		.entry-title {
 		
 			a {
@@ -97,6 +99,7 @@
 				}
 			}
 		}
+		
 	.entry-content {
 		margin-bottom: $push;
 		
@@ -107,14 +110,15 @@
 			ul {
 				
 			}
-			.more-link {
-			
-				.read-more {
-					@include gen-dashicon('\f310', $place: after, $margin: 0 0 0 0.5em);
-				}
-			}
 		}
 	}
+		.more-link {
+					
+			.read-more {
+				@include gen-dashicon('\f310', $place: after, $margin: 0 0 0 0.5em);
+				margin-left: 0.5em;
+			}
+		}
 		// Shown if a post is split into pages.
 		.entry-pages {
 		
@@ -133,6 +137,7 @@
 				@include gen-button-activated($padding: 0.15em 0.5em);
 			}
 		}
+		
 	.entry-footer {
 	
 		> * {
@@ -167,4 +172,3 @@
 				}
 			}
 		}
-}

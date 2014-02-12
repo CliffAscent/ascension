@@ -7,7 +7,7 @@
 	
 	.contain {
 		position: relative;
-		
+	}
 		.header-image-link {
 			line-height: 0;
 			
@@ -15,14 +15,16 @@
 				text-decoration: none;
 			}
 		}
+		
 		.header-info {
 			
+		}
 			.site-title,
 			.site-description {
 				line-height: 1;
 				margin: 0;
 			}
-		}
+			
 		.social-icons {
 			position: absolute;
 			right: 0;
@@ -39,7 +41,6 @@
 				}
 			}
 		}
-	}
 }
 
 // Default header type.
@@ -59,7 +60,7 @@
 	
 	.contain {
 		position: relative;
-		
+	}
 		.header-image {
 			width: 100%;
 		}
@@ -68,5 +69,4 @@
 			position: absolute;
 			top: 0;
 		}
-	}
 }

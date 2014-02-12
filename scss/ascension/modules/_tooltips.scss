@@ -5,6 +5,13 @@
 .tip {
 	@include inline-block(top);
 	
+	.no-js &:hover {
+		
+		.tip-content {
+			display: block;
+		}
+	}
+}
 	.tip-control {
 		@include gen-dashicon('\f348');
 		cursor: pointer;
@@ -19,10 +26,3 @@
 		position: absolute;
 		z-index: 999;
 	}
-	.no-js &:hover {
-		
-		.tip-content {
-			display: block;
-		}
-	}
-}

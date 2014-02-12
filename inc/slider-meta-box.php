@@ -5,15 +5,26 @@
  * Add a meta box to posts for custom slider content.
  */
 
+// Add hooks
+if ( ! function_exists( 'asc_hook_slider_meta_box' ) ) :
+function asc_hook_slider_meta_box() {
+	if ( current_user_can( 'upload_files' ) ) {
+		add_action( 'add_meta_boxes', 'asc_add_slider_meta_box' );
+		add_action( 'post_edit_form_tag', 'asc_add_post_form_tag' );
+		add_action( 'save_post', 'asc_save_slider_meta_box' );
+	}
+}
+endif; // End asc_hook_slider_meta_box()
+add_action( 'init', 'asc_hook_slider_meta_box' );
+
+
 // Register the meta box.
 if ( ! function_exists( 'asc_add_slider_meta_box' ) ) :
 function asc_add_slider_meta_box() {
-	if ( current_user_can( 'upload_files' ) ) {
-		add_meta_box( 'asc-slider-meta', 'Custom Slider Content', 'asc_slider_meta_box', apply_filters( 'asc_slider_meta_post_type', 'post' ), 'side', 'low' );
-	}
+	add_meta_box( 'asc-slider-meta', 'Custom Slider Content', 'asc_slider_meta_box', apply_filters( 'asc_slider_meta_post_type', 'post' ), 'side', 'low' );
 }
 endif; // End asc_add_slider_meta_box()
-add_action( 'add_meta_boxes', 'asc_add_slider_meta_box' );
+
 
 // Output the meta box.
 if ( ! function_exists( 'asc_slider_meta_box' ) ) :
@@ -43,6 +54,8 @@ function asc_slider_meta_box( $post ) {
 		$image_src = wp_get_attachment_image_src( $image_id, 'ascension-slider' );
 		$image_url = $image_src[0];
 		
+		$html .= '<input type="checkbox" name="asc_slider_image_remove" id="asc_slider_image_remove" value="remove" />';
+		$html .= '<label for="asc_slider_image"> ' . __( 'Remove Slider Image', 'ascension' ) . '</label>';
 		$html .= '<img style="max-width: 100%; margin-top: 1em;" src="' . $image_url . '" />';
 	}
 	
@@ -65,19 +78,15 @@ function asc_slider_meta_box( $post ) {
 
 	// Add a security nonce.
 	wp_nonce_field( 'asc_slider_image_nonce', 'asc_slider_image_nonce' );
-	
-	// Change the form tag to support uploads.
-	add_action( 'post_edit_form_tag', 'asc_add_post_form_tag' );
-	
-	// Hook the function to save the slider meta content.
-	add_action( 'save_post', 'asc_save_slider_meta_box' );
 }
 endif; // End asc_slider_meta_box()
+
 
 // Set a new form tag to support image uploads.
 function asc_add_post_form_tag() {
 	echo ' enctype="multipart/form-data"';
 }
+
 
 // Save the meta box.
 if ( ! function_exists( 'asc_save_slider_meta_box' ) ) :
@@ -162,13 +171,22 @@ function asc_save_slider_meta_box( $post_id ) {
 	// There was no file uploaded.
 	else {
 		$image_upload_feedback = 'No file uploaded.';
+		
+		// Delete any previously uploaded image.
+		if ( isset( $_POST['asc_slider_image_remove'] ) && $_POST['asc_slider_image_remove'] == 'remove' ) {
+			$existing_uploaded_image = (int) get_post_meta( $post_id, '_slider_image_id', true );
+			if ( is_numeric( $existing_uploaded_image ) ) {
+				wp_delete_attachment( $existing_uploaded_image );
+				delete_post_meta( $post_id, '_slider_image_id' );
+			}
+		}
 	}
 
 	// Update the post meta with the upload feedback.
 	update_post_meta( $post_id, '_slider_image_id_upload_feedback', $image_upload_feedback );
 	
 	// Check if an title was set.
-	if( isset( $_POST['asc_slider_title'] ) ) {
+	if ( isset( $_POST['asc_slider_title'] ) ) {
 		// Sanitize the title.
 		$slider_title = $_POST['asc_slider_title'];
 		$slider_title = sanitize_text_field( $slider_title );
@@ -178,7 +196,7 @@ function asc_save_slider_meta_box( $post_id ) {
 	}
 	
 	// Check if an excerpt was set.
-	if( isset( $_POST['asc_slider_excerp'] ) ) {
+	if ( isset( $_POST['asc_slider_excerp'] ) ) {
 		// Sanitize the excerpt.
 		$slider_excerp = $_POST['asc_slider_excerp'];
 		$slider_excerp = sanitize_text_field( $slider_excerp );

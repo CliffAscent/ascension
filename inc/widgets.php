@@ -70,6 +70,8 @@ class Asc_Content_Slider extends WP_Widget {
 			$query_args = array(
 				'posts_per_page'      => $count,
 				'ignore_sticky_posts' => true,
+				'orderby'             => 'date',
+				'order'               => 'ASC',
 				'meta_query'          => array(
 					array(
 						'key'     => '_slider_image_id',
@@ -133,9 +135,13 @@ class Asc_Content_Slider extends WP_Widget {
 						?>
 							<li>
 								<?php if ( ! empty( $slider_image ) ) : ?>
-									<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><img src="<?php echo $slider_image; ?>" alt="<?php the_title_attribute(); ?>"></a>
+									<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
+										<img src="<?php echo $slider_image; ?>" alt="<?php the_title_attribute(); ?>">
+									</a>
 								<?php elseif ( has_post_thumbnail() ) : ?>
-									<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( 'ascension-slider' ); ?></a>
+									<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
+										<?php the_post_thumbnail( 'ascension-slider' ); ?>
+									</a>
 								<?php endif; ?>
 								<div class="slide-content">
 									<div class="contain">	

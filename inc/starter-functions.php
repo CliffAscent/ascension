@@ -1,5 +1,21 @@
 <?php
 /**
+ * Theme Functions
+ *
+ * Contains the theme functions, definitions, configurations, etc.
+ */
+
+
+/**
+ * Navigation Menu
+ *
+ * Versions
+ * Setup
+ * Scripts and Styles
+ */
+
+
+/**
  * Versions
  *
  * Version numbers tracking the various theme sections.

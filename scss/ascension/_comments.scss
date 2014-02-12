@@ -4,32 +4,28 @@
 
 #comments {
 
-	.comments-list {
-		list-style-type: none;
-		margin-left: 0;
-	}
-	
-	.comment-details .meta {
-		@include inline-block();
-		margin-right: 1em;
-		white-space: nowrap;
-	}
-	
 	.children {
 		list-style-type: none;
 	}
-	
-	.next-comments {
-		float: right;
-	}
-	.prev-comments {
-		float: left;
-	}
-	
-	#respond {
-	
-		textarea {
-			width: 100%;
-		}
+}
+.comments-list {
+	list-style-type: none;
+	margin-left: 0;
+}
+.comment-details .meta {
+	@include inline-block();
+	margin-right: 1em;
+	white-space: nowrap;
+}
+.next-comments {
+	float: right;
+}
+.prev-comments {
+	float: left;
+}
+#respond {
+
+	textarea {
+		width: 100%;
 	}
 }

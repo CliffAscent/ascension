@@ -26,6 +26,18 @@ $image = has_post_thumbnail();
 				
 				<header class="entry-header <?php echo apply_filters( 'asc_entry_header_class', '' ); ?>">
 					<?php do_action( 'asc_after_entry_header_open' ); ?>
+
+					<?php if ( $image ) : ?>
+						<div class="entry-image <?php echo apply_filters( 'asc_entry_image_class', '' ); ?>">
+							<?php do_action( 'asc_after_entry_image_open' ); ?>
+							
+							<?php the_post_thumbnail( 'ascension-large', array( 'class' => 'the-entry-image ' . apply_filters( 'asc_page_image_class', 'aligncenter' ) ) ); ?>
+							
+							<?php do_action( 'asc_before_entry_image_close' ); ?>
+						</div><!-- End .entry-image -->
+					
+						<?php do_action( 'asc_after_entry_image' ); ?>
+					<?php endif; ?>
 					
 					<?php if ( $title ) : ?>
 						<h1 class="entry-title">
@@ -37,18 +49,6 @@ $image = has_post_thumbnail();
 				</header><!-- End .entry-header -->
 				
 				<?php do_action( 'asc_after_entry_header' ); ?>
-
-				<?php if ( $image ) : ?>
-					<div class="entry-image <?php echo apply_filters( 'asc_entry_image_class', '' ); ?>">
-						<?php do_action( 'asc_after_entry_image_open' ); ?>
-						
-						<?php the_post_thumbnail( 'ascension-large', array( 'class' => 'the-entry-image ' . apply_filters( 'asc_page_image_class', 'aligncenter' ) ) ); ?>
-						
-						<?php do_action( 'asc_before_entry_image_close' ); ?>
-					</div><!-- End .entry-image -->
-				
-					<?php do_action( 'asc_after_entry_image' ); ?>
-				<?php endif; ?>
 
 				<div class="entry-content <?php echo apply_filters( 'asc_entry_content_class', '' ); ?>">
 					<div class="contain">

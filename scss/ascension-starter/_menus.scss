@@ -1,81 +1,141 @@
-/**
-* Menus
-*/
+//==========
+// Vertical Menus
+//==========
+.menu.vertical {
+	
+	.menu-item {
+		@include gen-border(bottom);
+		
+		&:nth-child(even) {
+			
+		}
+		&:nth-child(odd) {
+			
+		}
+		&:last-child {
+			
+		}
+		// Add an open/close arrow for a menu-item with a sub-menu.
+		&.menu-item-has-children {
+			
+			> a {
+				@include gen-dashicon('\f140', after, $margin: 0 0 0 0.5em);
+			}
+			&.opened > a {
+				@include gen-dashicon('\f142', after, $margin: 0 0 0 0.5em);
+			}
+		}
+		&.current-menu-item {
+		
+			& > a {
+				text-decoration: underline;
+			}
+		}
+		a {
+
+			&:hover,
+			&:focus,
+			&:active {
+				
+			}
+		}
+	}
+	.sub-menu {
+		
+		.menu-item {
+			
+			&:first-child {
+				@include gen-border(top);
+			}
+			&:last-child {
+				border-bottom: 0;
+				padding-bottom: 0;
+			}
+			a {
+				
+			}
+		}
+	}
+}
 
 
 //==========
 // Horizontal Menus
 //==========
-.horizontal-menu {
+.menu.horizontal {
 	
-	.menu {
+	.menu-item {
+		
+		&:hover {
+			background: $bg-alt-color;
+		}
+		&:last-child {
+			
+		}
+		// Add an open/close arrow for a menu-item with a sub-menu.
+		&.menu-item-has-children {
+			
+			> a {
+				@include gen-dashicon('\f140', after, $margin: 0 0 0 0.5em);
+			}
+			&.opened > a {
+				@include gen-dashicon('\f142', after, $margin: 0 0 0 0.5em);
+			}
+		}
+		&.current-menu-item {
+		
+			& > a {
+				text-decoration: underline;
+			}
+		}
+		a {
+			@include inline-block;
+			padding: $pad 0.75em;
+			
+			&:hover,
+			&:focus,
+			&:active {
+				
+			}
+		}
+	}
+	.sub-menu {
+		background: $bg-alt-color;
 		
 		.menu-item {
 			
-			&:hover {
-				background: $bg-alt-color;
-			}
-			&:last-child {
-				
-			}
-			// Add an open/close arrow for a menu-item with a sub-menu.
-			&.has-sub-menu {
+			// Change the sub-menu menu-item arrows.
+			&.menu-item-has-children {
 				
 				> a {
-					@include gen-dashicon('\f140', after, $margin: 0 0 0 0.5em);
+					@include gen-dashicon('\f139', after, $margin: 0 0 0 0.5em);
 				}
 				&.opened > a {
-					@include gen-dashicon('\f142', after, $margin: 0 0 0 0.5em);
-				}
-			}
-			&.current-menu-item {
-			
-				& > a {
-					text-decoration: underline;
+					@include gen-dashicon('\f141', after, $margin: 0 0 0 0.5em);
 				}
 			}
 			a {
-				@include inline-block;
-				padding: $pad 0.75em;
-				
-				&:hover,
-				&:focus,
-				&:active {
-					
-				}
+				padding: 0.25em 2em 0.25em 0.5em;
 			}
-			.sub-menu {
-				background: $bg-alt-color;
+			> .sub-menu {
 				
-				.menu-item {
-					
-					// Change the sub-menu menu-item arrows.
-					&.has-sub-menu {
-						
-						> a {
-							@include gen-dashicon('\f139', after, $margin: 0 0 0 0.5em);
-						}
-						&.opened > a {
-							@include gen-dashicon('\f141', after, $margin: 0 0 0 0.5em);
-						}
-					}
-					a {
-						padding: 0.25em 2em 0.25em 0.5em;
-					}
-					.sub-sub-menu {
-						
-					}
-				}
 			}
 		}
+	}
+	> .menu-item > .sub-menu {
+		min-width: 115%;
 	}
 	
 	@media ( max-width: $medium-starts-at ) {
 		.drop.at-small & {
 			
 			.menu-item {
+				@include gen-border(bottom);
 				
-				&.has-sub-menu {
+				&:last-child {
+					border-bottom: none;
+				}
+				&.menu-item-has-children {
 					
 					> a {
 						
@@ -89,8 +149,12 @@
 		.drop.at-medium & {
 			
 			.menu-item {
+				@include gen-border(bottom);
 			
-				&.has-sub-menu {
+				&:last-child {
+					border-bottom: none;
+				}
+				&.menu-item-has-children {
 					
 					> a {
 						
@@ -104,78 +168,14 @@
 		.drop.at-large & {
 			
 			.menu-item {
+				@include gen-border(bottom);
 			
-				&.has-sub-menu {
+				&:last-child {
+					border-bottom: none;
+				}
+				&.menu-item-has-children {
 					
 					> a {
-						
-					}
-				}
-			}
-		}
-	}
-}
-
-//==========
-// Vertical Menus
-//==========
-.widget,
-.vertical-menu {
-	
-	.menu {
-		
-		.menu-item {
-			@include gen-border(bottom);
-			
-			&:nth-child(even) {
-				
-			}
-			&:nth-child(odd) {
-				
-			}
-			&:last-child {
-				
-			}
-			// Add an open/close arrow for a menu-item with a sub-menu.
-			&.has-sub-menu {
-				@include gen-dashicon('\f140', after, $margin: 0 0 0 0.5em);
-				
-				> a {
-					
-				}
-				&.opened > a {
-					@include gen-dashicon('\f142', after, $margin: 0 0 0 0.5em);
-				}
-			}
-			&.current-menu-item {
-			
-				& > a {
-					text-decoration: underline;
-				}
-			}
-			a {
-	
-				&:hover,
-				&:focus,
-				&:active {
-					
-				}
-			}
-			.sub-menu {
-				
-				.menu-item {
-					
-					&:first-child {
-						@include gen-border(top);
-					}
-					&:last-child {
-						border-bottom: 0;
-						padding-bottom: 0;
-					}
-					a {
-						
-					}
-					.sub-sub-menu {
 						
 					}
 				}

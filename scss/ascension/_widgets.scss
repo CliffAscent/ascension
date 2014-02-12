@@ -5,20 +5,10 @@
 // Effects all widgets.
 .widgets {
 	
+	ul {
+		margin: 0;
+	}
+}
 	.widget-title {
 		margin: 0;
 	}
-	ul {
-		list-style-type: none;
-		margin: 0;
-		
-		ul {
-			display: none;
-			list-style-type: none;
-			margin: 0.25em 0 0 0;
-		}
-		.no-js &:hover > ul {
-			display: block;
-		}
-	}
-}

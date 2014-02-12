@@ -7,6 +7,7 @@
 	&.sticky {
 		/* WordPress required class. */
 	}
+}
 	.entry-title {
 		line-height: 1;
 		margin: 0;
@@ -39,4 +40,3 @@
 	.entry-edit {
 		@include inline-block();
 	}
-}

@@ -2,66 +2,69 @@
  * Widgets
  */
 
-// Effects all widgets.
+// Wraps all widget areas.
 .widgets {
+	margin-bottom: $push-lg;
+}
+
+// Effects all widgets.
+.widget {
+	margin-bottom: $push-lg;
 	
-	.widget {
-		margin-bottom: $push-lg;
-		
-		.contain {
+	&:last-child {
+		margin-bottom: 0;
+	}
+	.contain {
+	
+	}
+		ol {
 			
-			.widget-title {
+		}
+		ul {
+			list-style-type: none;
 			
+			li {
+				@include gen-border(bottom);
 			}
 			ul {
+				margin: 0.25em 0 0 0;
 				
-				li {
-					@include gen-border(bottom);
-					padding: 0.25em 0;
-					
-					&:nth-child(even) {
-						
-					}
-					&:nth-child(odd) {
-						
-					}
-					&:last-child {
-						
-					}
-					&.current-menu-item {
-					
-						& > a {
-							text-decoration: underline;
-						}
-					}
-					a {
-			
-						&:hover,
-						&:focus,
-						&:active {
-							
-						}
-					}
-					ul {
-						
-						li {
-							
-							&:last-child {
-								
-							}
-							a {
-								
-							}
-							ul {
-								
-							}
-						}
-					}
+				li:last-child {
+					border-bottom: 0;
 				}
 			}
 		}
-	}
+			li {
+				padding: 0.25em 0;
+				
+				&:nth-child(even) {
+					
+				}
+				&:nth-child(odd) {
+					
+				}
+				&:last-child {
+					
+				}
+				&.current-menu-item {
+				
+					& > a {
+						text-decoration: underline;
+					}
+				}
+				a {
+
+					&:hover,
+					&:focus,
+					&:active {
+						
+					}
+				}
+			}
 }
+	.widget-title {
+	
+	}
 
 // Effects only sidebar widgets.
 .sidebar {
@@ -72,47 +75,15 @@
 	&.right-sidebar {
 	
 	}
-	.widgets {
-	
-		.widget {
-			
-			.contain {
-				
-				.widget-title {
-				
-				}
-				ol,
-				ul {
-					
-				}
-			}
-		}
+	.widget {
+		
 	}
-}
-.left-sidebar {
-	
-}
-.right-sidebar {
-	
 }
 
 // Effects only non-sidebar widgets.
 .widget-area {
 	
-	.widgets {
-	
-		.widget {
-			
-			.contain {
-				
-				.widget-title {
-				
-				}
-				ol,
-				ul {
-					
-				}
-			}
-		}
+	.widget {
+		
 	}
 }
