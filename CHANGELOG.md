@@ -1,5 +1,8 @@
 # Change Log
 
++ 13 February 2014
+	+ Added 'page-' to all page templates.
+
 + 12 February 2014
 	+ Ensure user can upload files before displaying the slider mat box.
 	+ Changed the orderby for the 'activated' slider query.
