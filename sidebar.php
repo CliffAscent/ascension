@@ -8,7 +8,7 @@
 $sidebar_layout = asc_get_sidebar_layout();
 
 switch ( $sidebar_layout ) {
-	case 'Right Sidebar': ?>
+	case 'right': ?>
 		<?php do_action( 'asc_before_right_sidebar' ); ?>
 		
 		<div class="sidebar widgets right-sidebar <?php echo apply_filters( 'asc_right_sidebars_right', 'md-12 lg-4' ); ?>" role="complementary">
@@ -24,7 +24,7 @@ switch ( $sidebar_layout ) {
 		
 		<?php break;
 
-	case 'Left Sidebar': ?>
+	case 'left': ?>
 		<?php do_action( 'asc_before_left_sidebar' ); ?>
 		
 		<div class="sidebar widgets left-sidebar <?php echo apply_filters( 'asc_left_sidebars_left', 'md-12 lg-4 lg-pull-8' ); ?>" role="complementary">
@@ -40,7 +40,7 @@ switch ( $sidebar_layout ) {
 		
 		<?php break;
 
-	case 'Left and Right Sidebars': ?>
+	case 'left-right': ?>
 		<?php do_action( 'asc_before_left_sidebar' ); ?>
 		
 		<div class="sidebar widgets left-sidebar <?php echo apply_filters( 'asc_left_right_sidebars_left', 'sm-12 md-6 lg-3 lg-pull-6' ); ?>" role="complementary">
@@ -68,7 +68,7 @@ switch ( $sidebar_layout ) {
 		
 		<?php break;
 
-	case 'Double Right Sidebars': ?>
+	case 'double-right': ?>
 		<?php do_action( 'asc_before_left_sidebar' ); ?>
 		
 		<div class="sidebar widgets left-sidebar <?php echo apply_filters( 'asc_right_right_sidebars_left', 'sm-12 md-6 lg-3' ); ?>" role="complementary">
@@ -97,7 +97,7 @@ switch ( $sidebar_layout ) {
 		
 		<?php break;
 
-	case 'Double Left Sidebars': ?>
+	case 'double-left': ?>
 		<?php do_action( 'asc_before_left_sidebar' ); ?>
 		
 		<div class="sidebar widgets left-sidebar <?php echo apply_filters( 'asc_left_left_sidebars_left', 'sm-12 md-6 lg-3 lg-pull-6' ); ?>" role="complementary">
@@ -125,7 +125,7 @@ switch ( $sidebar_layout ) {
 		
 		<?php break;
 
-	case 'No Sidebars':
+	case 'none':
 		// Do nothing
 		break;
 

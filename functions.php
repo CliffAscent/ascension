@@ -75,10 +75,12 @@ require( ASC_TEMPLATE_DIR . '/inc/web-fonts.php' );
 require( ASC_TEMPLATE_DIR . '/inc/slider-meta-box.php' );
 
 // Load the theme options into the global space.
-$asc_theme_options = asc_get_theme_options();
+$asc_theme_options = '';
 
 // Declare supports, register menus, and set misc. options after theme setup.
 function asc_setup() {
+	global $asc_theme_options;
+	
 	// Add internationalization support.
 	load_theme_textdomain( 'ascension', ASC_TEMPLATE_DIR . '/languages' );
 
@@ -102,6 +104,10 @@ function asc_setup() {
 	add_image_size( 'ascension-large', apply_filters( 'asc_image_width_large', 1200 ), apply_filters( 'asc_image_height_large', 0 ) );
 	add_image_size( 'ascension-medium', apply_filters( 'asc_image_width_medium', 800 ), apply_filters( 'asc_image_height_medium', 0 ) );
 	add_image_size( 'ascension-small', apply_filters( 'asc_image_width_small', 400 ), apply_filters( 'asc_image_height_small', 0 ) );
+	
+	// Load the theme options.
+	$ascThemeOptions   = new AscThemeOptions();
+	$asc_theme_options = $ascThemeOptions->get_options();
 }
 add_action( 'after_setup_theme', 'asc_setup' );
 
@@ -165,7 +171,7 @@ if ( ! function_exists( 'asc_page_title' ) ) :
 function asc_page_title( $title, $sep ) {
 	global $asc_theme_options;
 	
-	if ( $asc_theme_options['asc_sitename_in_title'] === 'Enabled' ) {
+	if ( $asc_theme_options['asc_sitename_in_title'] == 'true' ) {
 		return $title . get_bloginfo( 'name' );
 	}
 	else {
@@ -229,7 +235,7 @@ add_action( 'wp_head', 'asc_init_script', 99 );
 function asc_header_max_width() {
 	global $asc_theme_options;
 	
-	if ( $asc_theme_options['asc_fullscreen_layout'] == 'Enabled' ) {
+	if ( $asc_theme_options['asc_fullscreen_layout'] == 'true' ) {
 		?>
 			<style type="text/css">
 				body > .wrapper > .row {
@@ -295,7 +301,7 @@ add_action( 'admin_bar_menu', 'add_theme_options_link', 999 );
 if ( ! function_exists( 'asc_body_classes' ) ) :
 function asc_body_classes( $classes ) {
 	// Add a class for the main content and sidebar layout.
-	$classes[] = sanitize_title( asc_get_sidebar_layout() );
+	$classes[] = asc_get_sidebar_layout() . '-sidebar-layout';
 	
 	// Adding no-js to the body for no JavaScript support.
 	$classes[] = 'no-js';
@@ -305,7 +311,7 @@ function asc_body_classes( $classes ) {
 	}
 
 	$sidebars = asc_get_sidebar_layout();
-	if ( $sidebars === 'No Sidebars' || is_page_template( 'templates/full-width.php' ) ) {
+	if ( $sidebars === 'none' || is_page_template( 'templates/full-width.php' ) ) {
 		$classes[] = 'full-width';
 	}
 
@@ -437,8 +443,8 @@ function asc_footer_credits() {
 	global $asc_theme_options;
 	$asc_theme = wp_get_theme( 'ascension' );
 	
-	if ( $asc_theme_options['asc_footer_credits'] == 'Enabled' ) {
-		echo '<div class="ascension-credits">' . __( 'Built using', 'ascension' ) . ' <a href="' . $asc_theme->get( 'ThemeURI' ) . '">' . $asc_theme->get( 'Name' ) . '</a></div>';
+	if ( $asc_theme_options['asc_footer_credits'] == 'true' ) {
+		echo '<div class="ascension-credits">' . __( 'Built using', 'ascension' ) . ' <a href="' . $asc_theme->get( 'ThemeURI' ) . '" target="_blank">' . $asc_theme->get( 'Name' ) . '</a></div>';
 	}
 }
 endif; // End asc_footer_credits()

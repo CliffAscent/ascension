@@ -27,7 +27,7 @@ function asc_widget_areas() {
 		'after_title' => '</h2>'
 	) );
 	
-	if ( $asc_theme_options['asc_header_layout'] === 'Widget' ) {
+	if ( $asc_theme_options['asc_header_layout'] === 'widget' ) {
 		register_sidebar( array(
 			'name' => __( 'Header', 'ascension' ),
 			'id' => 'header',

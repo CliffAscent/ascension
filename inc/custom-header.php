@@ -25,7 +25,7 @@
 function asc_custom_header_setup() {
 	global $asc_theme_options;
 
-	if ( $asc_theme_options['asc_header_layout'] === 'Banner Image' ) {
+	if ( $asc_theme_options['asc_header_layout'] === 'banner' ) {
 		$header_args = array(
 			'default-image'          => ASC_TEMPLATE_DIR_URI . '/images/headers/luna.jpg',
 			'header-text'            => true,
@@ -60,7 +60,7 @@ function asc_custom_header_setup() {
 	add_theme_support( 'custom-header', $header_args );
 
 	// Default custom headers packaged with the theme.
-	if ( $asc_theme_options['asc_header_layout'] === 'Banner Image' ) {
+	if ( $asc_theme_options['asc_header_layout'] === 'banner' ) {
 		$default_header_args = array(
 			'luna' => array(
 				'url'           => '%s/images/headers/luna.jpg',

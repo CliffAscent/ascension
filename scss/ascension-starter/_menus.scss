@@ -122,9 +122,6 @@
 			}
 		}
 	}
-	> .menu-item > .sub-menu {
-		min-width: 115%;
-	}
 	
 	@media ( max-width: $medium-starts-at ) {
 		.drop.at-small & {

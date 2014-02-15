@@ -2653,11 +2653,9 @@ img {
   max-width: 100%; }
 
 .wp-caption img[class*="wp-image-"] {
-  display: block;
-  margin: 1.2% auto 0;
-  max-width: 98%; }
+  display: block; }
 
-.wp-caption .wp-caption-text {
+.wp-caption-text {
   margin-top: 0.25em; }
 
 .gallery-item {
@@ -2722,6 +2720,8 @@ img {
         position: absolute;
         left: 100%;
         top: 0; }
+  .menu.horizontal > .menu-item > .sub-menu {
+    min-width: 100%; }
   .no-js .menu.horizontal .menu-item:hover > .sub-menu {
     display: block; }
     .no-js .menu.horizontal .menu-item:hover > .sub-menu .menu-item:hover > .sub-menu {

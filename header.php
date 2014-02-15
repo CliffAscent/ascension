@@ -4,8 +4,6 @@
  *
  * Document head, user control bar, header image and title, and main navigation bar.
  */
-
-global $asc_theme_options;
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>

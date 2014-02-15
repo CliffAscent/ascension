@@ -553,6 +553,9 @@ input[type="submit"] {
   color: #666666;
   font-size: 0.8em; }
 
+.wp-caption-text {
+  text-align: center; }
+
 .gallery-caption {
   color: #666666;
   font-size: 0.8em; }
@@ -876,8 +879,6 @@ input[type="submit"] {
     *zoom: 1; }
   .menu.horizontal .sub-menu .menu-item a {
     padding: 0.25em 2em 0.25em 0.5em; }
-.menu.horizontal > .menu-item > .sub-menu {
-  min-width: 115%; }
 @media (max-width: 400px) {
   .drop.at-small .menu.horizontal .menu-item {
     border-bottom: 1px solid #dddddd; }

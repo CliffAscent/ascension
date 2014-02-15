@@ -58,7 +58,7 @@ if ( ! function_exists( 'asc_get_header_title' ) ) :
 function asc_get_header_title() {
 	global $asc_theme_options;
 	
-	if ( $asc_theme_options['asc_header_info'] == 'Enabled' ) {
+	if ( $asc_theme_options['asc_header_info'] == 'true' ) {
 		$return = '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" rel="home">';
 		
 		if ( empty( $asc_theme_options['asc_header_title'] ) ) {
@@ -90,7 +90,7 @@ if ( ! function_exists( 'asc_get_header_desc' ) ) :
 function asc_get_header_desc() {
 	global $asc_theme_options;
 	
-	if ( $asc_theme_options['asc_header_info'] == 'Enabled' ) {
+	if ( $asc_theme_options['asc_header_info'] == 'true' ) {
 		if ( empty( $asc_theme_options['asc_header_text'] ) ) {
 			$return = get_bloginfo( 'description' );
 		}
@@ -118,7 +118,7 @@ if ( ! function_exists( 'asc_get_header_socials' ) ) :
 function asc_get_header_socials() {
 	global $asc_theme_options;
 	
-	if ( $asc_theme_options['asc_header_socials'] === 'Yes' ) {
+	if ( $asc_theme_options['asc_header_socials'] === 'true' ) {
 		$socials = asc_get_social_icons();
 		
 		if ( ! empty( $socials ) ) {
@@ -288,37 +288,37 @@ function asc_main_content_classes( $class = '', $sidebar_layout = '' ) {
 	}
 
 	switch( $sidebar_layout ) {
-		case 'Left Sidebar':
+		case 'left':
 			$class .= ' ' . apply_filters( 'asc_main_content_left_sidebar', 'md-12 lg-8 lg-push-4' );
 			echo $class;
 			$content_width = 700;
 			break;
 			
-		case 'Right Sidebar':
+		case 'right':
 			$class .= ' ' . apply_filters( 'asc_main_content_right_sidebar', 'md-12 lg-8' );
 			echo $class;
 			$content_width = 700;
 			break;
 			
-		case 'Left and Right Sidebars':
+		case 'left-right':
 			$class .= ' ' . apply_filters( 'asc_main_content_left_right_sidebar', 'md-12 lg-6 lg-push-3' );
 			echo $class;
 			$content_width = 500;
 			break;
 			
-		case 'Double Left Sidebars':
-			$class .= ' ' . apply_filters( 'asc_main_content_left_left_sidebar', 'md-12 lg-6 lg-push-6' );
-			echo $class;
-			$content_width = 500;
-			break;
-			
-		case 'Double Right Sidebars':
+		case 'double-right':
 			$class .= ' ' . apply_filters( 'asc_main_content_right_right_sidebar', 'md-12 lg-6' );
 			echo $class;
 			$content_width = 500;
 			break;
 			
-		case 'No Sidebars':
+		case 'double=left':
+			$class .= ' ' . apply_filters( 'asc_main_content_left_left_sidebar', 'md-12 lg-6 lg-push-6' );
+			echo $class;
+			$content_width = 500;
+			break;
+			
+		case 'none':
 			$class .= ' ' . apply_filters( 'asc_main_content_no_sidebar', 'col-12' );
 			echo $class;
 			$content_width = 900;
@@ -358,7 +358,7 @@ function asc_get_category_desc() {
 	global $asc_theme_options;
 	$description = category_description();
 	
-	if ( is_category() && ! is_home() && ! empty( $description ) && $asc_theme_options['asc_category_desc'] === 'Enabled' ) {
+	if ( is_category() && ! is_home() && ! empty( $description ) && $asc_theme_options['asc_category_desc'] === 'true' ) {
 		return $description;
 	}
 	else {
@@ -431,7 +431,7 @@ function asc_get_entry_title() {
 	global $asc_theme_options;
 	
 	if ( is_page() ) {
-		if ( $asc_theme_options['asc_page_title'] === 'Enabled' ) {
+		if ( $asc_theme_options['asc_page_title'] === 'true' ) {
 			return get_the_title();
 		}
 	}
@@ -475,7 +475,7 @@ if ( ! function_exists( 'asc_get_entry_details' ) ) :
 function asc_get_entry_details( $id ) {
 	global $asc_theme_options;
 	
-	if ( $asc_theme_options['asc_entry_details'] === 'Enabled' ) {
+	if ( $asc_theme_options['asc_entry_details'] === 'true' ) {
 		$return = apply_filters( 'asc_entry_author_meta', '<span class="meta author"><a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . get_the_author() . '</a></span>' );
 		
 		$return .= apply_filters( 'asc_entry_date_meta', '<span class="meta date"><a href="' . get_permalink() . '" rel="bookmark">' . get_the_date() . '</a></span>' );
@@ -517,7 +517,7 @@ if ( ! function_exists( 'asc_get_entry_page_details' ) ) :
 function asc_get_entry_page_details( $id ) {
 	global $asc_theme_options;
 	
-	if ( $asc_theme_options['asc_page_details'] === 'Enabled' ) {
+	if ( $asc_theme_options['asc_page_details'] === 'true' ) {
 		$return = apply_filters( 'asc_entry_author_meta', '<span class="meta author"><a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . get_the_author() . '</a></span>' );
 		
 		$return .= apply_filters( 'asc_entry_date_meta', '<span class="meta date"><a href="' . get_permalink() . '" rel="bookmark">' . get_the_date() . '</a></span>' );
@@ -595,7 +595,7 @@ if ( ! function_exists( 'asc_entry_tags' ) ) :
 function asc_entry_tags() {
 	global $asc_theme_options;
 
-	if ( $asc_theme_options['asc_entry_tags'] === 'Enabled' ) {
+	if ( $asc_theme_options['asc_entry_tags'] === 'true' ) {
 		apply_filters( 'asc_entry_tags_meta', the_tags( '<div class="entry-tags meta">', ', ', '</div>' ) );
 	}
 }
@@ -951,7 +951,7 @@ if ( ! function_exists( 'asc_media_query_test' ) ) :
 function asc_media_query_test() {
 	global $asc_theme_options;
 	
-	if ( $asc_theme_options['asc_media_query_test'] === 'Enabled' ) {
+	if ( $asc_theme_options['asc_media_query_test'] === 'true' ) {
 		// Output the margin CSS.
 		?>
 			<style type="text/css">
@@ -983,7 +983,7 @@ if ( ! function_exists( 'asc_scroll_to_top' ) ) :
 function asc_scroll_to_top() {
 	global $asc_theme_options;
 	
-	if ( $asc_theme_options['asc_scroll_to_top'] === 'Enabled' ) {
+	if ( $asc_theme_options['asc_scroll_to_top'] === 'true' ) {
 		$classes = '';
 		
 		if ( is_admin_bar_showing() ) {

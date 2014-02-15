@@ -1,5 +1,13 @@
 # Change Log
 
++ 15 February 2014
+	+ Footer credits open in a new window.
+	+ Theme options reorganized into an object.
+		+ Settings options array changed to be associative.
+		+ Custom options move into it's own function.
+		+ Tooltip descriptions moved into their own function.
+		+ Filters added to header layout, sidebar layout and environment options.
+
 + 13 February 2014
 	+ Added 'page-' to all page templates.
 

@@ -39,7 +39,7 @@ $main_nav = asc_get_nav_template();
 		<?php do_action( 'asc_after_main_header' ); ?>
 		
 		<?php // Check if the main nav is active, because it may be disabled and displayed elsewhere. ?>
-		<?php if ( ! defined( 'ASC_DISABLE_MAIN_NAV' ) && $asc_theme_options['asc_main_nav'] === 'Enabled' ) : ?>
+		<?php if ( ! defined( 'ASC_DISABLE_MAIN_NAV' ) && $asc_theme_options['asc_main_nav'] === 'true' ) : ?>
 			<div id="navigation" class="<?php echo apply_filters( 'asc_main_nav_class', '' ); ?>">
 				<?php do_action( 'asc_after_main_nav_open' ); ?>
 				
