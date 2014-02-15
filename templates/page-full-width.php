@@ -9,7 +9,7 @@ Template Name: Full Width
 <div id="main-content" class="<?php asc_main_content_classes( 'singular page', 'No Sidebars' ); ?>" role="main">
 	<?php do_action( 'asc_after_main_content_open' ); ?>
 	
-	<?php get_template_part( 'templates/modules/widgets', 'content-top' ); ?>
+	<?php get_template_part( 'templates/widgets/widgets', 'content-top' ); ?>
 
 	<?php /* The post loop. */ ?>
 	<?php if ( have_posts() ) : ?>
@@ -28,7 +28,7 @@ Template Name: Full Width
 		<?php do_action( 'asc_after_single_entry' ); ?>
 	<?php endif; ?>
 	
-	<?php get_template_part( 'templates/modules/widgets', 'content-bottom' ); ?>
+	<?php get_template_part( 'templates/widgets/widgets', 'content-bottom' ); ?>
 	
 	<?php do_action( 'asc_before_main_content_close' ); ?>
 </div><!-- End #main-content -->

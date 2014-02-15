@@ -93,17 +93,7 @@ if ( ! function_exists( 'asc_get_header' ) ) :
 function asc_get_header() {
 	global $asc_theme_options;
 	
-	switch ( $asc_theme_options['asc_header_layout'] ) {
-		case 'Banner Image':
-			get_template_part( 'templates/modules/header-banner' );
-			break;
-		case 'Widget':
-			get_template_part( 'templates/modules/header-widget' );
-			break;
-		default:
-			get_template_part( 'templates/modules/header-default' );
-			break;
-	}
+	get_template_part( 'templates/headers/header', $asc_theme_options['asc_header_layout'] );
 }
 endif; // End asc_get_header()
 

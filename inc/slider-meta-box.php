@@ -33,6 +33,7 @@ function asc_slider_meta_box( $post ) {
 	$image_id       = get_post_meta( $post->ID, '_slider_image_id', true );
 	$slider_title   = get_post_meta( $post->ID, '_slider_title', true );
 	$slider_excerpt = get_post_meta( $post->ID, '_slider_excerpt', true );
+	$slider_only    = get_post_meta( $post->ID, '_slider_only', true );
 	$html           = '';
 	
 	// Get the currents themes ascension-slider image dimensions.
@@ -73,6 +74,16 @@ function asc_slider_meta_box( $post ) {
 	// Textarea for a custom excerpt.
 	$html .= '<label for="asc_slider_excerp"><strong>' . __( 'Slider Excerpt', 'ascension' ) . '</strong></label>';
 	$html .= '<textarea style="width: 100%;" name="asc_slider_excerp" id="asc_slider_excerp">' . $slider_excerpt . '</textarea>';
+	$html .= '<br /><br />';
+	
+	// Checkbox to only display in a slider.
+	$html .= '<input type="checkbox" name="asc_slider_only" id="asc_slider_only" value="true" ' . checked( $slider_only, 'true', false ) . ' />';
+	$html .= '<label for="asc_slider_only"> ' . __( 'Slider Only Post', 'ascension' ) . '</label>';
+	
+	// Help text for slider only checkbox.
+	$html .= '<p class="howto">';
+	$html .= __( 'Check the box if you want this post removed from archives and only displayed in a slider.', 'ascension' );
+	$html .= '</p>';
 	
 	echo $html;
 
@@ -203,6 +214,14 @@ function asc_save_slider_meta_box( $post_id ) {
 		
 		// Update the post meta.
 		update_post_meta( $post_id, '_slider_excerpt', $slider_excerp );
+	}
+		
+	// Check for the slider only option.
+	if ( isset( $_POST['asc_slider_only'] ) ) {
+		update_post_meta( $post_id, '_slider_only', 'true' );
+	}
+	else {
+		update_post_meta( $post_id, '_slider_only', 'false' );
 	}
 
 	return;

@@ -12,13 +12,13 @@
 
 <?php do_action( 'asc_after_content' ); ?>
 
-<?php get_template_part( 'templates/modules/widgets', 'bottom' ) ?>
+<?php get_template_part( 'templates/widgets/widgets', 'bottom' ) ?>
 
 <footer id="footer" class="wrapper" role="contentinfo">
 	<div class="row no-outter-gutters">
 		<?php do_action( 'asc_after_footer_open' ); ?>
 		
-		<?php get_template_part( 'templates/modules/widgets', 'footer' ) ?>
+		<?php get_template_part( 'templates/widgets/widgets', 'footer' ) ?>
 	</div>
 </footer><!-- End #footer -->
 

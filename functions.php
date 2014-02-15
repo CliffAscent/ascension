@@ -66,9 +66,8 @@ define( 'ASC_THEME_SEPARATOR', ' - ' );
 
 // Load the required framework files.
 require( ASC_TEMPLATE_DIR . '/inc/theme-options.php' );
-require( ASC_TEMPLATE_DIR . '/inc/template-tags.php' );
-require( ASC_TEMPLATE_DIR . '/inc/widget-areas.php' );
-require( ASC_TEMPLATE_DIR . '/inc/widgets.php' );
+require( ASC_TEMPLATE_DIR . '/inc/template-tags/tags.php' );
+require( ASC_TEMPLATE_DIR . '/inc/widgets/widget-areas.php' );
 require( ASC_TEMPLATE_DIR . '/inc/shortcodes.php' );
 require( ASC_TEMPLATE_DIR . '/inc/custom-header.php' );
 require( ASC_TEMPLATE_DIR . '/inc/web-fonts.php' );

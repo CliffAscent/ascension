@@ -1,6 +1,14 @@
 # Change Log
 
 + 15 February 2014
+	+ Header, navigation and widget templates moved into their own folders.
+	+ Header types made extendible. Use filter 'asc_header_layout_options' and add templates/headers/header-{option_value}.php
+	+ asc_get_nav_template() changed to return false if the main nav is disabled.
+	+ Template tags spit into multiple files in inc/templates-tags/{category}.php
+	+ Widgets spit into multiple files in inc/widgets/{type}.php
+	+ Added an option to the post slider meta box to remove the post from archives (slider only).
+
++ 15 February 2014
 	+ Footer credits open in a new window.
 	+ Theme options reorganized into an object.
 		+ Settings options array changed to be associative.

@@ -39,7 +39,7 @@
 
 <?php do_action( 'asc_after_header' ); ?>
 
-<?php get_template_part( 'templates/modules/widgets', 'top' ) ?>
+<?php get_template_part( 'templates/widgets/widgets', 'top' ) ?>
 
 <div id="content" class="wrapper">
 	<div class="row">
