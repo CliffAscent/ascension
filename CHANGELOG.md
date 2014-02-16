@@ -1,6 +1,10 @@
 # Change Log
 
 + 15 February 2014
+	+ Attachment page links now returned from asc_get_next_image_link() and asc_get_prev_image_link()
+	+ Various functions changed to use locate_template()
+
++ 15 February 2014
 	+ Header, navigation and widget templates moved into their own folders.
 	+ Header types made extendible. Use filter 'asc_header_layout_options' and add templates/headers/header-{option_value}.php
 	+ asc_get_nav_template() changed to return false if the main nav is disabled.

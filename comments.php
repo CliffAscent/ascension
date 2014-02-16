@@ -5,7 +5,7 @@
  * Displays the comments list and comment submission box.
  */
 
-$prev_comments = asc_get_previous_comments_link();
+$prev_comments = asc_get_prev_comments_link();
 $next_comments = asc_get_next_comments_link();
 ?>
 

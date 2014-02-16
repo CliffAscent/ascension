@@ -12,22 +12,10 @@ function asc_archive_content_template() {
 	$slider_only = get_post_meta( get_the_ID(), '_slider_only', true );
 
 	if ( $slider_only != 'true' ) {
-		// Store the formatted single template content.
-		ob_start();
-		get_template_part( 'templates/content/content-' . $format );
-		$single_template = ob_get_contents();
-		ob_end_clean();
-		
-		// Store the formatted archive template content.
-		ob_start();
-		get_template_part( 'templates/content/content-archive-' . $format );
-		$archive_template = ob_get_contents();
-		ob_end_clean();
-		
-		if ( ! empty( $archive_template ) ) {
+		if ( locate_template( array( 'templates/content/content-archive-' . $format . '.php' ) ) ) {
 			get_template_part( 'templates/content/content-archive', $format );
 		}
-		elseif ( ! empty( $single_template ) ) {
+		elseif ( locate_template( array( 'templates/content/content-' . $format . '.php' ) ) ) {
 			get_template_part( 'templates/content/content', $format );
 		}
 		else {
@@ -105,9 +93,10 @@ endif; // End asc_get_archive_entry_title()
 if ( ! function_exists( 'asc_get_entry_details' ) ) :
 function asc_get_entry_details( $id ) {
 	global $asc_theme_options;
+	$return = '';
 	
 	if ( $asc_theme_options['asc_entry_details'] === 'true' ) {
-		$return = apply_filters( 'asc_entry_author_meta', '<span class="meta author"><a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . get_the_author() . '</a></span>' );
+		$return .= apply_filters( 'asc_entry_author_meta', '<span class="meta author"><a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . get_the_author() . '</a></span>' );
 		
 		$return .= apply_filters( 'asc_entry_date_meta', '<span class="meta date"><a href="' . get_permalink() . '" rel="bookmark">' . get_the_date() . '</a></span>' );
 		
@@ -116,6 +105,7 @@ function asc_get_entry_details( $id ) {
 		the_category( ', ' );
 		$categories = ob_get_contents();
 		ob_end_clean();
+
 		if ( ! empty( $categories ) ) {
 			$return .= apply_filters( 'asc_entry_category_meta', '<span class="meta category">' . $categories . '</span>' );
 		}
@@ -358,4 +348,32 @@ function asc_get_entry_pages() {
 	return $content;
 }
 endif; // End asc_get_entry_pages()
+
+
+/**
+ * Attachment Links
+ */
+if ( ! function_exists( 'asc_get_prev_image_link' ) ) :
+function asc_get_prev_image_link() {
+	// Store the previous image link.
+	ob_start();
+	previous_image_link();
+	$prev_image = ob_get_contents();
+	ob_end_clean();
+	
+	return $prev_image;
+}
+endif; // End asc_entry_pages()
+
+if ( ! function_exists( 'asc_get_next_image_link' ) ) :
+function asc_get_next_image_link() {
+	// Store the next image link.
+	ob_start();
+	next_image_link();
+	$next_image = ob_get_contents();
+	ob_end_clean();
+	
+	return $next_image;
+}
+endif; // End asc_get_next_image_link()
 ?>

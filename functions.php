@@ -205,6 +205,11 @@ function asc_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply', false, array(), 1, true );
 	}
+	
+	// Load the starter CSS if the child theme opted to do so.
+	if ( defined( 'ASC_ALWAYS_USE_STARTER_CSS' ) and ASC_ALWAYS_USE_STARTER_CSS === true ) {
+		wp_enqueue_style( 'ascension-starter', ASC_TEMPLATE_DIR_URI . '/css/ascension-starter.css', array( 'ascension' ), ASC_STYLE_VERSION );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'asc_scripts' );
 

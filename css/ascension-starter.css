@@ -79,10 +79,14 @@ body {
  * Slider
  */
 .slide-content {
+  display: none !important;
   bottom: 0;
   position: absolute;
   width: 100%;
   z-index: 99; }
+  @media (min-width: 400px) {
+    .slide-content {
+      display: inherit !important; } }
   .slide-content .contain {
     background: rgba(0, 0, 0, 0.75);
     color: white;

@@ -9,14 +9,11 @@
 if ( ! function_exists( 'asc_comments_title' ) ) :
 function asc_comments_title() {
 	comments_number(
-		__('Leave a Response', 'ascension' ),
+		__( 'Leave a Response', 'ascension' ),
 		__( 'One Response', 'ascension' ),
 		__( '% Responses', 'ascension' )
 	);
-	_e( ' to ', 'ascension' );
-	echo '&#8220;';
-	the_title();
-	echo '&#8220;';
+	_e( ' to &#8220;' . get_the_title() . '&#8220;', 'ascension' );
 }
 endif; // End asc_comments_title()
 
@@ -128,8 +125,8 @@ endif; // End asc_get_comment_details()
  *
  * @return mixed the previous comments link string or bool false
  */
-if ( ! function_exists( 'asc_get_previous_comments_link' ) ) :
-function asc_get_previous_comments_link() {
+if ( ! function_exists( 'asc_get_prev_comments_link' ) ) :
+function asc_get_prev_comments_link() {
 	// Store the previous comments content.
 	ob_start();
 	previous_comments_link( apply_filters( 'asc_prev_comments_link', __( 'Older Comments', 'ascension' ) ) );
@@ -143,7 +140,7 @@ function asc_get_previous_comments_link() {
 		return false;
 	}
 }
-endif; // End asc_get_previous_comments_link()
+endif; // End asc_get_prev_comments_link()
 
 
 /**

@@ -5,21 +5,11 @@
  * Template to display an attachment page.
  */
 
-$title   = asc_get_entry_title();
-$details = asc_get_image_details();
-$image   = wp_get_attachment_image( $post->ID, 'full', false, array( 'class' => 'the-entry-image aligncenter' ) );
-
-// Store the previous image link.
-ob_start();
-previous_image_link();
-$prev_image = ob_get_contents();
-ob_end_clean();
-
-// Store the next image link.
-ob_start();
-next_image_link();
-$next_image = ob_get_contents();
-ob_end_clean();
+$title      = asc_get_entry_title();
+$details    = asc_get_image_details();
+$image      = wp_get_attachment_image( $post->ID, 'full', false, array( 'class' => 'the-entry-image aligncenter' ) );
+$prev_image = asc_get_prev_image_link();
+$next_image = asc_get_next_image_link();
 ?>
 
 <?php get_header(); ?>

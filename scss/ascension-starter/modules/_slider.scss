@@ -18,6 +18,7 @@
 		}
 	}
 		.slide-content {
+			@include show(medium);
 			bottom: 0;
 			position: absolute;
 			width: 100%;

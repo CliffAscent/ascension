@@ -3617,10 +3617,14 @@
   .mceContentBody .push-down-large {
     margin-bottom: 2rem; }
   .mceContentBody .slide-content {
+    display: none !important;
     bottom: 0;
     position: absolute;
     width: 100%;
     z-index: 99; }
+    @media (min-width: 400px) {
+      .mceContentBody .slide-content {
+        display: inherit !important; } }
     .mceContentBody .slide-content .contain {
       background: rgba(0, 0, 0, 0.75);
       color: white;

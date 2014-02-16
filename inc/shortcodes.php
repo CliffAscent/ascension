@@ -149,13 +149,7 @@ add_shortcode( 'asc-notify', 'asc_sc_notify' );
  * Grid example
  */
 function asc_sc_grid_example( $attr, $content ) {
-	// Store the template module.
-	ob_start();
-	get_template_part( 'templates/modules/grid-example' );
-	$template = ob_get_contents();
-	ob_end_clean();
-	
-	return $template;
+	return file_get_contents( locate_template( array( 'templates/modules/grid-example.php' ) ) );
 }
 add_shortcode( 'asc-grid', 'asc_sc_grid_example' );
 
@@ -164,13 +158,7 @@ add_shortcode( 'asc-grid', 'asc_sc_grid_example' );
  * Style Guide
  */
 function asc_sc_style_guide( $attr, $content ) {
-	// Store the template module.
-	ob_start();
-	get_template_part( 'templates/modules/style-guide' );
-	$template = ob_get_contents();
-	ob_end_clean();
-	
-	return $template;
+	return file_get_contents( locate_template( array( 'templates/modules/style-guide.php' ) ) );
 }
 add_shortcode( 'asc-style-guide', 'asc_sc_style_guide' );
 ?>

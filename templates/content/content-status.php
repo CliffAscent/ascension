@@ -4,6 +4,8 @@
  *
  * Displays the post content for the aside post format.
  */
+
+$details = asc_get_entry_aside_details( $id );
 ?>
 
 <?php do_action( 'asc_before_entry' ); ?>
@@ -26,9 +28,11 @@
 	<footer class="entry-footer <?php echo apply_filters( 'asc_entry_footer_class', '' ); ?>">
 		<?php do_action( 'asc_after_entry_footer_open' ); ?>
 		
-		<div class="entry-details">
-			<?php asc_entry_aside_details( $post->ID );; ?>
-		</div>
+		<?php if ( $details ) : ?>
+			<div class="entry-details">
+				<?php echo $details; ?>
+			</div>
+		<?php endif; ?>
 		
 		<?php asc_edit_entry(); ?>
 		
