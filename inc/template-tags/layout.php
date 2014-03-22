@@ -35,9 +35,9 @@ endif; // End asc_get_nav_template()
 if ( ! function_exists( 'asc_default_menu' ) ) :
 function asc_default_menu() {
 	?>
-		<ul class="menu">
-			<li class="menu-item"><a href="<?php esc_url( home_url( '/' ) ); ?>"><?php _e( 'Home', 'ascension' ); ?></a></li>
-			<li class="menu-item"><a href="<?php admin_url( 'nav-menus.php' ); ?>"><?php _e( 'Add a Custom Menu', 'ascension' ); ?></a></li>
+		<ul class="horizontal menu">
+			<li class="menu-item"><a href="<?php echo esc_url( home_url() ); ?>"><?php _e( 'Home', 'ascension' ); ?></a></li>
+			<li class="menu-item"><a href="<?php echo admin_url( 'nav-menus.php' ); ?>"><?php _e( 'Add a Custom Menu', 'ascension' ); ?></a></li>
 		</ul>
 	<?php
 }

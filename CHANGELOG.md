@@ -1,5 +1,10 @@
 # Change Log
 
++ 22 March 2014
+	+ Default theme options callback fixed.
+	+ Compass files modified.
+	+ Misc. changes.
+
 + 15 February 2014
 	+ Attachment page links now returned from asc_get_next_image_link() and asc_get_prev_image_link()
 	+ Various functions changed to use locate_template()

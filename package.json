@@ -5,14 +5,17 @@
     "private" : true,
 
     "devDependencies" : {
-        "grunt"                : "~0.4.0",
-        "grunt-contrib-watch"  : "*",
-        "grunt-contrib-uglify" : "*",
-        "grunt-contrib-sass"   : "*",
-        "grunt-cssc"           : "*",
-        "grunt-contrib-cssmin" : "*",
-        "matchdep"             : "*",
-		"grunt-bower"          : "*",
-		"grunt-bower-task"     : "*"
+		"node-sass"             : "~0.7.0",
+        "grunt"                 : "~0.4.0",
+        "grunt-contrib-watch"   : "*",
+        "grunt-contrib-uglify"  : "*",
+        "grunt-contrib-sass"    : "*",
+        "grunt-cssc"            : "*",
+        "grunt-contrib-cssmin"  : "*",
+		"grunt-sass"            : "~0.8.0",
+		"grunt-contrib-compass" : "*",
+        "matchdep"              : "*",
+		"grunt-bower"           : "*",
+		"grunt-bower-task"      : "*"
     }
 }

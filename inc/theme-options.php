@@ -194,7 +194,7 @@ class AscThemeOptions {
 	
 
 	public function get_options() {
-		return get_option( 'asc_theme_options', array( $this, 'get_default_options' ) );
+		return get_option( 'asc_theme_options', $this->get_default_options() );
 	}
 
 	

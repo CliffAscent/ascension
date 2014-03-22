@@ -74,7 +74,8 @@ require( ASC_TEMPLATE_DIR . '/inc/web-fonts.php' );
 require( ASC_TEMPLATE_DIR . '/inc/slider-meta-box.php' );
 
 // Load the theme options into the global space.
-$asc_theme_options = '';
+$ascThemeOptions   = new AscThemeOptions();
+$asc_theme_options = $ascThemeOptions->get_options();
 
 // Declare supports, register menus, and set misc. options after theme setup.
 function asc_setup() {
@@ -103,10 +104,6 @@ function asc_setup() {
 	add_image_size( 'ascension-large', apply_filters( 'asc_image_width_large', 1200 ), apply_filters( 'asc_image_height_large', 0 ) );
 	add_image_size( 'ascension-medium', apply_filters( 'asc_image_width_medium', 800 ), apply_filters( 'asc_image_height_medium', 0 ) );
 	add_image_size( 'ascension-small', apply_filters( 'asc_image_width_small', 400 ), apply_filters( 'asc_image_height_small', 0 ) );
-	
-	// Load the theme options.
-	$ascThemeOptions   = new AscThemeOptions();
-	$asc_theme_options = $ascThemeOptions->get_options();
 }
 add_action( 'after_setup_theme', 'asc_setup' );
 

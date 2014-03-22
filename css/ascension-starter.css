@@ -7,12 +7,16 @@
 body {
   background-color: white;
   color: #333333;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 1em;
   line-height: 1.5; }
 
+
+
 #main-content {
   margin-bottom: 2rem; }
+
+
 
 .next-posts a:after {
   display: -moz-inline-stack;
@@ -22,7 +26,7 @@ body {
   zoom: 1;
   *display: inline;
   color: inherit;
-  content: "\f344";
+  content: '\f344';
   font-family: 'dashicons';
   font-size: inherit;
   font-style: normal;
@@ -44,7 +48,7 @@ body {
   zoom: 1;
   *display: inline;
   color: inherit;
-  content: "\f340";
+  content: '\f340';
   font-family: 'dashicons';
   font-size: inherit;
   font-style: normal;
@@ -58,26 +62,36 @@ body {
   *overflow: auto;
   *zoom: 1; }
 
+
+
+
+
 /**
  * Helpers
  */
 .borders {
   border: 1px solid #dddddd; }
 
-.pad,
-.padding {
+.pad, .padding {
   padding: 0.5em; }
 
 .push-down {
   margin-bottom: 1rem; }
 
-.push-down-lg,
-.push-down-large {
+.push-down-lg, .push-down-large {
   margin-bottom: 2rem; }
+
+
+
+
+
+
 
 /**
  * Slider
  */
+
+
 .slide-content {
   display: none !important;
   bottom: 0;
@@ -143,11 +157,25 @@ body {
     font-size: 24px; }
     .flex-direction-nav li .flex-prev {
       -webkit-border-radius: first-value-of(2px) first-value-of(2px);
+      -moz-border-radius: first-value-of(2px) first-value-of(2px);
+      -ms-border-radius: first-value-of(2px) first-value-of(2px);
+      -o-border-radius: first-value-of(2px) first-value-of(2px);
+      border-radius: first-value-of(2px) first-value-of(2px);
+      -webkit-border-radius: 2px / 2px;
       -moz-border-radius: 2px / 2px;
+      -ms-border-radius: 2px / 2px;
+      -o-border-radius: 2px / 2px;
       border-radius: 2px / 2px; }
     .flex-direction-nav li .flex-next {
       -webkit-border-radius: first-value-of(2px) first-value-of(2px);
+      -moz-border-radius: first-value-of(2px) first-value-of(2px);
+      -ms-border-radius: first-value-of(2px) first-value-of(2px);
+      -o-border-radius: first-value-of(2px) first-value-of(2px);
+      border-radius: first-value-of(2px) first-value-of(2px);
+      -webkit-border-radius: 2px / 2px;
       -moz-border-radius: 2px / 2px;
+      -ms-border-radius: 2px / 2px;
+      -o-border-radius: 2px / 2px;
       border-radius: 2px / 2px; }
     .flex-direction-nav li a {
       background: rgba(0, 0, 0, 0.75);
@@ -155,6 +183,7 @@ body {
       .flex-direction-nav li a:hover, .flex-direction-nav li a:focus, .flex-direction-nav li a:active {
         color: #0074a2;
         text-decoration: none; }
+
 
 /**
  * Responsive dropdowns
@@ -178,6 +207,8 @@ body {
 /**
  * Tooltips
  */
+
+
 .tip-content {
   border: 1px solid #dddddd;
   background: #fafafa; }
@@ -206,11 +237,14 @@ p {
   p:last-child {
     margin-bottom: 0; }
 
+
 q {
   color: #666666; }
 
 cite {
   color: #666666; }
+
+
 
 .meta {
   color: #666666;
@@ -234,49 +268,21 @@ a {
     color: #0074a2;
     text-decoration: none; }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   color: #222222;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: normal;
   margin-top: 1rem; }
-  h1.subhead, h1.subheading,
-  h2.subhead,
-  h2.subheading,
-  h3.subhead,
-  h3.subheading,
-  h4.subhead,
-  h4.subheading,
-  h5.subhead,
-  h5.subheading,
-  h6.subhead,
-  h6.subheading {
+  h1.subhead, h1.subheading, h2.subhead, h2.subheading, h3.subhead, h3.subheading, h4.subhead, h4.subheading, h5.subhead, h5.subheading, h6.subhead, h6.subheading {
     color: #666666; }
-  h1 a:hover, h1 a:focus, h1 a:active,
-  h2 a:hover,
-  h2 a:focus,
-  h2 a:active,
-  h3 a:hover,
-  h3 a:focus,
-  h3 a:active,
-  h4 a:hover,
-  h4 a:focus,
-  h4 a:active,
-  h5 a:hover,
-  h5 a:focus,
-  h5 a:active,
-  h6 a:hover,
-  h6 a:focus,
-  h6 a:active {
+  h1 a:hover, h1 a:focus, h1 a:active, h2 a:hover, h2 a:focus, h2 a:active, h3 a:hover, h3 a:focus, h3 a:active, h4 a:hover, h4 a:focus, h4 a:active, h5 a:hover, h5 a:focus, h5 a:active, h6 a:hover, h6 a:focus, h6 a:active {
     color: #0074a2; }
 
-ul,
-il {
+ul, il {
   margin-bottom: 1rem; }
+
+
+
 
 blockquote {
   color: #666666; }
@@ -288,7 +294,7 @@ blockquote {
     zoom: 1;
     *display: inline;
     color: inherit;
-    content: "\f122";
+    content: '\f122';
     font-family: 'dashicons';
     font-size: inherit;
     font-style: normal;
@@ -334,9 +340,7 @@ table {
 label {
   display: block; }
 
-input,
-select,
-textarea {
+input, select, textarea {
   border: 1px solid #dddddd;
   background: white;
   padding: 0.25em; }
@@ -362,94 +366,38 @@ textarea {
       box-shadow: 0 0 0;
       color: #0074a2; }
 
-.btn,
-.button,
-button,
-input[type="reset"],
-input[type="submit"] {
+.btn, .button, button, input[type="reset"], input[type="submit"] {
   border: 1px solid #dddddd;
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 1px 0 rgba(0, 0, 0, 0.15);
   background: #eeeeee;
   padding: 0.25em 1em;
   vertical-align: middle; }
-  .btn:hover, .btn:focus,
-  .button:hover,
-  .button:focus,
-  button:hover,
-  button:focus,
-  input[type="reset"]:hover,
-  input[type="reset"]:focus,
-  input[type="submit"]:hover,
-  input[type="submit"]:focus {
+  .btn:hover, .btn:focus, .button:hover, .button:focus, button:hover, button:focus, input[type="reset"]:hover, input[type="reset"]:focus, input[type="submit"]:hover, input[type="submit"]:focus {
     background: #e1e1e1; }
-  .btn:active,
-  .button:active,
-  button:active,
-  input[type="reset"]:active,
-  input[type="submit"]:active {
+  .btn:active, .button:active, button:active, input[type="reset"]:active, input[type="submit"]:active {
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1) inset; }
-  .btn.narrow,
-  .button.narrow,
-  button.narrow,
-  input[type="reset"].narrow,
-  input[type="submit"].narrow {
+  .btn.narrow, .button.narrow, button.narrow, input[type="reset"].narrow, input[type="submit"].narrow {
     padding-left: 0.25em;
     padding-right: 0.25em; }
-  .btn.small,
-  .button.small,
-  button.small,
-  input[type="reset"].small,
-  input[type="submit"].small {
+  .btn.small, .button.small, button.small, input[type="reset"].small, input[type="submit"].small {
     font-size: 0.8em;
     padding: 0.175em 0.5em; }
-  .btn.large,
-  .button.large,
-  button.large,
-  input[type="reset"].large,
-  input[type="submit"].large {
+  .btn.large, .button.large, button.large, input[type="reset"].large, input[type="submit"].large {
     font-size: 1.2em;
     padding: 0.5em 2em; }
-  .btn.special,
-  .button.special,
-  button.special,
-  input[type="reset"].special,
-  input[type="submit"].special {
+  .btn.special, .button.special, button.special, input[type="reset"].special, input[type="submit"].special {
     background: #d4d4d4;
     color: #0074a2; }
-    .btn.special:hover, .btn.special:focus,
-    .button.special:hover,
-    .button.special:focus,
-    button.special:hover,
-    button.special:focus,
-    input[type="reset"].special:hover,
-    input[type="reset"].special:focus,
-    input[type="submit"].special:hover,
-    input[type="submit"].special:focus {
+    .btn.special:hover, .btn.special:focus, .button.special:hover, .button.special:focus, button.special:hover, button.special:focus, input[type="reset"].special:hover, input[type="reset"].special:focus, input[type="submit"].special:hover, input[type="submit"].special:focus {
       border: 1px solid #0074a2;
       background: #2ea2cc;
       color: #333333; }
-  .btn.callout,
-  .button.callout,
-  button.callout,
-  input[type="reset"].callout,
-  input[type="submit"].callout {
+  .btn.callout, .button.callout, button.callout, input[type="reset"].callout, input[type="submit"].callout {
     border: 1px solid #d54e21;
     background: #e67f5d; }
-    .btn.callout:hover, .btn.callout:focus,
-    .button.callout:hover,
-    .button.callout:focus,
-    button.callout:hover,
-    button.callout:focus,
-    input[type="reset"].callout:hover,
-    input[type="reset"].callout:focus,
-    input[type="submit"].callout:hover,
-    input[type="submit"].callout:focus {
+    .btn.callout:hover, .btn.callout:focus, .button.callout:hover, .button.callout:focus, button.callout:hover, button.callout:focus, input[type="reset"].callout:hover, input[type="reset"].callout:focus, input[type="submit"].callout:hover, input[type="submit"].callout:focus {
       background: #e99073; }
-  .btn.activated,
-  .button.activated,
-  button.activated,
-  input[type="reset"].activated,
-  input[type="submit"].activated {
+  .btn.activated, .button.activated, button.activated, input[type="reset"].activated, input[type="submit"].activated {
     border: 1px solid #dddddd;
     box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 1px 0 rgba(0, 0, 0, 0.15);
     background: #eeeeee;
@@ -457,67 +405,34 @@ input[type="submit"] {
     vertical-align: middle;
     background: #e1e1e1;
     color: #333333; }
-    .btn.activated:hover, .btn.activated:focus,
-    .button.activated:hover,
-    .button.activated:focus,
-    button.activated:hover,
-    button.activated:focus,
-    input[type="reset"].activated:hover,
-    input[type="reset"].activated:focus,
-    input[type="submit"].activated:hover,
-    input[type="submit"].activated:focus {
+    .btn.activated:hover, .btn.activated:focus, .button.activated:hover, .button.activated:focus, button.activated:hover, button.activated:focus, input[type="reset"].activated:hover, input[type="reset"].activated:focus, input[type="submit"].activated:hover, input[type="submit"].activated:focus {
       background: #e1e1e1; }
-    .btn.activated:active,
-    .button.activated:active,
-    button.activated:active,
-    input[type="reset"].activated:active,
-    input[type="submit"].activated:active {
+    .btn.activated:active, .button.activated:active, button.activated:active, input[type="reset"].activated:active, input[type="submit"].activated:active {
       box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1) inset; }
-    .btn.activated:hover, .btn.activated:focus,
-    .button.activated:hover,
-    .button.activated:focus,
-    button.activated:hover,
-    button.activated:focus,
-    input[type="reset"].activated:hover,
-    input[type="reset"].activated:focus,
-    input[type="submit"].activated:hover,
-    input[type="submit"].activated:focus {
+    .btn.activated:hover, .btn.activated:focus, .button.activated:hover, .button.activated:focus, button.activated:hover, button.activated:focus, input[type="reset"].activated:hover, input[type="reset"].activated:focus, input[type="submit"].activated:hover, input[type="submit"].activated:focus {
       cursor: default; }
-    .btn.activated:active,
-    .button.activated:active,
-    button.activated:active,
-    input[type="reset"].activated:active,
-    input[type="submit"].activated:active {
+    .btn.activated:active, .button.activated:active, button.activated:active, input[type="reset"].activated:active, input[type="submit"].activated:active {
       box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 1px 0 rgba(0, 0, 0, 0.15); }
-  .btn.disabled,
-  .button.disabled,
-  button.disabled,
-  input[type="reset"].disabled,
-  input[type="submit"].disabled {
+  .btn.disabled, .button.disabled, button.disabled, input[type="reset"].disabled, input[type="submit"].disabled {
     background: #f6f6f6;
     border-color: #e5e5e5;
-    color: gray; }
-    .btn.disabled:hover, .btn.disabled:focus,
-    .button.disabled:hover,
-    .button.disabled:focus,
-    button.disabled:hover,
-    button.disabled:focus,
-    input[type="reset"].disabled:hover,
-    input[type="reset"].disabled:focus,
-    input[type="submit"].disabled:hover,
-    input[type="submit"].disabled:focus {
+    color: grey; }
+    .btn.disabled:hover, .btn.disabled:focus, .button.disabled:hover, .button.disabled:focus, button.disabled:hover, button.disabled:focus, input[type="reset"].disabled:hover, input[type="reset"].disabled:focus, input[type="submit"].disabled:hover, input[type="submit"].disabled:focus {
       background: #f6f6f6;
       cursor: default; }
-    .btn.disabled:active,
-    .button.disabled:active,
-    button.disabled:active,
-    input[type="reset"].disabled:active,
-    input[type="submit"].disabled:active {
+    .btn.disabled:active, .button.disabled:active, button.disabled:active, input[type="reset"].disabled:active, input[type="submit"].disabled:active {
       box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 1px 0 rgba(0, 0, 0, 0.15); }
 
 .notify {
   -webkit-border-radius: first-value-of(3px) first-value-of(3px);
+  -moz-border-radius: first-value-of(3px) first-value-of(3px);
+  -ms-border-radius: first-value-of(3px) first-value-of(3px);
+  -o-border-radius: first-value-of(3px) first-value-of(3px);
+  border-radius: first-value-of(3px) first-value-of(3px);
+  -webkit-border-radius: 3px / 3px;
   -moz-border-radius: 3px / 3px;
+  -ms-border-radius: 3px / 3px;
+  -o-border-radius: 3px / 3px;
   border-radius: 3px / 3px;
   color: black;
   padding: 1em; }
@@ -529,19 +444,19 @@ input[type="submit"] {
       .notify.alert a:hover, .notify.alert a:focus, .notify.alert a:active {
         color: red; }
   .notify.warn {
-    background: #ffe4b3;
+    background: #ffe3b3;
     border: 2px solid orange; }
     .notify.warn a {
-      color: #996300; }
+      color: #996100; }
       .notify.warn a:hover, .notify.warn a:focus, .notify.warn a:active {
         color: orange; }
   .notify.info {
-    background: #ffffb3;
+    background: #fffeb3;
     border: 2px solid yellow; }
     .notify.info a {
-      color: #999900; }
+      color: #999600; }
       .notify.info a:hover, .notify.info a:focus, .notify.info a:active {
-        color: #cccc00; }
+        color: #ccc900; }
   .notify.success {
     background: #80ff80;
     border: 2px solid green; }
@@ -550,15 +465,32 @@ input[type="submit"] {
       .notify.success a:hover, .notify.success a:focus, .notify.success a:active {
         color: green; }
 
+
 /**
  * Media
  */
+
+
+
+
+
+
+
+
+
+
+
+
+
 .wp-caption {
   color: #666666;
   font-size: 0.8em; }
 
+
 .wp-caption-text {
   text-align: center; }
+
+
 
 .gallery-caption {
   color: #666666;
@@ -573,6 +505,8 @@ input[type="submit"] {
 .header-image-link {
   margin-right: 1rem; }
 
+
+
 .site-title {
   color: #222222;
   font-size: 2.2em; }
@@ -580,6 +514,7 @@ input[type="submit"] {
 .site-description {
   color: #666666;
   font-size: 1.2em; }
+
 
 #navigation {
   background: #222222;
@@ -620,7 +555,7 @@ input[type="submit"] {
           zoom: 1;
           *display: inline;
           color: inherit;
-          content: "\f333";
+          content: '\f333';
           font-family: 'dashicons';
           font-size: inherit;
           font-style: normal;
@@ -646,6 +581,7 @@ input[type="submit"] {
         #navigation .drop-content .menu-item:last-child {
           border-bottom: 0; } }
 
+
 .header-banner .header-info {
   background: rgba(255, 255, 255, 0.75);
   margin: 0.5em;
@@ -657,6 +593,7 @@ input[type="submit"] {
       display: inherit !important; } }
 .header-banner .social-icons {
   padding: 0.5em; }
+
 
 /**
  * Footer
@@ -696,7 +633,7 @@ input[type="submit"] {
     zoom: 1;
     *display: inline;
     color: inherit;
-    content: "\f140";
+    content: '\f140';
     font-family: 'dashicons';
     font-size: inherit;
     font-style: normal;
@@ -717,7 +654,7 @@ input[type="submit"] {
     zoom: 1;
     *display: inline;
     color: inherit;
-    content: "\f142";
+    content: '\f142';
     font-family: 'dashicons';
     font-size: inherit;
     font-style: normal;
@@ -731,6 +668,9 @@ input[type="submit"] {
     *overflow: auto;
     *zoom: 1; }
 
+
+
+
 .menu.vertical .menu-item {
   border-bottom: 1px solid #dddddd; }
   .menu.vertical .menu-item.menu-item-has-children > a:after {
@@ -741,7 +681,7 @@ input[type="submit"] {
     zoom: 1;
     *display: inline;
     color: inherit;
-    content: "\f140";
+    content: '\f140';
     font-family: 'dashicons';
     font-size: inherit;
     font-style: normal;
@@ -762,7 +702,7 @@ input[type="submit"] {
     zoom: 1;
     *display: inline;
     color: inherit;
-    content: "\f142";
+    content: '\f142';
     font-family: 'dashicons';
     font-size: inherit;
     font-style: normal;
@@ -793,7 +733,7 @@ input[type="submit"] {
   zoom: 1;
   *display: inline;
   color: inherit;
-  content: "\f140";
+  content: '\f140';
   font-family: 'dashicons';
   font-size: inherit;
   font-style: normal;
@@ -814,7 +754,7 @@ input[type="submit"] {
   zoom: 1;
   *display: inline;
   color: inherit;
-  content: "\f142";
+  content: '\f142';
   font-family: 'dashicons';
   font-size: inherit;
   font-style: normal;
@@ -847,7 +787,7 @@ input[type="submit"] {
     zoom: 1;
     *display: inline;
     color: inherit;
-    content: "\f139";
+    content: '\f139';
     font-family: 'dashicons';
     font-size: inherit;
     font-style: normal;
@@ -868,7 +808,7 @@ input[type="submit"] {
     zoom: 1;
     *display: inline;
     color: inherit;
-    content: "\f141";
+    content: '\f141';
     font-family: 'dashicons';
     font-size: inherit;
     font-style: normal;
@@ -908,11 +848,14 @@ input[type="submit"] {
 .entry-header {
   margin-bottom: 1rem; }
 
+
+
 .the-entry-image {
   margin-bottom: 1em; }
   .the-entry-image.entry-thumbnail {
     float: left;
     margin: 0.5em; }
+
 
 .entry-details .meta.attachment:before {
   display: -moz-inline-stack;
@@ -922,7 +865,7 @@ input[type="submit"] {
   zoom: 1;
   *display: inline;
   color: inherit;
-  content: "\f128";
+  content: '\f128';
   font-family: 'dashicons';
   font-size: inherit;
   font-style: normal;
@@ -943,7 +886,7 @@ input[type="submit"] {
   zoom: 1;
   *display: inline;
   color: inherit;
-  content: "\f110";
+  content: '\f110';
   font-family: 'dashicons';
   font-size: inherit;
   font-style: normal;
@@ -964,7 +907,7 @@ input[type="submit"] {
   zoom: 1;
   *display: inline;
   color: inherit;
-  content: "\f331";
+  content: '\f331';
   font-family: 'dashicons';
   font-size: inherit;
   font-style: normal;
@@ -985,7 +928,7 @@ input[type="submit"] {
   zoom: 1;
   *display: inline;
   color: inherit;
-  content: "\f145";
+  content: '\f145';
   font-family: 'dashicons';
   font-size: inherit;
   font-style: normal;
@@ -1006,7 +949,7 @@ input[type="submit"] {
   zoom: 1;
   *display: inline;
   color: inherit;
-  content: "\f318";
+  content: '\f318';
   font-family: 'dashicons';
   font-size: inherit;
   font-style: normal;
@@ -1027,7 +970,7 @@ input[type="submit"] {
   zoom: 1;
   *display: inline;
   color: inherit;
-  content: "\f101";
+  content: '\f101';
   font-family: 'dashicons';
   font-size: inherit;
   font-style: normal;
@@ -1054,7 +997,7 @@ input[type="submit"] {
     zoom: 1;
     *display: inline;
     color: inherit;
-    content: "\f310";
+    content: '\f310';
     font-family: 'dashicons';
     font-size: inherit;
     font-style: normal;
@@ -1108,7 +1051,7 @@ input[type="submit"] {
   zoom: 1;
   *display: inline;
   color: inherit;
-  content: "\f323";
+  content: '\f323';
   font-family: 'dashicons';
   font-size: inherit;
   font-style: normal;
@@ -1130,7 +1073,7 @@ input[type="submit"] {
   zoom: 1;
   *display: inline;
   color: inherit;
-  content: "\f327";
+  content: '\f327';
   font-family: 'dashicons';
   font-size: inherit;
   font-style: normal;
@@ -1147,9 +1090,12 @@ input[type="submit"] {
 /**
  * Posts
  */
+
 /**
  * Posts
  */
+
+
 .single .entry.format-chat .entry-content p {
   padding: 0.25em; }
   .single .entry.format-chat .entry-content p:nth-child(odd) {
@@ -1158,6 +1104,7 @@ input[type="submit"] {
 /**
  * Pages
  */
+
 .search-page .search-header {
   margin-bottom: 2rem; }
 
@@ -1167,15 +1114,22 @@ input[type="submit"] {
 /**
  * Attachments
  */
+
 /**
  * WooCommerce
  */
+
 /**
  * bbPress
  */
+
 /**
  * Comments
  */
+
+
+
+
 .comment {
   margin-bottom: 1rem;
   padding: 0.5em; }
@@ -1185,6 +1139,7 @@ input[type="submit"] {
 
 .comment-header {
   margin-bottom: 1rem; }
+
 
 .comment-details {
   margin-bottom: 1rem; }
@@ -1198,7 +1153,7 @@ input[type="submit"] {
       zoom: 1;
       *display: inline;
       color: inherit;
-      content: "\f110";
+      content: '\f110';
       font-family: 'dashicons';
       font-size: inherit;
       font-style: normal;
@@ -1219,7 +1174,7 @@ input[type="submit"] {
       zoom: 1;
       *display: inline;
       color: inherit;
-      content: "\f145";
+      content: '\f145';
       font-family: 'dashicons';
       font-size: inherit;
       font-style: normal;
@@ -1240,7 +1195,7 @@ input[type="submit"] {
       zoom: 1;
       *display: inline;
       color: inherit;
-      content: "\f469";
+      content: '\f469';
       font-family: 'dashicons';
       font-size: inherit;
       font-style: normal;
@@ -1264,7 +1219,7 @@ input[type="submit"] {
     zoom: 1;
     *display: inline;
     color: inherit;
-    content: "\f122";
+    content: '\f122';
     font-family: 'dashicons';
     font-size: inherit;
     font-style: normal;
@@ -1279,12 +1234,11 @@ input[type="submit"] {
     *zoom: 1; }
   .comment-content .contain {
     padding-left: 1.5em; }
-  .comment-content ol,
-  .comment-content ul {
+  .comment-content ol, .comment-content ul {
     margin-left: 1.5em; }
-    .comment-content ol:last-child,
-    .comment-content ul:last-child {
+    .comment-content ol:last-child, .comment-content ul:last-child {
       margin-bottom: 0; }
+
 
 .comment-reply {
   margin-bottom: 1rem; }
@@ -1296,7 +1250,7 @@ input[type="submit"] {
     zoom: 1;
     *display: inline;
     color: inherit;
-    content: "\f346";
+    content: '\f346';
     font-family: 'dashicons';
     font-size: inherit;
     font-style: normal;
@@ -1318,7 +1272,7 @@ input[type="submit"] {
   zoom: 1;
   *display: inline;
   color: inherit;
-  content: "\f327";
+  content: '\f327';
   font-family: 'dashicons';
   font-size: inherit;
   font-style: normal;
@@ -1332,6 +1286,9 @@ input[type="submit"] {
   *overflow: auto;
   *zoom: 1; }
 
+
+
+
 .next-comments a:after {
   display: -moz-inline-stack;
   display: inline-block;
@@ -1340,7 +1297,7 @@ input[type="submit"] {
   zoom: 1;
   *display: inline;
   color: inherit;
-  content: "\f344";
+  content: '\f344';
   font-family: 'dashicons';
   font-size: inherit;
   font-style: normal;
@@ -1362,7 +1319,7 @@ input[type="submit"] {
   zoom: 1;
   *display: inline;
   color: inherit;
-  content: "\f340";
+  content: '\f340';
   font-family: 'dashicons';
   font-size: inherit;
   font-style: normal;
@@ -1375,3 +1332,6 @@ input[type="submit"] {
   *display: inline;
   *overflow: auto;
   *zoom: 1; }
+
+
+

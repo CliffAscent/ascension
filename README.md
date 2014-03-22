@@ -1,8 +1,6 @@
 # Ascension
 Ascension is a WordPress theme framework that's fully responsive, highly customizable, easily skinned, and light weight. Ascension is created using the most recent WordPress coding standards, and is 100% extendible by child themes.
 
-**This theme is currently in beta testing and should not be used on mission critical sites.**
-
 
 ## Documentation
 Ascension is a parent theme that supports the rapid development of unique and robust child themes. It's best to only use child themes to modify Ascension so the framework can be updated across all of your themes while preserving your changes. The Ascension code structure follows the WordPress coding standards and maintains a similar flow and consistency so it's as easy as possible to adapt too. A wide range of third party development tools and a starter child theme are integrated into Ascension to streamline the theme creation process.
@@ -91,4 +89,4 @@ Ascension is constantly updated to adhere to new WordPress updates and standards
 
 
 ### Support
-The full documentation and support resources can be found at http://themeascent.com/support
+Support is provided using the GitHub issue tracker at https://github.com/CliffAscent/ascension/issues
