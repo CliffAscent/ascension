@@ -1,5 +1,8 @@
 # Change Log
 
++ 29 March 2014
+	+ Updated grunt tasks to compile SASS much faster.
+
 + 22 March 2014
 	+ Default theme options callback fixed.
 	+ Compass files modified.

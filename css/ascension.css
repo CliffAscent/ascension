@@ -21,7 +21,7 @@ html {
   -ms-text-size-adjust: 100%; }
 
 body {
-  background: white;
+  background: #fff;
   font-size: 1em;
   line-height: 1; }
 
@@ -94,8 +94,8 @@ textarea {
   box-sizing: border-box; }
 
 body {
-  background: white;
-  color: black;
+  background: #fff;
+  color: #000;
   font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-size: 1em;
   font-weight: 400;
@@ -104,7 +104,7 @@ body {
 
 /* This row is the element centered in the viewport. */
 /* Ensure all root elements follow this structure. */
-/* body #{section}.wrapper .row */
+/* body section.wrapper .row */
 body > .wrapper > .row {
   margin-left: auto !important;
   margin-right: auto !important;
@@ -146,7 +146,7 @@ body > .wrapper > .row {
   float: left; }
 
 .ascension-credits {
-  color: grey;
+  color: #808080;
   font-size: 0.75em;
   padding: 0.5em; }
   .ascension-credits a {
@@ -1364,23 +1364,23 @@ body > .wrapper > .row {
     padding: 0.5em;
     text-align: center; }
   .media-test .media-small {
-    background: red;
-    color: black; }
+    background: #FF0000;
+    color: #000; }
   .media-test .media-medium {
-    background: yellow;
-    color: black; }
+    background: #FFFF00;
+    color: #000; }
   .media-test .media-large {
-    background: blue;
-    color: white; }
+    background: #0000FF;
+    color: #fff; }
   .media-test .media-full {
-    background: green;
-    color: white; }
+    background: #008000;
+    color: #fff; }
 
 /* Grid example */
 .grid-example .row {
   margin-bottom: 1em; }
   .grid-example .row > * {
-    background: #eeeeee;
+    background: #eee;
     border: 1px solid;
     padding: 0.5em 0;
     text-align: center; }
@@ -1391,7 +1391,7 @@ body > .wrapper > .row {
   border: 0;
   padding: 0 0.75em; }
   .grid-example .show-gutters .row > * > * {
-    background: #eeeeee;
+    background: #eee;
     border: 1px solid;
     padding: 0.5em 0;
     text-align: center; }
@@ -1514,7 +1514,7 @@ body > .wrapper > .row {
     cursor: pointer;
     display: block; }
   .drop.at-small .drop-content {
-    background: white;
+    background: #fff;
     display: none;
     padding: 0.5em;
     position: absolute;
@@ -1531,7 +1531,7 @@ body > .wrapper > .row {
     cursor: pointer;
     display: block; }
   .drop.at-medium .drop-content {
-    background: white;
+    background: #fff;
     display: none;
     padding: 0.5em;
     position: absolute;
@@ -1548,7 +1548,7 @@ body > .wrapper > .row {
     cursor: pointer;
     display: block; }
   .drop.at-large .drop-content {
-    background: white;
+    background: #fff;
     display: none;
     padding: 0.5em;
     position: absolute;
@@ -1566,7 +1566,7 @@ body > .wrapper > .row {
   cursor: pointer;
   display: block; }
 .drop.at-full .drop-content {
-  background: white;
+  background: #fff;
   display: none;
   padding: 0.5em;
   position: absolute;
@@ -1618,7 +1618,7 @@ body > .wrapper > .row {
     *zoom: 1; }
 
 .tip-content {
-  background: white;
+  background: #fff;
   display: none;
   margin: 0;
   max-width: 300px;
@@ -1664,7 +1664,7 @@ body > .wrapper > .row {
       *overflow: auto;
       *zoom: 1; }
     #scroll-to-top span:hover {
-      color: grey; }
+      color: #808080; }
 
 /**
  * Typography
@@ -1722,7 +1722,7 @@ kbd {
   -ms-border-radius: 2px / 2px;
   -o-border-radius: 2px / 2px;
   border-radius: 2px / 2px;
-  border: 1px solid grey;
+  border: 1px solid #808080;
   font-family: "Courier New", Courier, monospace;
   font-size: 0.9em;
   padding: 0.25em; }
@@ -1753,8 +1753,8 @@ address {
   padding: 0.5em; }
 
 mark, .highlight {
-  background: yellow;
-  color: black;
+  background: #FFFF00;
+  color: #000000;
   padding: 0 0.25em; }
 
 .strike {
@@ -1768,7 +1768,7 @@ mark, .highlight {
   white-space: nowrap; }
 
 hr {
-  background: grey;
+  background: #808080;
   border: 0;
   height: 1px;
   margin-bottom: 0.5rem;
@@ -1893,7 +1893,7 @@ dl dd {
 
 /* Blockquotes */
 blockquote {
-  color: grey;
+  color: #808080;
   font-style: italic;
   font-weight: normal;
   margin: 1.5rem;
@@ -1997,7 +1997,7 @@ img {
     padding: 0;
     position: relative; }
   .menu.horizontal .sub-menu {
-    background: white;
+    background: #fff;
     display: none;
     list-style-type: none;
     margin: 0;

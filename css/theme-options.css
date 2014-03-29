@@ -1278,7 +1278,7 @@
     *zoom: 1; }
 
 .tip-content {
-  background: white;
+  background: #fff;
   display: none;
   margin: 0;
   max-width: 300px;
@@ -1292,8 +1292,8 @@
 
 
 .tip-content {
-  border: 1px solid #dddddd;
+  border: 1px solid #ddd;
   background: #fafafa; }
 
 input:disabled, select:disabled, textarea:disabled {
-  color: #7f7f7f; }
+  color: #7F7F7F; }

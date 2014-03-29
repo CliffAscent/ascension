@@ -1,23 +1,13 @@
 module.exports = function( grunt ) {
-	// Load all of the dependencies in package.json
-	require( 'matchdep' ).filterDev( 'grunt-*' ).forEach( grunt.loadNpmTasks );
-
-	// Configure and initiate grunt.
     grunt.initConfig( {
         pkg : grunt.file.readJSON( 'package.json' ),
 		
-		// Install the script dependencies.
-		bower: {
-			install: {
-				options: {
-					targetDir: './js/vendor',
-					cleanBowerDir: true
-				}
-			}
-		},
-		
 		// Watch files and execute tasks when they change.
 		watch : {
+			grunt: {
+				files: ['Gruntfile.js']
+			},
+			
 			css: {
 				files: ['scss/**/*.scss'],
 				tasks: ['styles']
@@ -111,12 +101,34 @@ module.exports = function( grunt ) {
 				src  : 'css/icons.min.css',
 				dest : 'css/icons.min.css'
 			}
+		},
+		
+		// Install the script dependencies.
+		bower: {
+			install: {
+				options: {
+					targetDir: './js/vendor',
+					cleanBowerDir: true
+				}
+			}
 		}
     } );
+	
+	// Load the grunt dependencies.
+	grunt.loadNpmTasks( 'grunt-sass' );
+	grunt.loadNpmTasks( 'grunt-contrib-watch' );
+	grunt.loadNpmTasks( 'grunt-contrib-uglify' );
+	grunt.loadNpmTasks( 'grunt-cssc' );
+	grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
 
 	// Register the grunt tasks.
-    grunt.registerTask( 'default',    [] );
-    grunt.registerTask( 'dl-scripts', ['bower', 'uglify:vendors'] );
+    grunt.registerTask( 'default',    ['sass', 'watch'] );
 	grunt.registerTask( 'scripts',    ['uglify:framework'] );
-	grunt.registerTask( 'styles',     ['sass', 'cssc', 'cssmin'] );
+	grunt.registerTask( 'styles',     ['sass'] );
+	grunt.registerTask( 'dl-scripts', [], function() {
+		grunt.loadNpmTasks( 'grunt-bower' );
+		grunt.loadNpmTasks( 'grunt-bower-task' );
+		grunt.task.run( 'bower' );
+		grunt.task.run( 'uglify:vendors' );
+	} );
 };

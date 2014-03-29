@@ -5,16 +5,13 @@
     "private" : true,
 
     "devDependencies" : {
-		"node-sass"             : "~0.7.0",
-        "grunt"                 : "~0.4.0",
+		"node-sass"             : "*",
+        "grunt"                 : "*",
         "grunt-contrib-watch"   : "*",
         "grunt-contrib-uglify"  : "*",
-        "grunt-contrib-sass"    : "*",
         "grunt-cssc"            : "*",
         "grunt-contrib-cssmin"  : "*",
-		"grunt-sass"            : "~0.8.0",
-		"grunt-contrib-compass" : "*",
-        "matchdep"              : "*",
+		"grunt-sass"            : "*",
 		"grunt-bower"           : "*",
 		"grunt-bower-task"      : "*"
     }
