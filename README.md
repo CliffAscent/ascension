@@ -1,4 +1,6 @@
 # Ascension
+**Development of this project has discontinued in favor of other open source projects, but remains on GitHub for demonstration purposes. It is not recommended to use this code on a live site.**
+
 Ascension is a WordPress theme framework that's fully responsive, highly customizable, easily skinned, and light weight. Ascension is created using the most recent WordPress coding standards, and is 100% extendible by child themes.
 
 
